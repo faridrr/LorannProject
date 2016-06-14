@@ -9,13 +9,13 @@ import contract.IView;
 /**
  * The Class Controller.
  */
-public class Controller implements IController {
+public class Controller implements IController { //IController interface implementation
 
 	/** The view. */
-	private IView		view;
+	private IView view;
 
 	/** The model. */
-	private IModel	model;
+	private IModel model;
 
 	/**
 	 * Instantiates a new controller.
@@ -25,7 +25,7 @@ public class Controller implements IController {
 	 * @param model
 	 *          the model
 	 */
-	public Controller(final IView view, final IModel model) {
+	public Controller(final IView view, final IModel model) { //Controller constructor
 		this.setView(view);
 		this.setModel(model);
 	}
