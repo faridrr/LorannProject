@@ -132,7 +132,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.setResizable(false);
 		this.addKeyListener(this);
 		this.setContentPane(new ViewPanel(this));
-		this.setTitle("Lorann");
+		this.setTitle("LorannProject | Cattelan Montes Duffaut | Exia A1 Promo 2016");
 		//this.setSize(400 + this.getInsets().left + this.getInsets().right, 60 + this.getInsets().top + this.getInsets().bottom);
 		this.setSize(704, 448);
 		this.setBackground(Color.BLACK);
