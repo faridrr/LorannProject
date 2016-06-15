@@ -36,7 +36,7 @@ public class Controller implements IController { //IController interface impleme
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
+		this.view.printMessage("Welcome! Please press Enter to start.");
 	}
 
 	/**
