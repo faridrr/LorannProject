@@ -73,6 +73,7 @@ class ViewPanel extends JPanel implements Observer {
 		
 		for(int n = 0; n < 22*14; n++)
 		add(new Button("n"));
+		
 	
 	}
 }
