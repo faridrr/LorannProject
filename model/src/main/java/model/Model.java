@@ -19,7 +19,7 @@ public class Model extends Observable implements IModel {
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		this.message = "";
+		this.message = "Initialisation du jeu.";
 	}
 
 	/*
