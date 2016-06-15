@@ -71,8 +71,9 @@ class ViewPanel extends JPanel implements Observer {
 		//graphics.drawString(this.getViewFrame().getModel().getMessage(), 10, 20);
 		setLayout (new GridLayout(22,14,0,0));
 
-		add(new Button("1"));
-		add(new Button("2"));
+		for(int n = 0; n < 22*14; n++)
+		add(new Button("n"));
+		/*add(new Button("2"));
 		add(new Button("3"));
 		add(new Button("4"));
 		add(new Button("5"));
@@ -81,6 +82,6 @@ class ViewPanel extends JPanel implements Observer {
 		add(new Button("8"));
 		add(new Button("9"));
 		add(new Button("10"));
-		add(new Button("110"));
+		add(new Button("110"));*/
 	}
 }
