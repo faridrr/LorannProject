@@ -174,6 +174,7 @@ class ViewPanel extends JPanel implements Observer {
 			}
 
 		}		
+		
 
 	}*/
 	@Override
