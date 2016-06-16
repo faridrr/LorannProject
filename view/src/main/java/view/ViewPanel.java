@@ -1,9 +1,16 @@
 package view;
 
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -62,9 +69,33 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+	
+	BufferedImage bone;
+	BufferedImage corner;
+	BufferedImage lorann;
+	int x = 0;
+	int y = 0;
+	int nb = 32;
+	
+	List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
 	@Override
 	protected void paintComponent(final Graphics graphics) {
+		try {
+			bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
+			corner = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
+			lorann = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
+			
+			Arimages.add(corner);
+			Arimages.add(bone);
+			Arimages.add(lorann);
+		} catch (IOException e){
+
+	}
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-		graphics.drawImage(this.getViewFrame().getModel().getMessage(), 0, 0, this ); // "0,0" puts it at the upper left hand side
+		for(Image img : Arimages){
+			graphics.drawImage(img,  x*nb, y*nb, this);
+			x++;
+			y++;
+		}
 	}
 }

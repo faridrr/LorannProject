@@ -59,7 +59,9 @@ public class Model extends Observable implements IModel {
 	}
 
 	public Image getMessage() {
-		return Arimages.image(bone);
+		
+
+		return bone;
 	}
 
 	/**
