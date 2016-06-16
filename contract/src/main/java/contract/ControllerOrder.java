@@ -3,14 +3,13 @@ package contract;
 /**
  * The Enum ControllerOrder.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2016
  */
-public enum ControllerOrder {
-//Hello World Enum
+public enum ControllerOrder { //keyboard input enumeration 
 	
-	Right,  // The English. 
-	Left, // The French.
-	Up,  // The Deutch.
-	Down, // The Indonesia.
+	Right,  
+	Left, 
+	Up,  
+	Down, 
 	Spell
 }
