@@ -1,7 +1,15 @@
 package model;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.Observable;
+
+import javax.imageio.ImageIO;
+
 import elements.Lorann;
 import contract.IModel;
 
@@ -28,8 +36,15 @@ public class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public String getMessage() {
-		return this.message;
+	public Image getMessage() {
+		BufferedImage image = null;
+		try {
+			image = ImageIO.read(new File("C:/Users/dylan/Desktop/Projet Java/LorannProject/sprite/bone.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return image;
 	}
 
 	/**

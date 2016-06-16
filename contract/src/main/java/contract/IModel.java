@@ -1,5 +1,6 @@
 package contract;
 
+import java.awt.Image;
 import java.util.Observable;
 
 /**
@@ -14,7 +15,7 @@ public interface IModel {
 	 *
 	 * @return the message
 	 */
-	String getMessage();
+	Image getMessage();
 
 	/**
 	 * Load the message.
