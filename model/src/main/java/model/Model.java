@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 import javax.imageio.ImageIO;
@@ -23,6 +25,9 @@ public class Model extends Observable implements IModel {
 	/** The message. */
 	private String message;
 	private Lorann character;
+	BufferedImage bone;
+	BufferedImage corner;
+	List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
 
 	/**
 	 * Instantiates a new model.
@@ -36,22 +41,32 @@ public class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public Image getMessage() {
-		BufferedImage image = null;
+	public void initImages() {
 		try {
-			image = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
-		} catch (IOException e) {
+			bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
+			corner = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
+			Arimages.add(corner);
+			Arimages.add(bone);
+		} catch (
+
+		IOException e)
+
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return image;
+
+	}
+
+	public Image getMessage() {
+		return Arimages.image(bone);
 	}
 
 	/**
 	 * Sets the message.
 	 *
 	 * @param message
-	 *          the new message
+	 *            the new message
 	 */
 	private void setMessage(final String message) {
 		this.message = message;
@@ -65,7 +80,6 @@ public class Model extends Observable implements IModel {
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
 
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -78,7 +92,7 @@ public class Model extends Observable implements IModel {
 	public void moveR() {
 		this.character.moveR();
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void moveL() {
@@ -99,7 +113,6 @@ public class Model extends Observable implements IModel {
 	public void launchSpell() {
 		this.character.launchSpell(character);
 		// TODO Auto-generated method stub
-		
+
 	}
 }
-

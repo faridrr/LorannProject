@@ -4,7 +4,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class Keys extends Items{
+public class CrystalBall extends Items{
 	private int x;
 	private int y;
 
@@ -25,6 +25,6 @@ public class Keys extends Items{
 	}
 
 	public void Image() {
-		Image image = new ImageIcon("//view//sprite//crystal_ball.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/crystal_ball.png").getImage();
 	}
 }

@@ -25,6 +25,6 @@ public class Corners extends Background{
 	}
 
 	public void Image() {
-		Image image = new ImageIcon("//view//sprite//bone.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/bone.png").getImage();
 	}
 }

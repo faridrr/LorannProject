@@ -51,35 +51,35 @@ public class Lorann extends Mobile {
 	}
 
 	public void ImageB() {
-		Image image = new ImageIcon("//view//sprite//lorann_b.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_b.png").getImage();
 	}
 
 	public void ImageBl() {
-		Image image = new ImageIcon("//view//sprite//lorann_bl.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_bl.png").getImage();
 	}
 
 	public void ImageBr() {
-		Image image = new ImageIcon("//view//sprite//lorann_br.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_br.png").getImage();
 	}
 
 	public void ImageL() {
-		Image image = new ImageIcon("//view//sprite//lorann_l.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_l.png").getImage();
 	}
 
 	public void ImageR() {
-		Image image = new ImageIcon("//view//sprite//lorann_r.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_r.png").getImage();
 	}
 
 	public void ImageU() {
-		Image image = new ImageIcon("//view//sprite//lorann_u.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_u.png").getImage();
 	}
 
 	public void ImageUl() {
-		Image image = new ImageIcon("//view//sprite//lorann_ul.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_ul.png").getImage();
 	}
 
 	public void ImageUr() {
-		Image image = new ImageIcon("//view//sprite//lorann_ur.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/lorann_ur.png").getImage();
 	}
 
 	public String getMessage() {

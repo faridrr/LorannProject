@@ -25,7 +25,7 @@ public class DoorO extends Background {
 	}
 
 	public void Image() {
-		Image image = new ImageIcon("//view//sprite//gate_open.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/gate_open.png").getImage();
 	}
 
 }

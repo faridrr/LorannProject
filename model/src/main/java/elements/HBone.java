@@ -25,6 +25,6 @@ public class HBone extends Background{
 	}
 
 	public void Image() {
-		Image image = new ImageIcon("//view//sprite//horizontal_bone.png").getImage();
+		Image image = new ImageIcon("src/main/resources/sprite/horizontal_bone.png").getImage();
 	}
 }
