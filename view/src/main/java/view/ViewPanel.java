@@ -116,11 +116,15 @@ class ViewPanel extends JPanel implements Observer {
 			gate_closed = ImageIO.read(new File("src/main/resources/sprite/gate_closed.png"));
 			gate_open = ImageIO.read(new File("src/main/resources/sprite/gate_open.png"));
 			crystal_ball = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
-			
-			
-			
-			
 			lorann = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
+			
+			purse = ImageIO.read(new File("src/main/resources/sprite/purse.png"));
+			
+			monster_1 = ImageIO.read(new File("src/main/resources/sprite/monster_1.png"));
+			monster_2 = ImageIO.read(new File("src/main/resources/sprite/monster_2.png"));
+			monster_3 = ImageIO.read(new File("src/main/resources/sprite/monster_3.png"));
+			monster_4 = ImageIO.read(new File("src/main/resources/sprite/monster_4.png"));
+			
 			
 			Arimages.add(bone);
 			Arimages.add(black);
@@ -136,6 +140,11 @@ class ViewPanel extends JPanel implements Observer {
 			Arimages.add(gate_closed);
 			Arimages.add(gate_open);
 			Arimages.add(crystal_ball);
+			Arimages.add(purse);
+			Arimages.add(monster_1);
+			Arimages.add(monster_2);
+			Arimages.add(monster_3);
+			Arimages.add(monster_4);
 			
 		} catch (IOException e){
 
