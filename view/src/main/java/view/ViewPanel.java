@@ -75,11 +75,14 @@ class ViewPanel extends JPanel implements Observer {
 
 	public void InitialGrid(){
 		
-		viewFrame.setLayout(new GridBagLayout());
+		/* 
+		 * Max's modifications :
+		 * 
+		 * viewFrame.setLayout(new GridBagLayout());
 
 		GridBagConstraints gbc = new GridBagConstraints();
 
-		gbc.gridx = 0; // On positionne la case de départ du composan
+		gbc.gridx = 0; // On positionne la case de départ du composant
 		gbc.gridy = 0;
 
 		gbc.gridheight = 1; //Proportions des images
@@ -102,7 +105,72 @@ class ViewPanel extends JPanel implements Observer {
 
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		viewFrame.add(cell, gbc);
+		viewFrame.add(cell, gbc);*/
+		
+		
+		/*
+		 * Ced's modifications:
+		 */
+	/*
+		    JPanel cell1 = new JPanel();
+
+		    //Le conteneur principal
+		    JPanel content = new JPanel();
+		    content.setPreferredSize(new Dimension(300, 120));
+		    content.setBackground(Color.BLACK);
+		    //On définit le layout manager
+		    content.setLayout(new GridBagLayout());
+				
+		    //L'objet servant à positionner les composants
+		    GridBagConstraints gbc = new GridBagConstraints();
+				
+		    //On positionne la case de départ du composant
+		    gbc.gridx = 0;
+		    gbc.gridy = 0;
+		    //La taille en hauteur et en largeur
+		    gbc.gridheight = 1;
+		    gbc.gridwidth = 1;
+		    content.add(cell1, gbc);
+		    //---------------------------------------------
+		    //gbc.gridx = 1;
+
+		    //---------------------------------------------
+		    //gbc.gridx = 2;		
+		
+		    //---------------------------------------------
+		    //Cette instruction informe le layout que c'est une fin de ligne
+		    gbc.gridwidth = GridBagConstraints.REMAINDER;
+		    gbc.gridx = 3;	
+
+		    //---------------------------------------------
+		    gbc.gridx = 0;
+		    gbc.gridy = 1;
+		    gbc.gridwidth = 1;
+		    gbc.gridheight = 1;
+		    
+		    //Celle-ci indique que la cellule se réplique de façon verticale
+		    gbc.fill = GridBagConstraints.VERTICAL;
+		    content.add(cell1, gbc);
+		    //---------------------------------------------
+		    gbc.gridx = 1;
+		    gbc.gridheight = 1;
+		    //Celle-ci indique que la cellule se réplique de façon horizontale
+		    gbc.fill = GridBagConstraints.HORIZONTAL;
+		    gbc.gridwidth = GridBagConstraints.REMAINDER;
+		    content.add(cell1, gbc);
+		    //---------------------------------------------
+		    gbc.gridx = 1;
+		    gbc.gridy = 2;
+		    gbc.gridwidth = 2;
+		    content.add(cell1, gbc);
+		    //---------------------------------------------
+		    gbc.gridx = 3;
+		    gbc.gridwidth = GridBagConstraints.REMAINDER;
+		    content.add(cell1, gbc);
+		    //---------------------------------------------
+		    //On ajoute le conteneur
+		    //this.setContentPane(content);
+		    this.setVisible(true);	*/	
 	}
 	
 	
