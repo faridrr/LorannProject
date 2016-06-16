@@ -82,6 +82,24 @@ public class Controller implements IController { //IController interface impleme
 			default:
 				break;
 		}
-	}
+	}/*
+	public void orderPerform(final ControllerOrder controllerOrder) {
+		switch (controllerOrder) {
+			case XXX:
+				this.model.loadMessage("XX");
+				break;
+			case XXX:
+				this.model.loadMessage("XX");
+				break;
+			case XXX:
+				this.model.loadMessage("XX");
+				break;
+			case XXX:
+				this.model.loadMessage("XX");
+				break;
 
+			default:
+				break;
+		}
+	}*/
 }
