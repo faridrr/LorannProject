@@ -73,6 +73,7 @@ class ViewPanel extends JPanel implements Observer {
 	
 	BufferedImage black;
 	BufferedImage bone;
+	BufferedImage horizontal_bone;
 	BufferedImage vertical_bone;
 	BufferedImage corner;
 	BufferedImage crystal_ball;
@@ -101,13 +102,41 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		try {
+			black = ImageIO.read(new File("src/main/resources/sprite/black.png"));
 			bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
-			corner = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
+			vertical_bone = ImageIO.read(new File("src/main/resources/sprite/vertical_bone.png"));
+			horizontal_bone = ImageIO.read(new File("src/main/resources/sprite/horizontal_bone.png"));
+			
+			fireball_1 = ImageIO.read(new File("src/main/resources/sprite/fireball_1.png"));
+			fireball_2 = ImageIO.read(new File("src/main/resources/sprite/fireball_2.png"));
+			fireball_3 = ImageIO.read(new File("src/main/resources/sprite/fireball_3.png"));
+			fireball_4 = ImageIO.read(new File("src/main/resources/sprite/fireball_4.png"));
+			
+			
+			gate_closed = ImageIO.read(new File("src/main/resources/sprite/gate_closed.png"));
+			gate_open = ImageIO.read(new File("src/main/resources/sprite/gate_open.png"));
+			crystal_ball = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
+			
+			
+			
+			
 			lorann = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
 			
-			Arimages.add(corner);
 			Arimages.add(bone);
+			Arimages.add(black);
+			Arimages.add(vertical_bone);
+			Arimages.add(horizontal_bone);
 			Arimages.add(lorann);
+			
+			Arimages.add(fireball_1);
+			Arimages.add(fireball_2);
+			Arimages.add(fireball_3);
+			Arimages.add(fireball_4);
+			
+			Arimages.add(gate_closed);
+			Arimages.add(gate_open);
+			Arimages.add(crystal_ball);
+			
 		} catch (IOException e){
 
 	}
@@ -115,7 +144,7 @@ class ViewPanel extends JPanel implements Observer {
 		for(Image img : Arimages){
 			graphics.drawImage(img,  x*nb, y*nb, this);
 			x++;
-			y++;
+			;
 		}
 	}
 }
