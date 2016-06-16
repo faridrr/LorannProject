@@ -11,7 +11,7 @@ import java.sql.SQLException;
  * @param <E>
  *          the element type
  */
-abstract class DAOEntity<E extends Entity> {
+abstract class DAOElements<E extends Elements> {
 
 	/** The connection. */
 	private final Connection connection;
@@ -24,7 +24,7 @@ abstract class DAOEntity<E extends Entity> {
 	 * @throws SQLException
 	 *           the SQL exception
 	 */
-	public DAOEntity(final Connection connection) throws SQLException {
+	public DAOElements(final Connection connection) throws SQLException {
 		this.connection = connection;
 	}
 

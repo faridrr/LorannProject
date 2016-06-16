@@ -5,7 +5,7 @@ package model;
  *
  * @author Jean-Aymeric Diet
  */
-class HelloWorld extends Entity {
+class Lorann extends Elements {
 
 	/** The id. */
 	private int			id;
@@ -26,7 +26,7 @@ class HelloWorld extends Entity {
 	 * @param message
 	 *          the message
 	 */
-	public HelloWorld(final int id, final String key, final String message) {
+	public Lorann(final int id, final String key, final String message) {
 		this.setId(id);
 		this.setKey(key);
 		this.setMessage(message);
@@ -35,7 +35,7 @@ class HelloWorld extends Entity {
 	/**
 	 * Instantiates a new hello world.
 	 */
-	public HelloWorld() {
+	public Lorann() {
 		this(0, "", "");
 	}
 
