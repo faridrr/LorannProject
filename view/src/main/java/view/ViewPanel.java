@@ -73,37 +73,7 @@ class ViewPanel extends JPanel implements Observer {
 		this.repaint();
 	}
 
-	public void InitialGrid(){
-		
-		viewFrame.setLayout(new GridBagLayout());
-
-		GridBagConstraints gbc = new GridBagConstraints();
-
-		gbc.gridx = 0; // On positionne la case de départ du composan
-		gbc.gridy = 0;
-
-		gbc.gridheight = 1; //Proportions des images
-		gbc.gridwidth = 1;
-		
-		
-		JPanel cell = new JPanel();
-		JPanel cell1 = new JPanel();
-		
-		cell.setBackground(Color.BLUE);
-		cell1.setBackground(Color.RED);
-		cell.setPreferredSize(new Dimension(32, 32));
-		cell1.setPreferredSize(new Dimension(32, 32));
-
-		gbc.fill = GridBagConstraints.VERTICAL;
-		gbc.gridheight = GridBagConstraints.REMAINDER;
-		viewFrame.add(cell1, gbc);
-		
-		gbc.gridy = 1;
-
-		gbc.fill = GridBagConstraints.HORIZONTAL;
-		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		viewFrame.add(cell, gbc);
-	}
+	
 	
 	
 	/*
@@ -167,64 +137,11 @@ class ViewPanel extends JPanel implements Observer {
 
 
 
-	}
-	public void GridInit(){
-
-		//Avec le JPanel nommé "content"
-
-		
-		viewFrame.setLayout(new GridBagLayout());
-
-		GridBagConstraints gbc = new GridBagConstraints();
-
-		gbc.gridx = 0; // On positionne la case de départ du composan
-		gbc.gridy = 0;
-
-		gbc.gridheight = 1; //Proportions des images
-		gbc.gridwidth = 1;
-
-		for (int x=0; x<21; x++){
-
-			gbc.gridx = x;
-
-			if (gbc.gridx == 21){
-
-				gbc.gridwidth = GridBagConstraints.REMAINDER; //Cette instruction informe le layout que c'est une fin de ligne
-
-			}
-			else{
-			}
-
-			for (int y=0; y<13; y++){
-
-				gbc.gridy = y;
-
-				if (gbc.gridy == 13){
-
-				gbc.gridheight = GridBagConstraints.REMAINDER; //Cette instruction informe le layout que c'est une fin de colonne
- 
-				}
-				else{				
-				}
-
-				String imgobject = getProcImg(Selectlvl1(x,y));
-
-				viewFrame.add(imgobject, gbc);
-
-			}
-
-		}		
-		
 	}*/
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		//graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		//graphics.drawString(this.getViewFrame().getModel().getMessage(), 10, 20);
-		//setLayout (new GridLayout(14,22,1,1)); // 22 colums, 14 rows and 1 gap betwenn each colums and rows
-		InitialGrid();
-		
-		//for(int n = 0; n < 22*14; n++)
-		//add(new Button("n"));
 		
 	
 	}
