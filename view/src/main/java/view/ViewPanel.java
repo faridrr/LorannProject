@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 /**
  * The Class ViewPanel.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 class ViewPanel extends JPanel implements Observer {
 

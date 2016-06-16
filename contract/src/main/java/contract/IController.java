@@ -3,7 +3,7 @@ package contract;
 /**
  * The Interface IController.
  *
- * @author Cattelan Montes Duffaut | Exia A1 Promo 2016
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 public interface IController {
 

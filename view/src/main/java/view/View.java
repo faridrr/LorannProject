@@ -12,7 +12,7 @@ import contract.IView;
 /**
  * The Class View.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 public class View implements IView, Runnable {
 

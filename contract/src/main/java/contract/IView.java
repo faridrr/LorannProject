@@ -3,7 +3,7 @@ package contract;
 /**
  * The Interface IView.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 public interface IView {
 
