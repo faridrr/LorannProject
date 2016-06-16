@@ -64,7 +64,7 @@ public class Controller implements IController { //IController interface impleme
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
+	public void orderPerform(final ControllerOrder controllerOrder) {//Hello World Enum
 		switch (controllerOrder) {
 			case English:
 				this.model.loadMessage("GB");
@@ -85,16 +85,16 @@ public class Controller implements IController { //IController interface impleme
 	}/*
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
-			case XXX:
+			case XX:
 				this.model.loadMessage("XX");
 				break;
-			case XXX:
+			case XX:
 				this.model.loadMessage("XX");
 				break;
-			case XXX:
+			case XX:
 				this.model.loadMessage("XX");
 				break;
-			case XXX:
+			case XX:
 				this.model.loadMessage("XX");
 				break;
 
