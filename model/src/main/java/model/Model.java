@@ -39,7 +39,7 @@ public class Model extends Observable implements IModel {
 	public Image getMessage() {
 		BufferedImage image = null;
 		try {
-			image = ImageIO.read(new File("C:/Users/dylan/Desktop/Projet Java/LorannProject/sprite/bone.png"));
+			image = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
