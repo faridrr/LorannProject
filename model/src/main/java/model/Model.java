@@ -88,8 +88,9 @@ public class Model extends Observable implements IModel {
 		this.character.moveD();
 	}
 
-	public void launchSpell() {
+	public void launchSpell(character) {
 		// TODO Auto-generated method stub
-		this.character.launchSpell();
+		
 	}
 }
+

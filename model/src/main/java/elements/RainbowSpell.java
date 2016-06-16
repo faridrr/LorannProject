@@ -5,10 +5,14 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class RainbowSpell extends Mobile {
+	private int x;
+	private int y;
 
-	public RainbowSpell(char c) {
+	public RainbowSpell(Character character, char c) {
+		x = character.getX();
+		y = character.getY();
+		
 		if (c == 'R') {
-			x = Character.getX();
 
 		} else if (c == 'L') {
 
@@ -19,9 +23,6 @@ public class RainbowSpell extends Mobile {
 		}
 
 	}
-
-	private int x;
-	private int y;
 
 	public int getX() {
 		return x;

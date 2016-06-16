@@ -25,8 +25,8 @@ public class Character extends Mobile {
 		this.y = y;
 	}
 
-	public void launchSpell() {
-		RainbowSpell spell = new RainbowSpell(bufferSpell);
+	public void launchSpell(Character character) {
+		RainbowSpell spell = new RainbowSpell(character, bufferSpell);
 
 	}
 

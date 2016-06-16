@@ -74,7 +74,7 @@ CREATE TABLE `level5` (
 
 
 
-INSERT INTO `level1` (`x`, `y`,`symbol`) VALUES
+INSERT INTO `level1` (`y`, `x`,`symbol`) VALUES
 
 (1,7,"#"),
 (1,8,"-"),
