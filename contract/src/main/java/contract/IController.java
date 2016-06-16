@@ -3,7 +3,7 @@ package contract;
 /**
  * The Interface IController.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2016
  */
 public interface IController {
 
