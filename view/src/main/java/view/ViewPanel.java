@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -67,6 +68,17 @@ class ViewPanel extends JPanel implements Observer {
 		/*graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		graphics.drawString(this.getViewFrame().getModel().getMessage(), 10, 20);*/
 		
+		image = getToolkit().getImage(path);
+		graphics.drawImage(image,32,32,this);
 		
 	}
+	private Image image;
+	String path = "//view//main//src//ressources//sprite//lorann_l.png";
+	
+	
+	
+	
+	
+	
+	
 }

@@ -137,6 +137,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.setSize(704, 448);
 		this.setBackground(Color.BLACK);
 		this.setLocationRelativeTo(null);
+		this.setVisible(true);
 	}
 
 	/**
