@@ -1,10 +1,16 @@
 package view;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
 //import java.awt.Button;
 import java.awt.Graphics;
-/*import java.awt.GridBagConstraints;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+/*import java.awt.GridLayout;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,6 +18,7 @@ import java.sql.SQLException;*/
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -66,6 +73,73 @@ class ViewPanel extends JPanel implements Observer {
 		this.repaint();
 	}
 
+	public void InitialGrid(){
+		
+		viewFrame.setLayout(new GridBagLayout());
+
+		GridBagConstraints gbc = new GridBagConstraints();
+
+		gbc.gridx = 0; // On positionne la case de départ du composan
+		gbc.gridy = 0;
+
+		gbc.gridheight = 1; //Proportions des images
+		gbc.gridwidth = 1;
+		
+		
+		JPanel cell = new JPanel();
+		JPanel cell1 = new JPanel();
+		
+		cell.setBackground(Color.BLUE);
+		cell1.setBackground(Color.RED);
+		cell.setPreferredSize(new Dimension(32, 32));
+		cell1.setPreferredSize(new Dimension(32, 32));
+		
+		for (int x=0; x<21; x++){
+
+			gbc.gridx = x;
+
+			if (gbc.gridx == 21){
+
+				gbc.gridwidth = GridBagConstraints.REMAINDER; //Cette instruction informe le layout que c'est une fin de ligne
+
+			}
+			else{
+			}
+
+			for (int y=0; y<13; y++){
+
+				gbc.gridy = y;
+
+				if (gbc.gridy == 13){
+
+				gbc.gridheight = GridBagConstraints.REMAINDER; //Cette instruction informe le layout que c'est une fin de colonne
+ 
+				}
+				else{				
+				}
+
+				double nombre = Math.random();
+		
+				if (nombre == 0){
+					
+					viewFrame.add(cell, gbc);
+					
+				}
+				
+				else if (nombre == 1){
+					
+					viewFrame.add(cell1, gbc);
+					
+				}
+
+
+			}
+
+		}
+		
+	}
+	
+	
 	/*
 	 * (non-Javadoc)
 	 *
@@ -181,6 +255,7 @@ class ViewPanel extends JPanel implements Observer {
 		//graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		//graphics.drawString(this.getViewFrame().getModel().getMessage(), 10, 20);
 		//setLayout (new GridLayout(14,22,1,1)); // 22 colums, 14 rows and 1 gap betwenn each colums and rows
+		InitialGrid();
 		
 		//for(int n = 0; n < 22*14; n++)
 		//add(new Button("n"));
