@@ -7,13 +7,14 @@ import javax.swing.ImageIcon;
 public class RainbowSpell extends Mobile {
 
 	public RainbowSpell(char c) {
-		if (c = 'R') {
+		if (c == 'R') {
+			x = Character.getX();
 
-		}
+		} else if (c == 'L') {
 
-		else if (c = 'L') {
+		} else if (c == 'D') {
 
-		} else if (c = 'L') {
+		} else if (c == 'U') {
 
 		}
 

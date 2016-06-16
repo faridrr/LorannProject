@@ -2,12 +2,9 @@ package elements;
 
 import java.awt.Image;
 import java.util.Observable;
-
 import javax.swing.ImageIcon;
 
-import contract.IModel;
-
-public class Character extends Mobile implements IModel {
+public class Character extends Mobile {
 	private int x;
 	private int y;
 	char bufferSpell = 0;
