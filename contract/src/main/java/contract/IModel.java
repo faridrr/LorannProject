@@ -35,5 +35,5 @@ public interface IModel {
 	void moveU();
 	void moveD();
 	void moveR();
-	void launchSpell();
+	void launchSpell(Character character);
 }
