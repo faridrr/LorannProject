@@ -24,12 +24,8 @@ public class DoorO extends Background {
 		this.y = y;
 	}
 
-	public void ImageB() {
-		Image image = new ImageIcon("//view//sprite//lorann_b.png").getImage();
-	}
-
-	public void ImageBl() {
-		Image image = new ImageIcon("//view//sprite//lorann_bl.png").getImage();
+	public void Image() {
+		Image image = new ImageIcon("//view//sprite//gate_open.png").getImage();
 	}
 
 }

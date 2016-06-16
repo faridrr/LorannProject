@@ -24,7 +24,7 @@ public class Purse extends Items{
 		this.y = y;
 	}
 
-	public void ImagePurse() {
+	public void Image() {
 		Image image = new ImageIcon("//view//sprite//Purse.png").getImage();
 	}
 
