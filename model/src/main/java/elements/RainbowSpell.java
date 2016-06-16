@@ -13,13 +13,13 @@ public class RainbowSpell extends Mobile {
 		y = character.getY();
 		
 		if (c == 'R') {
-
+// TODO 
 		} else if (c == 'L') {
-
+// TODO
 		} else if (c == 'D') {
-
+// TODO
 		} else if (c == 'U') {
-
+// TODO
 		}
 
 	}
