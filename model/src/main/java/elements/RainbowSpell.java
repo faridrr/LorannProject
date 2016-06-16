@@ -5,6 +5,20 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class RainbowSpell extends Mobile {
+
+	public RainbowSpell(char c) {
+		if (c = 'R') {
+
+		}
+
+		else if (c = 'L') {
+
+		} else if (c = 'L') {
+
+		}
+
+	}
+
 	private int x;
 	private int y;
 
@@ -27,19 +41,19 @@ public class RainbowSpell extends Mobile {
 	public void Image1() {
 		Image image = new ImageIcon("//view//sprite//fireball_1.png").getImage();
 	}
-	
+
 	public void Image2() {
 		Image image = new ImageIcon("//view//sprite//fireball_2.png").getImage();
 	}
-	
+
 	public void Image3() {
 		Image image = new ImageIcon("//view//sprite//fireball_3.png").getImage();
 	}
-	
+
 	public void Image4() {
 		Image image = new ImageIcon("//view//sprite//fireball_4.png").getImage();
 	}
-	
+
 	public void Image5() {
 		Image image = new ImageIcon("//view//sprite//fireball_5.png").getImage();
 	}

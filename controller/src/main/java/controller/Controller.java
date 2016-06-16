@@ -66,17 +66,20 @@ public class Controller implements IController { //IController interface impleme
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {//Hello World Enum
 		switch (controllerOrder) {
-			case English:
-				this.model.loadMessage("GB");
+			case Right:
+				this.model.moveR();
 				break;
-			case Francais:
-				this.model.loadMessage("FR");
+			case Left:
+				this.model.moveL();
 				break;
-			case Deutsch:
-				this.model.loadMessage("DE");
+			case Up:
+				this.model.moveU();
 				break;
-			case Indonesia:
-				this.model.loadMessage("ID");
+			case Down:
+				this.model.moveD();
+				break;
+			case Spell:
+				this.model.launchSpell();
 				break;
 
 			default:

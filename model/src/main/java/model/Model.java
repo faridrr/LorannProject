@@ -65,4 +65,30 @@ public class Model extends Observable implements IModel {
 	public Observable getObservable() {
 		return this;
 	}
+
+	public void moveR() {
+		Character.moveR();
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void moveL() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void moveU() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void moveD() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void launchSpell() {
+		// TODO Auto-generated method stub
+		
+	}
 }

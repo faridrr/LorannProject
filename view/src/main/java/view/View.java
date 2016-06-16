@@ -23,7 +23,7 @@ public class View implements IView, Runnable {
 	 * Instantiates a new view.
 	 *
 	 * @param model
-	 *          the model
+	 *            the model
 	 */
 	public View(final IModel model) {
 		this.viewFrame = new ViewFrame(model);
@@ -34,24 +34,28 @@ public class View implements IView, Runnable {
 	 * Key code to controller order.
 	 *
 	 * @param keyCode
-	 *          the key code
+	 *            the key code
 	 * @return the controller order
 	 */
-	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) { // Controller of the key events
+	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) { // Controller
+																					// of
+																					// the
+																					// key
+																					// events
+
 		switch (keyCode) {
-			case KeyEvent.VK_RIGHT:
-				return ControllerOrder.English;
-			case KeyEvent.VK_LEFT:
-				return ControllerOrder.Francais;
-			case KeyEvent.VK_UP:
-				return ControllerOrder.Deutsch;
-			case KeyEvent.VK_DOWN:
-				return ControllerOrder.Indonesia;
-			case KeyEvent.VK_SPACE:
-				return ControllerOrder.Indonesia;
-			default:
-				return ControllerOrder.English;
+		case KeyEvent.VK_RIGHT:
+			return ControllerOrder.Right;
+		case KeyEvent.VK_LEFT:
+			return ControllerOrder.Left;
+		case KeyEvent.VK_UP:
+			return ControllerOrder.Up;
+		case KeyEvent.VK_DOWN:
+			return ControllerOrder.Down;
+		case KeyEvent.VK_SPACE:
+			return ControllerOrder.Spell;
 		}
+		return null;
 	}
 
 	/*
@@ -76,7 +80,7 @@ public class View implements IView, Runnable {
 	 * Sets the controller.
 	 *
 	 * @param controller
-	 *          the new controller
+	 *            the new controller
 	 */
 	public void setController(final IController controller) {
 		this.viewFrame.setController(controller);

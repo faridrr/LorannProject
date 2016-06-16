@@ -1,12 +1,16 @@
 package elements;
 
 import java.awt.Image;
+import java.util.Observable;
 
 import javax.swing.ImageIcon;
 
-public class Character extends Mobile {
+import contract.IModel;
+
+public class Character extends Mobile implements IModel {
 	private int x;
 	private int y;
+	char bufferSpell = 0;
 
 	public int getX() {
 		return x;
@@ -25,7 +29,28 @@ public class Character extends Mobile {
 	}
 
 	public void launchSpell() {
+		RainbowSpell spell = new RainbowSpell(bufferSpell);
 
+	}
+
+	public void moveR() {
+		this.x++;
+		bufferSpell = 'R';
+	}
+
+	public void moveL() {
+		this.x--;
+		bufferSpell = 'L';
+	}
+
+	public void moveD() {
+		this.y++;
+		bufferSpell = 'D';
+	}
+
+	public void moveU() {
+		this.y--;
+		bufferSpell = 'U';
 	}
 
 	public void ImageB() {
@@ -59,4 +84,17 @@ public class Character extends Mobile {
 	public void ImageUr() {
 		Image image = new ImageIcon("//view//sprite//lorann_ur.png").getImage();
 	}
+
+	public String getMessage() {
+		return null;
+	}
+
+	public void loadMessage(String key) {
+
+	}
+
+	public Observable getObservable() {
+		return null;
+	}
+
 }
