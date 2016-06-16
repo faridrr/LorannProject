@@ -41,7 +41,7 @@ public class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public void initImages() {
+	/*public void initImages() {
 		try {
 			bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
 			corner = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
@@ -56,7 +56,7 @@ public class Model extends Observable implements IModel {
 			e.printStackTrace();
 		}
 
-	}
+	}*/
 
 	public Image getMessage() {
 		

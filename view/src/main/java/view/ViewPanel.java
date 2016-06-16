@@ -69,10 +69,30 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+	// Example : BufferedImage NAME;
 	
+	BufferedImage black;
 	BufferedImage bone;
+	BufferedImage vertical_bone;
 	BufferedImage corner;
+	BufferedImage crystal_ball;
+	BufferedImage fireball_1;
+	BufferedImage fireball_2;
+	BufferedImage fireball_3;
+	BufferedImage fireball_4;
+	BufferedImage fireball_5;
+	BufferedImage gate_closed;
+	BufferedImage gate_open;
+	BufferedImage horizontal;
+	// 8 loran images missing here
+	BufferedImage monster_1;
+	BufferedImage monster_2;
+	BufferedImage monster_3;
+	BufferedImage monster_4;
+	BufferedImage purse;
 	BufferedImage lorann;
+	
+	
 	int x = 0;
 	int y = 0;
 	int nb = 32;
