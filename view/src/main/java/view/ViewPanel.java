@@ -93,50 +93,16 @@ class ViewPanel extends JPanel implements Observer {
 		cell1.setBackground(Color.RED);
 		cell.setPreferredSize(new Dimension(32, 32));
 		cell1.setPreferredSize(new Dimension(32, 32));
+
+		gbc.fill = GridBagConstraints.VERTICAL;
+		gbc.gridheight = GridBagConstraints.REMAINDER;
+		viewFrame.add(cell1, gbc);
 		
-		for (int x=0; x<21; x++){
+		gbc.gridy = 1;
 
-			gbc.gridx = x;
-
-			if (gbc.gridx == 21){
-
-				gbc.gridwidth = GridBagConstraints.REMAINDER; //Cette instruction informe le layout que c'est une fin de ligne
-
-			}
-			else{
-			}
-
-			for (int y=0; y<13; y++){
-
-				gbc.gridy = y;
-
-				if (gbc.gridy == 13){
-
-				gbc.gridheight = GridBagConstraints.REMAINDER; //Cette instruction informe le layout que c'est une fin de colonne
- 
-				}
-				else{				
-				}
-
-				double nombre = Math.random();
-		
-				if (nombre == 0){
-					
-					viewFrame.add(cell, gbc);
-					
-				}
-				
-				else if (nombre == 1){
-					
-					viewFrame.add(cell1, gbc);
-					
-				}
-
-
-			}
-
-		}
-		
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		gbc.gridwidth = GridBagConstraints.REMAINDER;
+		viewFrame.add(cell, gbc);
 	}
 	
 	
