@@ -8,7 +8,7 @@ public class RainbowSpell extends Mobile {
 	private int x;
 	private int y;
 
-	public RainbowSpell(Character character, char c) {
+	public RainbowSpell(Lorann character, char c) {
 		x = character.getX();
 		y = character.getY();
 		

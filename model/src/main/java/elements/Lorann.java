@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.util.Observable;
 import javax.swing.ImageIcon;
 
-public class Character extends Mobile {
+public class Lorann extends Mobile {
 	private int x;
 	private int y;
 	char bufferSpell = 0;
@@ -25,7 +25,7 @@ public class Character extends Mobile {
 		this.y = y;
 	}
 
-	public void launchSpell(Character character) {
+	public void launchSpell(Lorann character) {
 		RainbowSpell spell = new RainbowSpell(character, bufferSpell);
 
 	}

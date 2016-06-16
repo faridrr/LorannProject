@@ -15,7 +15,6 @@ public interface IModel {
 	 * @return the message
 	 */
 	String getMessage();
-	
 
 	/**
 	 * Load the message.
@@ -23,7 +22,6 @@ public interface IModel {
 	 * @param key
 	 *          the key
 	 */
-	void loadMessage(String key);
 
 	/**
 	 * Gets the observable.
@@ -35,5 +33,5 @@ public interface IModel {
 	void moveU();
 	void moveD();
 	void moveR();
-	void launchSpell(Character character);
+	void launchSpell();
 }

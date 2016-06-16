@@ -2,7 +2,7 @@ package model;
 
 import java.sql.SQLException;
 import java.util.Observable;
-import elements.Character;
+import elements.Lorann;
 import contract.IModel;
 
 /**
@@ -14,7 +14,7 @@ public class Model extends Observable implements IModel {
 
 	/** The message. */
 	private String message;
-	private Character character;
+	private Lorann character;
 
 	/**
 	 * Instantiates a new model.
@@ -49,14 +49,7 @@ public class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
-	public void loadMessage(final String key) {
-		try {
-			final DAOLorann daoHelloWorld = new DAOLorann(DBConnection.getInstance().getConnection());
-			this.setMessage(daoHelloWorld.find(key).getMessage());
-		} catch (final SQLException e) {
-			e.printStackTrace();
-		}
-	}
+
 
 	/*
 	 * (non-Javadoc)
@@ -88,7 +81,7 @@ public class Model extends Observable implements IModel {
 		this.character.moveD();
 	}
 
-	public void launchSpell(Character character) {
+	public void launchSpell() {
 		this.character.launchSpell(character);
 		// TODO Auto-generated method stub
 		
