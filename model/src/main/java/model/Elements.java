@@ -5,6 +5,6 @@ package model;
  *
  * @author Jean-Aymeric Diet
  */
-abstract class Elements {
+public abstract class Elements {
 
 }

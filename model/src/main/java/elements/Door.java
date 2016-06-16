@@ -1,5 +1,5 @@
 package elements;
 
-public class Door {
+public class Door extends Items {
 
 }

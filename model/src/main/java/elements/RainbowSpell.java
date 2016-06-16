@@ -1,5 +1,5 @@
 package elements;
 
-public class RainbowSpell {
+public class RainbowSpell extends Mobile {
 
 }

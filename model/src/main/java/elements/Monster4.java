@@ -1,5 +1,5 @@
 package elements;
 
-public class Monster4 {
+public class Monster4 extends Mobile {
 
 }

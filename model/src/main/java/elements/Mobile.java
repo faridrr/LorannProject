@@ -1,5 +1,7 @@
 package elements;
 
-public abstract class Mobile {
+import model.Elements;
+
+public abstract class Mobile extends Elements{
 
 }

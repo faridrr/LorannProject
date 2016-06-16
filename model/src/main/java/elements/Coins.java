@@ -1,5 +1,5 @@
 package elements;
 
-public class Coins {
+public class Coins extends Items{
 
 }

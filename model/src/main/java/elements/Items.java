@@ -1,5 +1,5 @@
 package elements;
 
-public abstract class Items {
+public abstract class Items extends Unmobile{
 
 }

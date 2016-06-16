@@ -1,5 +1,5 @@
 package elements;
 
-public class Character {
+public class Character extends Mobile {
 
 }

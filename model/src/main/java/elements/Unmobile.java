@@ -1,5 +1,7 @@
 package elements;
 
-public abstract class Unmobile {
+import model.Elements;
+
+public abstract class Unmobile extends Elements{
 
 }

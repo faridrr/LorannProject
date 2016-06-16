@@ -1,5 +1,5 @@
 package elements;
 
-public class Walls {
+public class Walls extends Background{
 
 }
