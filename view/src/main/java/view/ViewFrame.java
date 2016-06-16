@@ -18,6 +18,7 @@ import contract.IModel;
  * @author Jean-Aymeric Diet
  */
 class ViewFrame extends JFrame implements KeyListener {
+	
 
 	/** The model. */
 	private IModel						model;
