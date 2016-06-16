@@ -175,7 +175,6 @@ class ViewPanel extends JPanel implements Observer {
 
 		}		
 		
-
 	}*/
 	@Override
 	protected void paintComponent(final Graphics graphics) {
