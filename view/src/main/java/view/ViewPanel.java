@@ -1,14 +1,14 @@
 package view;
 
-import java.awt.Button;
+//import java.awt.Button;
 import java.awt.Graphics;
-import java.awt.GridBagConstraints;
+/*import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.SQLException;*/
 import java.util.Observable;
 import java.util.Observer;
 
