@@ -46,6 +46,10 @@ public class Model extends Observable implements IModel {
 					VBone vbone = new VBone(x, y);
 					Arimages.add(vbone);
 					break;
+				case 'L':
+					Lorann lorann = new Lorann(x, y);
+					Arimages.add(lorann);
+					break;
 				case '-':
 					HBone hbone = new HBone(x, y);
 					Arimages.add(hbone);

@@ -14,6 +14,11 @@ public class Lorann extends Mobile {
 	private int y;
 	char bufferSpell = 0;
 
+	public Lorann(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
 	public int getX() {
 		return x;
 	}
@@ -108,8 +113,8 @@ public class Lorann extends Mobile {
 	}
 
 	public BufferedImage Image() throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_ur.png"));
+		return image;
 	}
 
 	public Permeability getPerm() {
