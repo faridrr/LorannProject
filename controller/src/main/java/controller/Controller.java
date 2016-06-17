@@ -1,5 +1,8 @@
 package controller;
 
+import java.awt.image.BufferedImage;
+import java.util.List;
+
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
@@ -85,5 +88,9 @@ public class Controller implements IController { //IController interface impleme
 			default:
 				break;
 		}
+	}
+
+	public List<BufferedImage> getMap1() {
+		return this.model.getMap1();
 	}
 }

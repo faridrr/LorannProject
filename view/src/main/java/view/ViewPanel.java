@@ -3,21 +3,26 @@ package view;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import contract.IModel;
+import javax.swing.SwingUtilities;
+
+import contract.*;
 
 /**
  * The Class ViewPanel.
  *
  * @author Jean-Aymeric Diet
  */
-class ViewPanel extends JPanel implements Observer, IModel {
+class ViewPanel extends JPanel implements Observer {
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
@@ -64,12 +69,13 @@ class ViewPanel extends JPanel implements Observer, IModel {
 	}
 
 	@Override
+
 	protected void paintComponent(final Graphics graphics) {
 		int x = 0;
 		int y = 0;
 		int pixelNumbers = 32;
-		
-		List<BufferedImage> Arimages = getMap();
+		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
+		Arimages = this.viewFrame.getController().getMap1();
 
 		for (Image img : Arimages) {
 
@@ -121,13 +127,9 @@ class ViewPanel extends JPanel implements Observer, IModel {
 
 	}
 
-	public List<BufferedImage> getMap(ArrayList<IModel> array) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	public List<BufferedImage> getMap() {
+	public void run() {
 		// TODO Auto-generated method stub
-		return null;
+
 	}
 }

@@ -1,5 +1,6 @@
 package contract;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -39,6 +40,5 @@ public interface IModel {
 	void moveD();
 	void moveR();
 	void launchSpell();
-	public List<BufferedImage> getMap() throws IOException;
-	
+	List<BufferedImage> getMap1();
 }

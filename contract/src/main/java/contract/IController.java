@@ -1,5 +1,8 @@
 package contract;
 
+import java.awt.image.BufferedImage;
+import java.util.List;
+
 /**
  * The Interface IController.
  *
@@ -19,4 +22,5 @@ public interface IController {
 	 *          the controller order
 	 */
 	public void orderPerform(ControllerOrder controllerOrder);
+	List<BufferedImage> getMap1();
 }
