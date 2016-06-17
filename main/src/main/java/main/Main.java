@@ -7,7 +7,7 @@ import view.View;
 /**
  * The Class Main.
  *
- * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
+ * @author Jean-Aymeric Diet
  */
 public abstract class Main {
 

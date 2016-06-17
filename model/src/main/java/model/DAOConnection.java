@@ -4,31 +4,24 @@ import java.io.IOException;
 import java.sql.*;
 
 public class DAOConnection extends DAOElements {
-	public DAOConnection(java.sql.Connection connection) throws SQLException {
+	public DAOConnection(Connection connection) throws SQLException {
 		super(connection);
+		// TODO Auto-generated constructor stub
 	}
 
-	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost/jpublankproject?autoReconnect=true&useSSL=false";
-
-	// Database credentials
-	static final String USER = "root";
-	static final String PASS = "";
-
-	public char Connection(int x, int y) {
-		int SQLx;
-		int SQLy;
+	public char checkMap(int x, int y) {
 		char c = ' ';
-		SQLx = x;
-		SQLy = y;
-		HelloWorld helloWorld = new HelloWorld();
 
 		try {
-			final String sql = "{call Selectlvl1(" + SQLx + "," + SQLy + ")}";
-			final CallableStatement call = this.getConnection().prepareCall(sql);
+			DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
+
+			final String sql = "{call Selectlvl1(?,?)}";
+			final CallableStatement call = co.getConnection().prepareCall("{call Selectlvl1(?,?)}"); 
+			call.setInt(1, x);
+			call.setInt(2, y);
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
+			resultSet.next();
 			c = resultSet.getString("symbol").charAt(0);
 
 		} catch (SQLException se) {
@@ -37,6 +30,7 @@ public class DAOConnection extends DAOElements {
 		} catch (Exception e) {
 			// Handle errors for Class.forName
 			e.printStackTrace();
+
 		}
 		return c;
 

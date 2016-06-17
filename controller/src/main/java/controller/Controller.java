@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.image.BufferedImage;
+import java.sql.SQLException;
 import java.util.List;
 
 import contract.ControllerOrder;
@@ -90,7 +91,7 @@ public class Controller implements IController { //IController interface impleme
 		}
 	}
 
-	public List<BufferedImage> getMap1() { //transmission depuis le modèle jusqu'à la vue
+	public List<BufferedImage> getMap1() throws SQLException {
 		return this.model.getMap1();
 	}
 }

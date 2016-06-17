@@ -6,7 +6,7 @@ import java.sql.SQLException;
 /**
  * The Class DAOEntity.
  *
- * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
+ * @author Jean-Aymeric Diet
  *
  * @param <E>
  *          the element type

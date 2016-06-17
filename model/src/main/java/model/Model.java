@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -21,7 +22,7 @@ import contract.IModel;
 /**
  * The Class Model.
  *
- * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
+ * @author Jean-Aymeric Diet
  */
 public class Model extends Observable implements IModel {
 
@@ -31,12 +32,13 @@ public class Model extends Observable implements IModel {
 	int x;
 	int y;
 
-	public List<BufferedImage> getMap1() {
-		DAOConnection co = new DAOConnection(connection);
+	public List<BufferedImage> getMap1() throws SQLException {
+	
 		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
+		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 14; y++) {
-				char symbol = co.Connection(x, y);
+				char symbol = co.checkMap(x, y);
 				try {
 					switch (symbol) {
 					case '+':

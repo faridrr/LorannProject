@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +21,7 @@ import contract.*;
 /**
  * The Class ViewPanel.
  *
- * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
+ * @author Jean-Aymeric Diet
  */
 class ViewPanel extends JPanel implements Observer {
 
@@ -75,7 +76,12 @@ class ViewPanel extends JPanel implements Observer {
 		int y = 0;
 		int pixelNumbers = 32;
 		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
-		Arimages = this.viewFrame.getController().getMap1();
+		try {
+			Arimages = this.viewFrame.getController().getMap1();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		for (Image img : Arimages) {
 

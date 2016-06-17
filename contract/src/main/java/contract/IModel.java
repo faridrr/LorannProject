@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -40,5 +41,5 @@ public interface IModel {
 	void moveD();
 	void moveR();
 	void launchSpell();
-	List<BufferedImage> getMap1();
+	List<BufferedImage> getMap1() throws SQLException;
 }

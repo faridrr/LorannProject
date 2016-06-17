@@ -3,7 +3,7 @@ package model;
 /**
  * The Class HelloWorld.
  *
- * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
+ * @author Jean-Aymeric Diet
  */
 class HelloWorld extends Elements {
 

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * The Class DBConnection.
  *
- * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
+ * @author Jean-Aymeric Diet
  */
 final class DBConnection {
 	/** The instance. */
@@ -19,7 +19,7 @@ final class DBConnection {
 	/**
 	 * Instantiates a new DB connection.
 	 */
-	private DBConnection() {
+	public DBConnection() {
 		this.open();
 	}
 
