@@ -1,7 +1,7 @@
 package elements;
 
+import contract.Permeability;
 import model.Elements;
-import model.Permeability;
 
 public abstract class Unmobile extends Elements{
 

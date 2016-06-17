@@ -1,5 +1,10 @@
 package model;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import contract.Permeability;
+
 /**
  * The Class HelloWorld.
  *
@@ -94,6 +99,36 @@ class HelloWorld extends Elements {
 	 */
 	public void setMessage(final String message) {
 		this.message = message;
+	}
+
+	public int getX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setX(int x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setY(int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public BufferedImage Image() throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

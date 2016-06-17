@@ -10,7 +10,7 @@ public class DAOConnection extends DAOElements {
 	}
 
 	public char checkMap(int x, int y) {
-		char c = ' ';
+		char c = '?';
 
 		try {
 			DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
@@ -23,10 +23,6 @@ public class DAOConnection extends DAOElements {
 			final ResultSet resultSet = call.getResultSet();
 			if (resultSet.next()) {
 			    c = resultSet.getString("symbol").charAt(0);
-			}
-			
-			else if(!resultSet.next()){
-				c = ' ';
 			}
 
 		} catch (SQLException se) {

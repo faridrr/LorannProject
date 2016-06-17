@@ -72,10 +72,9 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 
 	protected void paintComponent(final Graphics graphics) {
-		int x = 0;
-		int y = 0;
+		
 		int pixelNumbers = 32;
-		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
+		List<IElements> Arimages = new ArrayList<IElements>();
 		try {
 			Arimages = this.viewFrame.getController().getMap1();
 		} catch (SQLException e) {
@@ -83,17 +82,16 @@ class ViewPanel extends JPanel implements Observer {
 			e.printStackTrace();
 		}
 
-		for (Image img : Arimages) {
-
-			graphics.drawImage(img, x * pixelNumbers, y * pixelNumbers, this);
-
-			if (x == 21) {
-				x = 0;
-				y++;
-			}
-
-			else {
-				x++;
+		for (IElements obj : Arimages) {
+			
+			int x = obj.getX();
+			int y = obj.getY();
+			
+			try {
+				graphics.drawImage(obj.Image(), x * pixelNumbers, y * pixelNumbers, this);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}

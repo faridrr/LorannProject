@@ -8,6 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import contract.Permeability;
+
 public class RainbowSpell extends Mobile {
 	private int x;
 	private int y;
@@ -67,5 +69,15 @@ public class RainbowSpell extends Mobile {
 	public BufferedImage Image5() throws IOException {
 		BufferedImage fireball_5 = ImageIO.read(new File("src/main/resources/sprite/fireball_5.png"));
 		return fireball_5;
+	}
+
+	public BufferedImage Image() throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

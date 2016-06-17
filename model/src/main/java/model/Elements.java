@@ -1,5 +1,6 @@
 package model;
 
+import contract.IElements;
 import contract.IModel;
 
 /**
@@ -7,5 +8,5 @@ import contract.IModel;
  *
  * @author Jean-Aymeric Diet
  */
-public abstract class Elements{
+public abstract class Elements implements IElements{
 }

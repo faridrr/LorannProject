@@ -8,6 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import contract.Permeability;
+
 public class Purse extends Items{
 	private int x;
 	private int y;
@@ -38,6 +40,11 @@ public class Purse extends Items{
 	public BufferedImage Image() throws IOException {
 		BufferedImage purse = ImageIO.read(new File("src/main/resources/sprite/purse.png"));
 		return purse;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -6,6 +6,7 @@ import java.util.List;
 
 import contract.ControllerOrder;
 import contract.IController;
+import contract.IElements;
 import contract.IModel;
 import contract.IView;
 
@@ -91,7 +92,7 @@ public class Controller implements IController { //IController interface impleme
 		}
 	}
 
-	public List<BufferedImage> getMap1() throws SQLException {
+	public List<IElements> getMap1() throws SQLException {
 		return this.model.getMap1();
 	}
 }

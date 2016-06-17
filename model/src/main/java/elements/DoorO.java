@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import contract.Permeability;
+
 public class DoorO extends Background {
 	private int x;
 	private int y;
@@ -36,6 +38,11 @@ public class DoorO extends Background {
 	public BufferedImage Image() throws IOException {
 		BufferedImage doorO = ImageIO.read(new File("src/main/resources/sprite/gate_open.png"));
 		return doorO;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

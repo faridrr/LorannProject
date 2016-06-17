@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 import com.mysql.jdbc.CallableStatement;
 
 import elements.Lorann;
+import contract.IElements;
 import contract.IModel;
 
 /**
@@ -32,55 +33,54 @@ public class Model extends Observable implements IModel {
 	int x;
 	int y;
 
-	public List<BufferedImage> getMap1() throws SQLException {
-	
-		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
+	public List<IElements> getMap1() throws SQLException {
+
+		List<IElements> Arimages = new ArrayList<IElements>();
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 13; y++) {
 				char symbol = co.checkMap(x, y);
-				try {
-					switch (symbol) {
-					case '+':
-						VBone vbone = new VBone(x, y);
-						Arimages.add(vbone.Image());
-						break;
-					case '-':
-						HBone hbone = new HBone(x, y);
-						Arimages.add(hbone.Image());
-						//
-						break;
-					case '#':
-						Corners corner = new Corners(x, y);
-						Arimages.add(corner.Image());
-						//
-						break;
-					case 'x':
-						Purse purse = new Purse(x, y);
-						Arimages.add(purse.Image());
-						//
-						break;
-					case 'o':
-						CrystalBall crystal = new CrystalBall(x, y);
-						Arimages.add(crystal.Image());
-						//
-						break;
-					case '$':
-						DoorC doorC = new DoorC(x, y);
-						Arimages.add(doorC.Image());
-						//
-						break;
-					case '@':
-						DoorO doorO = new DoorO(x, y);
-						Arimages.add(doorO.Image());
-						//
-						break;
-					default:
-						Black black = new Black();
-						Arimages.add(black.Image());
-						break;
-					}
-				} catch (IOException e) {
+				switch (symbol) {
+				case '+':
+					VBone vbone = new VBone(x, y);
+					Arimages.add(vbone);
+					break;
+				case '-':
+					HBone hbone = new HBone(x, y);
+					Arimages.add(hbone);
+					//
+					break;
+				case '#':
+					Corners corner = new Corners(x, y);
+					Arimages.add(corner);
+					//
+					break;
+				case 'x':
+					Purse purse = new Purse(x, y);
+					Arimages.add(purse);
+					//
+					break;
+				case 'o':
+					CrystalBall crystal = new CrystalBall(x, y);
+					Arimages.add(crystal);
+					//
+					break;
+				case '$':
+					DoorC doorC = new DoorC(x, y);
+					Arimages.add(doorC);
+					//
+					break;
+				case '@':
+					DoorO doorO = new DoorO(x, y);
+					Arimages.add(doorO);
+					//
+					break;
+				case '?':
+					Black black = new Black(x, y);
+					Arimages.add(black);
+					break;
+				default:
+					break;
 				}
 			}
 

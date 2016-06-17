@@ -8,6 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import contract.Permeability;
+
 public class Monster4 extends Mobile {
 	private int x;
 	private int y;
@@ -38,5 +40,10 @@ public class Monster4 extends Mobile {
 	public BufferedImage Image() throws IOException {
 		BufferedImage monster_4 = ImageIO.read(new File("src/main/resources/sprite/monster_4.png"));
 		return monster_4;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

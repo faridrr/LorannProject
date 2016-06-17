@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import contract.Permeability;
+
 public class VBone extends Background {
 	private int x;
 	private int y;
@@ -33,5 +35,10 @@ public class VBone extends Background {
 	public BufferedImage Image() throws IOException {
 		BufferedImage horizontal_bone = ImageIO.read(new File("src/main/resources/sprite/vertical_bone.png"));
 		return horizontal_bone;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

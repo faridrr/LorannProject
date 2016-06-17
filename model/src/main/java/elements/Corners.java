@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import contract.Permeability;
+
 public class Corners extends Background{
 	private int x;
 	private int y;
@@ -36,5 +38,10 @@ public class Corners extends Background{
 	public BufferedImage Image() throws IOException {
 		BufferedImage bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
 		return bone;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

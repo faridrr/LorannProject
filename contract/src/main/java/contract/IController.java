@@ -23,5 +23,5 @@ public interface IController {
 	 *          the controller order
 	 */
 	public void orderPerform(ControllerOrder controllerOrder);
-	List<BufferedImage> getMap1() throws SQLException;
+	List<IElements> getMap1() throws SQLException;
 }

@@ -1,6 +1,6 @@
 package elements;
+import contract.Permeability;
 import model.Elements;
-import model.Permeability;
 
 public abstract class Background extends Elements {
 	Permeability penetrable;

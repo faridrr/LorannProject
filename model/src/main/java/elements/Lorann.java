@@ -7,6 +7,8 @@ import java.util.Observable;
 
 import javax.imageio.ImageIO;
 
+import contract.Permeability;
+
 public class Lorann extends Mobile {
 	private int x;
 	private int y;
@@ -102,6 +104,16 @@ public class Lorann extends Mobile {
 	}
 
 	public Observable getObservable() {
+		return null;
+	}
+
+	public BufferedImage Image() throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

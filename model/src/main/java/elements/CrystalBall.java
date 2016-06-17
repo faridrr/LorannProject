@@ -8,6 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import contract.Permeability;
+
 public class CrystalBall extends Items{
 	private int x;
 	private int y;
@@ -38,5 +40,10 @@ public class CrystalBall extends Items{
 	public BufferedImage Image() throws IOException {
 		BufferedImage crystal_ball = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
 		return crystal_ball;
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -76,7 +76,6 @@ CREATE TABLE `level5` (
 
 INSERT INTO `level1` (`y`, `x`,`symbol`) VALUES
 
-(1,7,"#"),
 (1,8,"-"),
 (1,9,"#"),
 (1,10,"-"),
@@ -308,19 +307,19 @@ ALTER TABLE `level5`
 		-- -- -- -- -- -- -- --
 		-- Stored Procedures --
 		-- -- -- -- -- -- -- --
-
-CREATE PROCEDURE `Selectlvl1` (IN `p_x`INT, IN `p_y` INT)
+        
+CREATE DEFINER = `root`@`localhost` PROCEDURE `Selectlvl1`(IN `p_x` INT(3), IN `p_y` INT(3))
 	SELECT symbol FROM LorannProject.level1 where `x` = p_x && `y` = p_y;
 
-CREATE PROCEDURE `Selectlvl2` (IN `p_x`INT, IN `p_y` INT)
+CREATE DEFINER = `root`@`localhost` PROCEDURE `Selectlvl2` (IN `p_x` INT, IN `p_y` INT)
 	SELECT symbol FROM LorannProject.level2 where `x` = p_x && `y` = p_y;
 
-CREATE PROCEDURE `Selectlvl3` (IN `p_x`INT, IN `p_y` INT)
+CREATE DEFINER = `root`@`localhost` PROCEDURE `Selectlvl3` (IN `p_x` INT, IN `p_y` INT)
 	SELECT symbol FROM LorannProject.level3 where `x` = p_x && `y` = p_y;
 
-CREATE PROCEDURE `Selectlvl4` (IN `p_x`INT, IN `p_y` INT)
+CREATE DEFINER = `root`@`localhost` PROCEDURE `Selectlvl4` (IN `p_x` INT, IN `p_y` INT)
 	SELECT symbol FROM LorannProject.level4 where `x` = p_x && `y` = p_y;
 
-CREATE PROCEDURE `Selectlvl5` (IN `p_x`INT, IN `p_y` INT)
+CREATE DEFINER = `root`@`localhost` PROCEDURE `Selectlvl5` (IN `p_x` INT, IN `p_y` INT)
 	SELECT symbol FROM LorannProject.level5 where `x` = p_x && `y` = p_y;
 

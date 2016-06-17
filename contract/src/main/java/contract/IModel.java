@@ -41,5 +41,5 @@ public interface IModel {
 	void moveD();
 	void moveR();
 	void launchSpell();
-	List<BufferedImage> getMap1() throws SQLException;
+	List<IElements> getMap1() throws SQLException;
 }
