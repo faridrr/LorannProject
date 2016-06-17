@@ -21,8 +21,9 @@ public class DAOConnection extends DAOElements {
 			call.setInt(2, y);
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
-			resultSet.next();
-			c = resultSet.getString("symbol").charAt(0);
+			if (resultSet.next()) {
+			    c = resultSet.getString("symbol").charAt(0);
+			}
 
 		} catch (SQLException se) {
 			// Handle errors for JDBC

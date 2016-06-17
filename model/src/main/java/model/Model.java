@@ -37,7 +37,7 @@ public class Model extends Observable implements IModel {
 		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		for (x = 0; x < 21; x++) {
-			for (y = 0; y < 14; y++) {
+			for (y = 0; y < 13; y++) {
 				char symbol = co.checkMap(x, y);
 				try {
 					switch (symbol) {
