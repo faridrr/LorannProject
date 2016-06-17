@@ -30,18 +30,13 @@ public class Model extends Observable implements IModel {
 	private Lorann character;
 	int x;
 	int y;
-	protected void callSelect(){
-		final String sql = "{call Selectlvl1(?,?)}";
-		final CallableStatement call = this.getConnection().prepareCall(sql);
-		call.setInt(1, id_Element); //put x and y here
-		call.execute();
-		final ResultSet resultSet = call.getResultSet();
-	}
+
 	public List<BufferedImage> getMap1() {
+		DAOConnection co = new DAOConnection(connection);
 		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 14; y++) {
-				char symbol = 'x'; // {call Selectlvl1(x,y)}; ?
+				char symbol = co.Connection(x, y);
 				try {
 					switch (symbol) {
 					case '+':
@@ -88,8 +83,6 @@ public class Model extends Observable implements IModel {
 			}
 
 		}
-
-		
 
 		return Arimages;
 	}
