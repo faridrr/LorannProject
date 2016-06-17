@@ -90,7 +90,7 @@ public class Controller implements IController { //IController interface impleme
 		}
 	}
 
-	public List<BufferedImage> getMap1() {
+	public List<BufferedImage> getMap1() { //transmission depuis le modèle jusqu'à la vue
 		return this.model.getMap1();
 	}
 }

@@ -5,7 +5,7 @@ import contract.IModel;
 /**
  * The Class Entity.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 public abstract class Elements{
 }
