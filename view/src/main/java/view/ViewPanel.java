@@ -13,12 +13,14 @@ import java.util.Observer;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import contract.IDoorO;
+
 /**
  * The Class ViewPanel.
  *
  * @author Jean-Aymeric Diet
  */
-class ViewPanel extends JPanel implements Observer {
+class ViewPanel extends JPanel implements Observer,  IDoorO{
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
@@ -82,17 +84,16 @@ class ViewPanel extends JPanel implements Observer {
 
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 14; y++) {
-				char symbol = '-'; // {call Selectlvl1(x,y)};
+				char symbol = '-'; // {call Selectlvl1(x,y)}; ?
 
 				switch (symbol) {
 				case '+':
-					VBone bone = new VBone(x, y);
-					Arimages.add(bone.Image());
-					// Colision ici ?
+					VBone vbone = new VBone(x, y);
+					Arimages.add(vbone.Image());
 					break;
 				case '-':
-					Hbone bone = new HBone(x, y);
-					Arimages.add(bone.Image());
+					Hbone hbone = new HBone(x, y);
+					Arimages.add(hbone.Image());
 					//
 					break;
 				case '#':
@@ -133,17 +134,19 @@ class ViewPanel extends JPanel implements Observer {
 
 			graphics.drawImage(img, x * pixelNumbers, y * pixelNumbers, this);
 
-			// x++;
-
-			// testing a conditional loop to the images display:
 			if (x == 21) {
 				x = 0;
 				y++;
-			} else {
-				x++;
 			}
 
-			;
+			else {
+				x++;
+			}
 		}
+	}
+
+	public void DoorO(int x, int y) {
+		// TODO Auto-generated method stub
+		
 	}
 }

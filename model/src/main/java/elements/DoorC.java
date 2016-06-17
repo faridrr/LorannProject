@@ -34,7 +34,7 @@ public class DoorC extends Background{
 	}
 
 	public void Image() throws IOException {
-		BufferedImage gate_closed = ImageIO.read(new File("src/main/resources/sprite/gate_closed.png"));
+		BufferedImage doorC = ImageIO.read(new File("src/main/resources/sprite/gate_closed.png"));
 	}
 
 }

@@ -85,4 +85,9 @@ public class View implements IView, Runnable {
 	public void setController(final IController controller) {
 		this.viewFrame.setController(controller);
 	}
+
+	public void VBone(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
 }
