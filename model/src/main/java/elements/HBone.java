@@ -31,7 +31,8 @@ public class HBone extends Background{
 		this.y = y;
 	}
 
-	public void Image() throws IOException {
+	public BufferedImage Image() throws IOException {
 		BufferedImage horizontal_bone = ImageIO.read(new File("src/main/resources/sprite/horizontal_bone.png"));
+		return horizontal_bone;
 	}
 }

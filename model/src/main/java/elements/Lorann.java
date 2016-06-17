@@ -53,36 +53,44 @@ public class Lorann extends Mobile {
 		bufferSpell = 'U';
 	}
 
-	public void ImageB() throws IOException {
+	public BufferedImage ImageB() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
+		return image;
 	}
 
-	public void ImageBl() throws IOException {
+	public BufferedImage ImageBl() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_b1.png"));
+		return image;
 	}
 
-	public void ImageBr() throws IOException {
+	public BufferedImage ImageBr() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_br.png"));
+		return image;
 	}
 
-	public void ImageL() throws IOException {
+	public BufferedImage ImageL() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_l.png"));
+		return image;
 	}
 
-	public void ImageR() throws IOException {
+	public BufferedImage ImageR() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_r.png"));
+		return image;
 	}
 
-	public void ImageU() throws IOException {
+	public BufferedImage ImageU() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_u.png"));
+		return image;
 	}
 
-	public void ImageUl() throws IOException {
+	public BufferedImage ImageUl() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_ul.png"));
+		return image;
 	}
 
-	public void ImageUr() throws IOException {
+	public BufferedImage ImageUr() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_ur.png"));
+		return image;
 	}
 
 	public String getMessage() {

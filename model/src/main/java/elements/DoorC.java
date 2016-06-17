@@ -33,8 +33,9 @@ public class DoorC extends Background{
 		this.y = y;
 	}
 
-	public void Image() throws IOException {
+	public BufferedImage Image() throws IOException {
 		BufferedImage doorC = ImageIO.read(new File("src/main/resources/sprite/gate_closed.png"));
+		return doorC;
 	}
 
 }

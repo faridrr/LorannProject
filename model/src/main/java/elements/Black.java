@@ -8,9 +8,10 @@ import javax.imageio.ImageIO;
 
 public class Black extends Background{
 	
-	public void Image () throws IOException{
+	public BufferedImage Image () throws IOException{
 		
 		BufferedImage black = ImageIO.read(new File("src/main/resources/sprite/black.png"));
+		return black;
 	}
 
 }

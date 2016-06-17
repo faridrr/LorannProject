@@ -1,12 +1,9 @@
 package elements;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 public class VBone extends Background {
 	private int x;
@@ -33,7 +30,8 @@ public class VBone extends Background {
 		this.y = y;
 	}
 
-	public void Image() throws IOException {
+	public BufferedImage Image() throws IOException {
 		BufferedImage horizontal_bone = ImageIO.read(new File("src/main/resources/sprite/horizontal_bone.png"));
+		return horizontal_bone;
 	}
 }

@@ -2,6 +2,8 @@ package contract;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
@@ -17,7 +19,7 @@ public interface IModel {
 	 *
 	 * @return the message
 	 */
-	Image getMessage();
+	void getMessage();
 
 	/**
 	 * Load the message.
@@ -37,5 +39,6 @@ public interface IModel {
 	void moveD();
 	void moveR();
 	void launchSpell();
+	public List<BufferedImage> getMap() throws IOException;
 	
 }

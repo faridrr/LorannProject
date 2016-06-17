@@ -44,23 +44,28 @@ public class RainbowSpell extends Mobile {
 		this.y = y;
 	}
 
-	public void Image1() throws IOException {
+	public BufferedImage Image1() throws IOException {
 		BufferedImage fireball_1 = ImageIO.read(new File("src/main/resources/sprite/fireball_1.png"));
+		return fireball_1;
 	}
 
-	public void Image2() throws IOException {
+	public BufferedImage Image2() throws IOException {
 		BufferedImage fireball_2 = ImageIO.read(new File("src/main/resources/sprite/fireball_2.png"));
+		return fireball_2;
 	}
 
-	public void Image3() throws IOException {
+	public BufferedImage Image3() throws IOException {
 		BufferedImage fireball_3 = ImageIO.read(new File("src/main/resources/sprite/fireball_3.png"));
+		return fireball_3;
 	}
 
-	public void Image4() throws IOException {
+	public BufferedImage Image4() throws IOException {
 		BufferedImage fireball_4 = ImageIO.read(new File("src/main/resources/sprite/fireball_4.png"));
+		return fireball_4;
 	}
 
-	public void Image5() throws IOException {
+	public BufferedImage Image5() throws IOException {
 		BufferedImage fireball_5 = ImageIO.read(new File("src/main/resources/sprite/fireball_5.png"));
+		return fireball_5;
 	}
 }

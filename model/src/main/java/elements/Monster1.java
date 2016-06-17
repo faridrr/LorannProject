@@ -35,7 +35,8 @@ public class Monster1 extends Mobile {
 		this.y = y;
 	}
 
-	public void Image() throws IOException {
+	public BufferedImage Image() throws IOException {
 		BufferedImage monster_1 = ImageIO.read(new File("src/main/resources/sprite/monster_1.png"));
+		return monster_1;
 	}
 }

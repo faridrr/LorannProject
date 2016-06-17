@@ -35,8 +35,9 @@ public class Purse extends Items{
 		this.y = y;
 	}
 
-	public void Image() throws IOException {
+	public BufferedImage Image() throws IOException {
 		BufferedImage purse = ImageIO.read(new File("src/main/resources/sprite/purse.png"));
+		return purse;
 	}
 
 }

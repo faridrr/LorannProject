@@ -33,7 +33,8 @@ public class Corners extends Background{
 		this.y = y;
 	}
 
-	public void Image() throws IOException {
+	public BufferedImage Image() throws IOException {
 		BufferedImage bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
+		return bone;
 	}
 }

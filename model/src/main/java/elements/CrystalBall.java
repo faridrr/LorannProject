@@ -35,7 +35,8 @@ public class CrystalBall extends Items{
 		this.y = y;
 	}
 
-	public void Image() throws IOException {
+	public BufferedImage Image() throws IOException {
 		BufferedImage crystal_ball = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
+		return crystal_ball;
 	}
 }

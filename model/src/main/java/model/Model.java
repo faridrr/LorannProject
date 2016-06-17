@@ -1,14 +1,12 @@
 package model;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
+import elements.*;
 
 import javax.imageio.ImageIO;
 
@@ -25,9 +23,20 @@ public class Model extends Observable implements IModel {
 	/** The message. */
 	private String message;
 	private Lorann character;
-	BufferedImage bone;
-	BufferedImage corner;
-	List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
+	int x;
+	int y;
+
+	
+
+	public List<BufferedImage> getMap() throws IOException {
+		List<BufferedImage> Arimages = new ArrayList<BufferedImage>();
+	
+		BufferedImage fireball_1 = ImageIO.read(new File("src/main/resources/sprite/fireball_1.png"));
+
+		Arimages.add(fireball_1);
+
+		return Arimages;
+	}
 
 	/**
 	 * Instantiates a new model.
@@ -36,32 +45,8 @@ public class Model extends Observable implements IModel {
 		this.message = "Initialisation du jeu.";
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage()
-	 */
-	/*public void initImages() {
-		try {
-			bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
-			corner = ImageIO.read(new File("src/main/resources/sprite/crystal_ball.png"));
-			Arimages.add(corner);
-			Arimages.add(bone);
-		} catch (
+	public void getMessage() {
 
-		IOException e)
-
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}*/
-
-	public Image getMessage() {
-		
-
-		return bone;
 	}
 
 	/**
@@ -117,26 +102,5 @@ public class Model extends Observable implements IModel {
 		// TODO Auto-generated method stub
 
 	}
-	
 
-	public void getImage(){
-		try{
-			bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
-		} catch (IOException e){ }
-		
-		
-		
-		
-		
-		
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
 }
