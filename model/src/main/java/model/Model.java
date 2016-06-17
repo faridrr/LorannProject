@@ -32,6 +32,7 @@ public class Model extends Observable implements IModel {
 	private Lorann character;
 	int x;
 	int y;
+	int lvl = 1;
 
 	public List<IElements> getMap1() throws SQLException {
 
@@ -39,7 +40,7 @@ public class Model extends Observable implements IModel {
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 13; y++) {
-				char symbol = co.checkMap(x, y);
+				char symbol = co.checkMap(x, y, lvl);
 				switch (symbol) {
 				case '+':
 					VBone vbone = new VBone(x, y);

@@ -9,20 +9,37 @@ public class DAOConnection extends DAOElements {
 		// TODO Auto-generated constructor stub
 	}
 
-	public char checkMap(int x, int y) {
+	public char checkMap(int x, int y, int lvl) {
 		char c = '?';
+		final String sql;
 
 		try {
 			DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
+			if (lvl == 1) {
+				sql = "{call Selectlvl1(?,?)}";
+			} else if (lvl == 2) {
+				sql = "{call Selectlvl2(?,?)}";
 
-			final String sql = "{call Selectlvl1(?,?)}";
-			final CallableStatement call = co.getConnection().prepareCall("{call Selectlvl1(?,?)}"); 
+			} else if (lvl == 3) {
+				sql = "{call Selectlvl3(?,?)}";
+
+			} else if (lvl == 4) {
+				sql = "{call Selectlvl4(?,?)}";
+
+			} else if (lvl == 5) {
+				sql = "{call Selectlvl5(?,?)}";
+
+			}
+			else{
+				return 'a';
+			}
+			final CallableStatement call = co.getConnection().prepareCall(sql);
 			call.setInt(1, x);
 			call.setInt(2, y);
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
 			if (resultSet.next()) {
-			    c = resultSet.getString("symbol").charAt(0);
+				c = resultSet.getString("symbol").charAt(0);
 			}
 
 		} catch (SQLException se) {
