@@ -4,11 +4,14 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Observable;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class VBone extends Background {
+import contract.IModel;
+
+public class VBone extends Background{
 	private int x;
 	private int y;
 
@@ -34,6 +37,7 @@ public class VBone extends Background {
 	}
 
 	public void Image() throws IOException {
-		BufferedImage black = ImageIO.read(new File("src/main/resources/sprite/black.png"));
+		BufferedImage vertical_bone = ImageIO.read(new File("src/main/resources/sprite/vertical_bone.png"));
 	}
+
 }
