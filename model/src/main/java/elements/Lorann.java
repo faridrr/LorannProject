@@ -1,8 +1,11 @@
 package elements;
 
-import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Observable;
-import javax.swing.ImageIcon;
+
+import javax.imageio.ImageIO;
 
 public class Lorann extends Mobile {
 	private int x;
@@ -50,36 +53,36 @@ public class Lorann extends Mobile {
 		bufferSpell = 'U';
 	}
 
-	public void ImageB() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_b.png").getImage();
+	public void ImageB() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
 	}
 
-	public void ImageBl() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_bl.png").getImage();
+	public void ImageBl() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_b1.png"));
 	}
 
-	public void ImageBr() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_br.png").getImage();
+	public void ImageBr() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_br.png"));
 	}
 
-	public void ImageL() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_l.png").getImage();
+	public void ImageL() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_l.png"));
 	}
 
-	public void ImageR() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_r.png").getImage();
+	public void ImageR() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_r.png"));
 	}
 
-	public void ImageU() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_u.png").getImage();
+	public void ImageU() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_u.png"));
 	}
 
-	public void ImageUl() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_ul.png").getImage();
+	public void ImageUl() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_ul.png"));
 	}
 
-	public void ImageUr() {
-		Image image = new ImageIcon("src/main/resources/sprite/lorann_ur.png").getImage();
+	public void ImageUr() throws IOException {
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_ur.png"));
 	}
 
 	public String getMessage() {

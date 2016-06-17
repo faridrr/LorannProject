@@ -1,7 +1,11 @@
 package elements;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 public class RainbowSpell extends Mobile {
@@ -40,23 +44,23 @@ public class RainbowSpell extends Mobile {
 		this.y = y;
 	}
 
-	public void Image1() {
-		Image image = new ImageIcon("//view//sprite//fireball_1.png").getImage();
+	public void Image1() throws IOException {
+		BufferedImage fireball_1 = ImageIO.read(new File("src/main/resources/sprite/fireball_1.png"));
 	}
 
-	public void Image2() {
-		Image image = new ImageIcon("//view//sprite//fireball_2.png").getImage();
+	public void Image2() throws IOException {
+		BufferedImage fireball_2 = ImageIO.read(new File("src/main/resources/sprite/fireball_2.png"));
 	}
 
-	public void Image3() {
-		Image image = new ImageIcon("//view//sprite//fireball_3.png").getImage();
+	public void Image3() throws IOException {
+		BufferedImage fireball_3 = ImageIO.read(new File("src/main/resources/sprite/fireball_3.png"));
 	}
 
-	public void Image4() {
-		Image image = new ImageIcon("//view//sprite//fireball_4.png").getImage();
+	public void Image4() throws IOException {
+		BufferedImage fireball_4 = ImageIO.read(new File("src/main/resources/sprite/fireball_4.png"));
 	}
 
-	public void Image5() {
-		Image image = new ImageIcon("//view//sprite//fireball_5.png").getImage();
+	public void Image5() throws IOException {
+		BufferedImage fireball_5 = ImageIO.read(new File("src/main/resources/sprite/fireball_5.png"));
 	}
 }

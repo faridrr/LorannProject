@@ -1,12 +1,23 @@
 package elements;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 public class Purse extends Items{
 	private int x;
 	private int y;
+	
+	public Purse(int x, int y){
+		
+		this.x = x;
+		this.y = y;
+		
+	}
 
 	public int getX() {
 		return x;
@@ -24,8 +35,8 @@ public class Purse extends Items{
 		this.y = y;
 	}
 
-	public void Image() {
-		Image image = new ImageIcon("//view//sprite//Purse.png").getImage();
+	public void Image() throws IOException {
+		BufferedImage purse = ImageIO.read(new File("src/main/resources/sprite/purse.png"));
 	}
 
 }

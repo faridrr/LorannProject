@@ -1,12 +1,21 @@
 package elements;
 
-import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-import javax.swing.ImageIcon;
+import javax.imageio.ImageIO;
 
 public class DoorC extends Background{
 	private int x;
 	private int y;
+	
+	public DoorC(int x, int y){
+		
+		this.x = x;
+		this.y = y;
+		
+	}
 
 	public int getX() {
 		return x;
@@ -24,8 +33,8 @@ public class DoorC extends Background{
 		this.y = y;
 	}
 
-	public void Image() {
-		Image image = new ImageIcon("src/main/resources/sprite/gate_closed.png").getImage();
+	public void Image() throws IOException {
+		BufferedImage gate_closed = ImageIO.read(new File("src/main/resources/sprite/gate_closed.png"));
 	}
 
 }

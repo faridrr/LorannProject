@@ -1,12 +1,23 @@
 package elements;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 public class Monster1 extends Mobile {
 	private int x;
 	private int y;
+	
+	public Monster1(int x, int y){
+		
+		this.x = x;
+		this.y = y;
+		
+	}
 
 	public int getX() {
 		return x;
@@ -24,7 +35,7 @@ public class Monster1 extends Mobile {
 		this.y = y;
 	}
 
-	public void Image() {
-		Image image = new ImageIcon("//view//sprite//monster_1.png").getImage();
+	public void Image() throws IOException {
+		BufferedImage monster_1 = ImageIO.read(new File("src/main/resources/sprite/monster_1.png"));
 	}
 }
