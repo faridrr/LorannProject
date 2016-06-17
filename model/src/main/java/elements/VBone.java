@@ -1,12 +1,21 @@
 package elements;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class VBone extends Background{
+public class VBone extends Background {
 	private int x;
 	private int y;
+
+	public VBone(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 
 	public int getX() {
 		return x;
@@ -24,7 +33,7 @@ public class VBone extends Background{
 		this.y = y;
 	}
 
-	public void Image() {
-		Image image = new ImageIcon("//view//sprite//vertical_bone.png").getImage();
+	public void Image() throws IOException {
+		BufferedImage black = ImageIO.read(new File("src/main/resources/sprite/black.png"));
 	}
 }

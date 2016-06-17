@@ -79,8 +79,9 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		try {
+			BufferedImage bone;
 			BufferedImage black = ImageIO.read(new File("src/main/resources/sprite/black.png"));
-			BufferedImage bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
+			Arimages.add(bone = ImageIO.read(new File("src/main/resources/sprite/bone.png")));
 			BufferedImage vertical_bone = ImageIO.read(new File("src/main/resources/sprite/vertical_bone.png"));
 			BufferedImage horizontal_bone = ImageIO.read(new File("src/main/resources/sprite/horizontal_bone.png"));
 			
