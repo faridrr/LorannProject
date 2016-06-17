@@ -24,6 +24,10 @@ public class DAOConnection extends DAOElements {
 			if (resultSet.next()) {
 			    c = resultSet.getString("symbol").charAt(0);
 			}
+			
+			else if(!resultSet.next()){
+				c = ' ';
+			}
 
 		} catch (SQLException se) {
 			// Handle errors for JDBC
