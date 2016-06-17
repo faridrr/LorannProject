@@ -37,4 +37,6 @@ public interface IModel {
 	void moveD();
 	void moveR();
 	void launchSpell();
+	
+	void getImage();
 }

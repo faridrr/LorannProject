@@ -117,4 +117,26 @@ public class Model extends Observable implements IModel {
 		// TODO Auto-generated method stub
 
 	}
+	
+
+	public void getImage(){
+		try{
+			bone = ImageIO.read(new File("src/main/resources/sprite/bone.png"));
+		} catch (IOException e){ }
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
