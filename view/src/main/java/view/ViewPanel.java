@@ -127,7 +127,7 @@ class ViewPanel extends JPanel implements Observer {
 			
 			/*
 			 * Testing every images on the display
-			 * 
+			 */
 			Arimages.add(bone);
 			Arimages.add(black);
 			Arimages.add(vertical_bone);
@@ -147,11 +147,7 @@ class ViewPanel extends JPanel implements Observer {
 			Arimages.add(monster_2);
 			Arimages.add(monster_3);
 			Arimages.add(monster_4);
-			*/
-			for(int Nombredecases= 0 ; Nombredecases < 185; Nombredecases ++)
-			{
-				Arimages.add(horizontal_bone);
-			}
+			
 			
 			
 		} catch (IOException e){
@@ -159,18 +155,16 @@ class ViewPanel extends JPanel implements Observer {
 	}
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		for(Image img : Arimages){
+			
+			
 			graphics.drawImage(img,  x*pixelNumbers, y*pixelNumbers, this);
 			
 			//x++;
 			
 			//testing a conditional loop to the images display:
-			if (x>19 && x<= 20){
+			 if (x == 21){
+				x = 0;
 				y++;
-				x++;
-			}
-			else if (x >20){
-				x = -1;
-				x++;
 			}
 			else {
 				x++;
