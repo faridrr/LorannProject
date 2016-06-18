@@ -126,7 +126,7 @@ public class Lorann extends Mobile {
 			   System.out.println(e);
 			   }	
 		*/
-		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_ur.png"));
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
 		return image;
 	
 	}

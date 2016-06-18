@@ -13,6 +13,7 @@ import java.util.Observable;
 import elements.*;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 import com.mysql.jdbc.CallableStatement;
 
@@ -48,6 +49,9 @@ public class Model extends Observable implements IModel {
 					break;
 				case 'L':
 					Lorann lorann = new Lorann(x, y);
+					Arimages.add(lorann);
+					Arimages.add(lorann);
+					Arimages.add(lorann);
 					Arimages.add(lorann);
 					break;
 				case '-':
@@ -134,9 +138,8 @@ public class Model extends Observable implements IModel {
 	}
 
 	public void moveR() {
-		this.character.moveR();
 		// TODO Auto-generated method stub
-
+		this.character.moveR();
 	}
 
 	public void moveL() {
