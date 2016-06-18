@@ -84,6 +84,7 @@ public class Model extends Observable implements IModel {
 					Black black = new Black(x, y);
 					Arimages.add(black);
 					break;
+				
 				default:
 					break;
 				}
