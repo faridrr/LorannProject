@@ -23,7 +23,7 @@ import contract.IModel;
 /**
  * The Class Model.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 public class Model extends Observable implements IModel {
 

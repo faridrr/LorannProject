@@ -6,9 +6,9 @@ import java.io.IOException;
 import contract.Permeability;
 
 /**
- * The Class HelloWorld.
+ * The Class HelloSQL.
  *
- * @author Jean-Aymeric Diet
+ * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 class HelloWorld extends Elements {
 
