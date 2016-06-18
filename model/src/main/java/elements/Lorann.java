@@ -6,8 +6,9 @@ import java.io.IOException;
 import java.util.Observable;
 
 import javax.imageio.ImageIO;
-
 import contract.Permeability;
+import java.util.Timer; 
+import java.lang.*;
 
 public class Lorann extends Mobile {
 	private int x;
@@ -112,9 +113,22 @@ public class Lorann extends Mobile {
 		return null;
 	}
 
+	Thread t ;
+	
 	public BufferedImage Image() throws IOException {
+	
+	/*BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_u.png"));
+		return image;
+		
+	try {  
+		Thread.sleep(500); //thread to sleep for 500 milliseconds = 5 seconds
+		} catch (Exception e) {
+			   System.out.println(e);
+			   }	
+		*/
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_ur.png"));
 		return image;
+	
 	}
 
 	public Permeability getPerm() {
