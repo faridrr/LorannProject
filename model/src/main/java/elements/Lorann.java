@@ -16,7 +16,7 @@ import java.util.Timer;
 import java.lang.*;
 import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IMobile, IModel, IElements {
+public class Lorann extends Mobile implements IMobile, IModel{
 	private int x;
 	private int y;
 	char c;
