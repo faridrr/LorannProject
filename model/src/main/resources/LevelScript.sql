@@ -121,7 +121,9 @@ INSERT INTO `level1` (`y`, `x`, `symbol`) VALUES  -- this is the level 1
 (2,1,"+"),
 (3,1,"+"),
 (4,1,"+"),
+(5,1,"$"),
 (5,1,"@"),
+
 (6,1,"+"),
 (7,1,"+"),
 (8,1,"+"),
@@ -195,6 +197,7 @@ INSERT INTO `level2` (`y`, `x`, `symbol`) VALUES -- this is the level 2
 (3,1,"+"),
 (4,1,"+"),
 (5,1,"$"),
+(5,1,"$"),
 (6,1,"+"),
 (7,1,"+"),
 (8,1,"+"),
@@ -212,7 +215,7 @@ INSERT INTO `level2` (`y`, `x`, `symbol`) VALUES -- this is the level 2
 (10,20,"+"),
 
 
-(7,13,"L"),
+
 
 
 (1,18,"+"),
@@ -302,6 +305,7 @@ INSERT INTO `level3` (`y`, `x`, `symbol`) VALUES  -- this is the level 3
 (3,1,"+"),
 (4,1,"+"),
 (5,1,"$"),
+(5,1,"@"),
 (6,1,"#"),
 (7,1,"+"),
 (8,1,"+"),
@@ -319,7 +323,6 @@ INSERT INTO `level3` (`y`, `x`, `symbol`) VALUES  -- this is the level 3
 (10,20,"+"),
 
 
-(9,15,"L"),
 
 
 (1,18,"+"),
@@ -488,9 +491,9 @@ INSERT INTO `level4` (`y`, `x`, `symbol`) VALUES -- this is the level 4
 (8,16,"+"),
 (9,16,"#"),
 (9,18,"$"),
+(9,18,"@"),
 
 
-(1,11,"L"),
 (3,11,"x"),
 (4,11,"o"),
 (5,11,"x"),
@@ -572,8 +575,8 @@ INSERT INTO `level5` (`y`, `x`,`symbol`) VALUES -- this is the level 5
 (6,	1,"+"),
 (6,	2,"x"),
 (6,	13,"o"),
-(6,	18,"L"),
 (6,	20,"$"),
+(6,20,"@"),
 
 (7,	1,"+"),
 (7,	3,"x"),

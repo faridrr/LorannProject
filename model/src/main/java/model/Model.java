@@ -24,7 +24,7 @@ public class Model extends Observable implements IModel, IMobile {
 	/** The message. */
 	int x;
 	int y;
-	int lvl = 1;
+	int lvl = 5;
 	private String message;
 	List<IElements> Arimages = new ArrayList<IElements>();
 	List<IMobile> Armobile = new ArrayList<IMobile>();
@@ -34,8 +34,27 @@ public class Model extends Observable implements IModel, IMobile {
 
 		switch (lvl) {
 		case 1:
-			Lorann lorann = new Lorann(13, 7);
-			Armobile.add(0, lorann);
+			Lorann lorann1 = new Lorann(13, 7);
+			Armobile.add(0, lorann1);
+			break;
+		case 2:
+			Lorann lorann2 = new Lorann(13, 7);
+			Armobile.add(0, lorann2);
+			break;
+			
+		case 3:
+			Lorann lorann3 = new Lorann(15, 9);
+			Armobile.add(0, lorann3);
+			break;
+			
+		case 4:
+			Lorann lorann4 = new Lorann(11, 1);
+			Armobile.add(0, lorann4);
+			break;
+			
+		case 5:
+			Lorann lorann5 = new Lorann(18, 6);
+			Armobile.add(0, lorann5);
 			break;
 		default:
 			break;
@@ -47,57 +66,62 @@ public class Model extends Observable implements IModel, IMobile {
 				switch (symbol) {
 				case '+':
 					VBone vbone = new VBone(x, y);
-					Arimages.add(vbone);
+					Arimages.add(0,vbone);
 					break;
 
 				case '-':
 					HBone hbone = new HBone(x, y);
-					Arimages.add(hbone); // add() is a method that adds an
+					Arimages.add(1,hbone); // add() is a method that adds an
 											// element on the ArrayList called
 											// here "Arimage"
 					//
 					break;
 				case '#':
 					Corners corner = new Corners(x, y);
-					Arimages.add(corner); // add() is a method that adds an
+					Arimages.add(2,corner); // add() is a method that adds an
 											// element on the ArrayList called
 											// here "Arimage"
 					//
 					break;
 				case 'x':
 					Purse purse = new Purse(x, y);
-					Arimages.add(purse); // add() is a method that adds an
+					Arimages.add(3,purse); // add() is a method that adds an
 											// element on the ArrayList called
 											// here "Arimage"
 					//
 					break;
 				case 'o':
 					CrystalBall crystal = new CrystalBall(x, y);
-					Arimages.add(crystal); // add() is a method that adds an
+					Arimages.add(4,crystal); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
+					//
+					break;
+					
+				case '@':
+					DoorO doorO = new DoorO(x, y);
+					Arimages.add(5,doorO); // add() is a method that adds an
 											// element on the ArrayList called
 											// here "Arimage"
 					//
 					break;
 				case '$':
 					DoorC doorC = new DoorC(x, y);
-					Arimages.add(doorC); // add() is a method that adds an
+					Arimages.add(6,doorC); // add() is a method that adds an
 											// element on the ArrayList called
 											// here "Arimage"
 					//
 					break;
-				case '@':
-					DoorO doorO = new DoorO(x, y);
-					Arimages.add(doorO); // add() is a method that adds an
-											// element on the ArrayList called
-											// here "Arimage"
-					//
-					break;
+				
 				case '?':
 					Black black = new Black(x, y);
 					Arimages.add(black); // add() is a method that adds an
 											// element on the ArrayList called
 											// here "Arimage"
 					break;
+					
+					
+					
 				case 'L':
 					Lorann lorann = new Lorann(x, y);
 					Armobile.add(0, lorann); // add() is a method that adds an
