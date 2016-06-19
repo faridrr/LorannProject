@@ -46,12 +46,12 @@ public class Monster2 extends Mobile {
 	}
 
 
-	public void launchSpell() {
+	public void move(char c) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void move(char c) throws IOException {
+	public void launchSpell() {
 		// TODO Auto-generated method stub
 		
 	}

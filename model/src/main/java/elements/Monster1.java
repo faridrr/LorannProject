@@ -10,32 +10,43 @@ import javax.swing.ImageIcon;
 
 import contract.Permeability;
 
+import java.util.Timer;
+
+
 public class Monster1 extends Mobile {
+	
+	Timer timer = new Timer();
+	
 	private int x;
 	private int y;
 	
 	public Monster1(int x, int y){
-		
 		this.x = x;
 		this.y = y;
-		
 	}
 
 	public int getX() {
 		return x;
 	}
+	
+	
+	
+	public int getY() {
+		return y;
+	}
+	
 
 	public void setX(int x) {
 		this.x = x;
 	}
 
-	public int getY() {
-		return y;
-	}
+	
 
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	
 
 	public BufferedImage Image() throws IOException {
 		BufferedImage monster_1 = ImageIO.read(new File("src/main/resources/sprite/monster_1.png"));
@@ -47,12 +58,13 @@ public class Monster1 extends Mobile {
 		return null;
 	}
 
-	public void launchSpell() {
+
+	public void move(char c) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void move(char c) throws IOException {
+	public void launchSpell() {
 		// TODO Auto-generated method stub
 		
 	}

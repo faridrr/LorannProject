@@ -13,15 +13,20 @@ import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
 import contract.Permeability;
+import java.util.Timer;
+
 
 /**
  * The Class Model.
  *
  * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
+
 public class Model extends Observable implements IModel, IMobile {
 
-	/** The message. */
+	Timer timer = new Timer();
+	
+	
 	int x;
 	int y;
 	int lvl = 5;

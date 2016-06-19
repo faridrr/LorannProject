@@ -80,7 +80,7 @@ public class Lorann extends Mobile implements IMobile, IModel{
 		}
 	}
 	
-	public void colision (char c){
+	/*public void colision (char c){
 
 		int characterX;
 		int characterY;
@@ -138,7 +138,7 @@ public class Lorann extends Mobile implements IMobile, IModel{
     	}
 
     }
-
+*/
 
 	public BufferedImage ImageD() throws IOException {
 		image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
