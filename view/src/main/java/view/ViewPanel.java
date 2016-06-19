@@ -19,6 +19,8 @@ class ViewPanel extends JPanel implements Observer {
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
+	public List<IElements> Arimages = new ArrayList<IElements>();
+	public List<IMobile> Armobile = new ArrayList<IMobile>();
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -998294702363713521L;
 
@@ -57,6 +59,14 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
 	 */
+	
+	public List<IMobile> getArmobile(){
+		return this.Armobile;
+	}
+	
+	public List<IElements> getArimages(){
+		return this.Arimages;
+	}
 
 	public void update(final Observable arg0, final Object arg1) {
 		this.repaint();
@@ -66,8 +76,7 @@ class ViewPanel extends JPanel implements Observer {
 	protected void paintComponent(final Graphics graphics) {
 
 		int pixelNumbers = 32;
-		List<IElements> Arimages = new ArrayList<IElements>();
-		List<IElements> Armobile = new ArrayList<IElements>();
+		
 
 		try {
 			Arimages = this.viewFrame.getModel().getArimages();
@@ -85,7 +94,7 @@ class ViewPanel extends JPanel implements Observer {
 
 			}
 
-			for (IElements obj : Armobile) {
+			for (IMobile obj : Armobile) {
 
 				int x = obj.getX();
 				int y = obj.getY();

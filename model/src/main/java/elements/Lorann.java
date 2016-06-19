@@ -16,7 +16,7 @@ import java.util.Timer;
 import java.lang.*;
 import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IModel{
+public class Lorann extends Mobile implements IMobile{
 	private int x;
 	private int y;
 	char c;
@@ -46,23 +46,19 @@ public class Lorann extends Mobile implements IModel{
 	public void move(char c) throws IOException {
 		switch (c) {
 		case 'R':
-			this.x++;
-			this.c = c;
+			setX(x++);
 			image = ImageR();
 			break;
 		case 'L':
-			this.x--;
-			this.c = c;
+			setX(x--);
 			image = ImageL();
 			break;
 		case 'U':
-			this.y--;
-			this.c = c;
+			setY(y--);
 			image = ImageU();
 			break;
 		case 'D':
-			this.x++;
-			this.c = c;
+			setY(y++);
 			image = ImageD();
 			break;
 		default:

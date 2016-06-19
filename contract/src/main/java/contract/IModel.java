@@ -34,5 +34,5 @@ public interface IModel {
 
 	List<IElements> getArimages() throws SQLException;
 
-	List<IElements> getArmobile() throws SQLException;
+	List<IMobile> getArmobile() throws SQLException;
 }

@@ -131,4 +131,9 @@ class HelloWorld extends Elements {
 		return null;
 	}
 
+	public void move(char c) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

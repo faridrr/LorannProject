@@ -1,8 +1,10 @@
 package controller;
 
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import contract.ControllerOrder;
@@ -16,7 +18,7 @@ import contract.IView;
 /**
  * The Class Controller.
  */
-public class Controller implements IController { // IController interface
+public class Controller implements IController, IView{ // IController interface
 													// implementation
 
 	/** The view. */
@@ -70,16 +72,20 @@ public class Controller implements IController { // IController interface
 	private void setModel(final IModel model) {
 		this.model = model;
 	}
+	
 
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) throws IOException {
+	
+	public void orderPerform(final ControllerOrder controllerOrder) throws IOException, SQLException {
 		switch (controllerOrder) {
 		case Right:
-			this.model.move('R');
+			System.out.println(this.model.getArmobile().get(0).getX());
+			this.model.getArmobile().get(0).move('R');
+			System.out.println(this.model.getArmobile().get(0).getX());
 			break;
 		case Left:
 			this.model.move('L');
@@ -102,12 +108,29 @@ public class Controller implements IController { // IController interface
 	public void getMap1() throws SQLException {
 	}
 
-	public List<IElements> getArimages() {
+	public List<IMobile> getArmobile(){
+		List<IMobile> Armobile = new ArrayList<IMobile>();
+		try {
+			 Armobile = model.getArmobile();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return Armobile;
+	}
+	public void printMessage(String message) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
-	public List<IElements> getArmobile() {
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<IElements> getArimages(){
 		// TODO Auto-generated method stub
 		return null;
 	}

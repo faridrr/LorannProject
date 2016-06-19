@@ -23,10 +23,11 @@ public interface IController {
 	 * @param controllerOrder
 	 *          the controller order
 	 * @throws IOException 
+	 * @throws SQLException 
 	 */
-	public void orderPerform(ControllerOrder controllerOrder) throws IOException;
+	public void orderPerform(ControllerOrder controllerOrder) throws IOException, SQLException;
 	void getMap1() throws SQLException;
 
 	public List<IElements> getArimages()throws SQLException ;
-	public List<IElements> getArmobile()throws SQLException ;
+	public List<IMobile> getArmobile()throws SQLException ;
 }

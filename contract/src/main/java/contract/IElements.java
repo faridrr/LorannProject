@@ -10,5 +10,6 @@ void setX( int x);
 void setY(int y);
 Permeability getPerm();
 BufferedImage Image() throws IOException;
+void move(char c) throws IOException;
 
 }

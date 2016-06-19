@@ -46,4 +46,9 @@ public class CrystalBall extends Items{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void move(char c) {
+		// TODO Auto-generated method stub
+		
+	}
 }

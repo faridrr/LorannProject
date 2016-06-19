@@ -1,11 +1,14 @@
 package view;
 
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import javax.swing.SwingUtilities;
 
 import contract.ControllerOrder;
 import contract.IController;
+import contract.IElements;
+import contract.IMobile;
 import contract.IModel;
 import contract.IView;
 
@@ -85,6 +88,16 @@ public class View implements IView, Runnable {
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public List<IMobile> getArmobile() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<IElements> getArimages() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

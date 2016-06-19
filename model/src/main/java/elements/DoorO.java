@@ -45,4 +45,9 @@ public class DoorO extends Background {
 		return null;
 	}
 
+	public void move(char c) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

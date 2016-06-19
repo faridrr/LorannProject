@@ -42,4 +42,9 @@ public class HBone extends Background{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void move(char c) {
+		// TODO Auto-generated method stub
+		
+	}
 }

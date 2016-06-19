@@ -6,6 +6,7 @@ import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -169,6 +170,9 @@ class ViewFrame extends JFrame implements KeyListener {
 		try {
 			this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
 		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

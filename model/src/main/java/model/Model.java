@@ -1,41 +1,33 @@
 package model;
 
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import elements.*;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-
-import com.mysql.jdbc.CallableStatement;
-
 import elements.Lorann;
 import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
+import contract.Permeability;
 
 /**
  * The Class Model.
  *
  * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
-public class Model extends Observable implements IModel {
+public class Model extends Observable implements IModel, IMobile {
 
 	/** The message. */
-	private String message;
-	private Lorann character;
 	int x;
 	int y;
 	int lvl = 1;
+	private String message;
 
+	
 	public List<IElements> getArimages() throws SQLException {
 		List<IElements> Arimages = new ArrayList<IElements>();
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
@@ -108,8 +100,8 @@ public class Model extends Observable implements IModel {
 		return Arimages;
 	}
 
-	public List<IElements> getArmobile() throws SQLException {
-		List<IElements> Armobile = new ArrayList<IElements>();
+	public List<IMobile> getArmobile() throws SQLException {
+		List<IMobile> Armobile = new ArrayList<IMobile>();
 
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 
@@ -146,8 +138,6 @@ public class Model extends Observable implements IModel {
 
 		return Armobile;
 	}
-
-	
 
 	/**
 	 * Instantiates a new model.
@@ -212,7 +202,7 @@ public class Model extends Observable implements IModel {
 
 	}
 
-	public void move(char c) throws IOException {
+	public void move(char c){
 		// TODO Auto-generated method stub
 
 	}
@@ -225,6 +215,26 @@ public class Model extends Observable implements IModel {
 	public void setX(int x) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public int getY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setY(int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Permeability getPerm() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public BufferedImage Image() throws IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
