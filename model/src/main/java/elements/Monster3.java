@@ -44,4 +44,14 @@ public class Monster3 extends Mobile {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void move(char c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void launchSpell() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -7,13 +7,13 @@ import java.util.Observable;
 
 import javax.imageio.ImageIO;
 import contract.Permeability;
-import java.util.Timer; 
+import java.util.Timer;
 import java.lang.*;
 
 public class Lorann extends Mobile {
 	private int x;
 	private int y;
-	char bufferSpell = 0;
+	char c;
 
 	public Lorann(int x, int y) {
 		this.x = x;
@@ -36,29 +36,28 @@ public class Lorann extends Mobile {
 		this.y = y;
 	}
 
-	public void launchSpell(Lorann character) {
-		RainbowSpell spell = new RainbowSpell(character, bufferSpell);
 
-	}
-
-	public void moveR() {
-		this.x++;
-		bufferSpell = 'R';
-	}
-
-	public void moveL() {
-		this.x--;
-		bufferSpell = 'L';
-	}
-
-	public void moveD() {
-		this.y++;
-		bufferSpell = 'D';
-	}
-
-	public void moveU() {
-		this.y--;
-		bufferSpell = 'U';
+	public void move(char c) {
+		switch (c) {
+		case 'R':
+			this.x++;
+			this.c = c;
+			break;
+		case 'L':
+			this.x--;
+			this.c = c;
+			break;
+		case 'U':
+			this.y--;
+			this.c = c;
+			break;
+		case 'D':
+			this.x++;
+			this.c = c;
+			break;
+		default:
+			break;
+		}
 	}
 
 	public BufferedImage ImageB() throws IOException {
@@ -101,39 +100,29 @@ public class Lorann extends Mobile {
 		return image;
 	}
 
-	public String getMessage() {
-		return null;
-	}
-
-	public void loadMessage(String key) {
-
-	}
-
-	public Observable getObservable() {
-		return null;
-	}
-
-	Thread t ;
-	
 	public BufferedImage Image() throws IOException {
-	
-	/*BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_u.png"));
-		return image;
-		
-	try {  
-		Thread.sleep(500); //thread to sleep for 500 milliseconds = 5 seconds
-		} catch (Exception e) {
-			   System.out.println(e);
-			   }	
-		*/
+
+		/*
+		 * BufferedImage image = ImageIO.read(new
+		 * File("src/main/resources/sprite/lorann_u.png")); return image;
+		 * 
+		 * try { Thread.sleep(500); //thread to sleep for 500 milliseconds = 5
+		 * seconds } catch (Exception e) { System.out.println(e); }
+		 */
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
 		return image;
-	
+
 	}
 
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void launchSpell() {
+		RainbowSpell spell = new RainbowSpell(x,y, c);
+		// TODO Auto-generated method stub
+		
 	}
 
 }

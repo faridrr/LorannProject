@@ -47,7 +47,7 @@ public class Model extends Observable implements IModel {
 				case '+':
 					VBone vbone = new VBone(x, y);
 					Arimages.add(vbone);
-					break;
+				
 				case '-':
 					HBone hbone = new HBone(x, y);
 					Arimages.add(hbone);
@@ -82,7 +82,7 @@ public class Model extends Observable implements IModel {
 					Black black = new Black(x, y);
 					Arimages.add(black);
 					break;
-				
+
 				default:
 					break;
 				}
@@ -93,11 +93,12 @@ public class Model extends Observable implements IModel {
 		return Arimages;
 	}
 
-	public List<IMobile> getMobile() throws SQLException{
-		
+	public List<IMobile> getMobile() throws SQLException {
+
 		return null;
-		
+
 	}
+
 	/**
 	 * Instantiates a new model.
 	 */
@@ -136,28 +137,27 @@ public class Model extends Observable implements IModel {
 		return this;
 	}
 
-	public void moveR() {
-		// TODO Auto-generated method stub
-		this.character.moveR();
-	}
-
 	public void moveL() {
 		// TODO Auto-generated method stub
-		this.character.moveL();
+
 	}
 
 	public void moveU() {
 		// TODO Auto-generated method stub
-		this.character.moveU();
+
 	}
 
 	public void moveD() {
 		// TODO Auto-generated method stub
-		this.character.moveD();
+
+	}
+
+	public void moveR() {
+		// TODO Auto-generated method stub
+
 	}
 
 	public void launchSpell() {
-		this.character.launchSpell(character);
 		// TODO Auto-generated method stub
 
 	}

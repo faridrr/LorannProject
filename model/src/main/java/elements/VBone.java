@@ -33,8 +33,8 @@ public class VBone extends Background {
 	}
 
 	public BufferedImage Image() throws IOException {
-		BufferedImage horizontal_bone = ImageIO.read(new File("src/main/resources/sprite/vertical_bone.png"));
-		return horizontal_bone;
+		BufferedImage vertical_bone = ImageIO.read(new File("src/main/resources/sprite/vertical_bone.png"));
+		return vertical_bone;
 	}
 
 	public Permeability getPerm() {

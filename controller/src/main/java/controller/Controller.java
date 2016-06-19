@@ -7,6 +7,7 @@ import java.util.List;
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IElements;
+import contract.IMobile;
 import contract.IModel;
 import contract.IView;
 
@@ -14,23 +15,26 @@ import contract.IView;
 /**
  * The Class Controller.
  */
-public class Controller implements IController { //IController interface implementation
+public class Controller implements IController { // IController interface
+													// implementation
 
 	/** The view. */
 	private IView view;
 
 	/** The model. */
 	private IModel model;
+	private IMobile mobile;
 
 	/**
 	 * Instantiates a new controller.
 	 *
 	 * @param view
-	 *          the view
+	 *            the view
 	 * @param model
-	 *          the model
+	 *            the model
 	 */
-	public Controller(final IView view, final IModel model) { //Controller constructor
+	public Controller(final IView view, final IModel model) { // Controller
+																// constructor
 		this.setView(view);
 		this.setModel(model);
 	}
@@ -48,7 +52,7 @@ public class Controller implements IController { //IController interface impleme
 	 * Sets the view.
 	 *
 	 * @param view
-	 *          the new view
+	 *            the new view
 	 */
 	private void setView(final IView view) {
 		this.view = view;
@@ -58,7 +62,7 @@ public class Controller implements IController { //IController interface impleme
 	 * Sets the model.
 	 *
 	 * @param model
-	 *          the new model
+	 *            the new model
 	 */
 	private void setModel(final IModel model) {
 		this.model = model;
@@ -71,24 +75,24 @@ public class Controller implements IController { //IController interface impleme
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
-			case Right:
-				this.model.moveR();
-				break;
-			case Left:
-				this.model.moveL();
-				break;
-			case Up:
-				this.model.moveU();
-				break;
-			case Down:
-				this.model.moveD();
-				break;
-			case Spell:
-				this.model.launchSpell();
-				break;
+		case Right:
+			this.mobile.move('R');
+			break;
+		case Left:
+			this.mobile.move('L');
+			break;
+		case Up:
+			this.mobile.move('U');
+			break;
+		case Down:
+			this.mobile.move('D');
+			break;
+		case Spell:
+			this.mobile.launchSpell();
+			break;
 
-			default:
-				break;
+		default:
+			break;
 		}
 	}
 

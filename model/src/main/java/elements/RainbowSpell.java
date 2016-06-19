@@ -14,18 +14,16 @@ public class RainbowSpell extends Mobile {
 	private int x;
 	private int y;
 
-	public RainbowSpell(Lorann character, char c) {
-		x = character.getX();
-		y = character.getY();
-		
+	public RainbowSpell(int x, int y, char c) {
+
 		if (c == 'R') {
-// TODO 
+			// TODO
 		} else if (c == 'L') {
-// TODO
+			// TODO
 		} else if (c == 'D') {
-// TODO
+			// TODO
 		} else if (c == 'U') {
-// TODO
+			// TODO
 		}
 
 	}
@@ -79,5 +77,20 @@ public class RainbowSpell extends Mobile {
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void Move() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void move(char c) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void launchSpell() {
+		// TODO Auto-generated method stub
+
 	}
 }
