@@ -2,6 +2,7 @@ package contract;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public interface IMobile {
 	void move(char c) throws IOException;

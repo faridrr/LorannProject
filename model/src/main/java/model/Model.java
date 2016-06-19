@@ -157,6 +157,8 @@ public class Model extends Observable implements IModel, IMobile {
 			}
 		}
 	}
+	
+	
 
 	public List<IElements> getArimages() {
 

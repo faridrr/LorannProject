@@ -16,7 +16,7 @@ import java.util.Timer;
 import java.lang.*;
 import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IMobile, IModel{
+public class Lorann extends Mobile implements IMobile, IModel, IElements{
 	private int x;
 	private int y;
 	char c;
@@ -56,21 +56,25 @@ public class Lorann extends Mobile implements IMobile, IModel{
 	public void move(char c) throws IOException {
 		switch (c) {
 		case 'R':
+			collision(c);
 			this.setX(getX() + 1);
 			this.image = ImageR();
 			this.c = c;
 			break;
 		case 'L':
+			collision(c);
 			this.setX(getX() - 1);
 			this.image = ImageL();
 			this.c = c;
 			break;
 		case 'U':
+			collision(c);
 			this.setY(getY() - 1);
 			this.image = ImageU();
 			this.c = c;
 			break;
 		case 'D':
+			collision(c);
 			this.setY(getY() + 1);
 			this.image = ImageD();
 			this.c = c;
@@ -80,11 +84,11 @@ public class Lorann extends Mobile implements IMobile, IModel{
 		}
 	}
 	
-	/*public void colision (char c){
+	public void collision (char c) throws SQLException{
 
 		int characterX;
 		int characterY;
-
+		List<IElements> Arimages = getArimages();
 		characterX = this.getX();
 		characterY = this.getY();
 
@@ -138,7 +142,7 @@ public class Lorann extends Mobile implements IMobile, IModel{
     	}
 
     }
-*/
+
 
 	public BufferedImage ImageD() throws IOException {
 		image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
