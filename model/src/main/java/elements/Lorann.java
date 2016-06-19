@@ -16,16 +16,23 @@ import java.util.Timer;
 import java.lang.*;
 import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IMobile, IModel{
+public class Lorann extends Mobile implements IMobile, IModel {
 	private int x;
 	private int y;
 	char c;
+
 	BufferedImage image;
-	private IModel model;
 
 	public Lorann(int x, int y) {
 		this.x = x;
 		this.y = y;
+		
+		try {
+			this.image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public int getX() {
@@ -47,19 +54,19 @@ public class Lorann extends Mobile implements IMobile, IModel{
 	public void move(char c) throws IOException {
 		switch (c) {
 		case 'R':
-			this.setX(getX()+1);
+			this.setX(getX() + 1);
 			this.image = ImageR();
 			break;
 		case 'L':
-			this.setX(getX()-1);
+			this.setX(getX() - 1);
 			this.image = ImageL();
 			break;
 		case 'U':
-			this.setY(getY()-1);
+			this.setY(getY() - 1);
 			this.image = ImageU();
 			break;
 		case 'D':
-			this.setY(getY()+1);
+			this.setY(getY() + 1);
 			this.image = ImageD();
 			break;
 		default:
@@ -125,7 +132,7 @@ public class Lorann extends Mobile implements IMobile, IModel{
 
 	public void getMessage() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Observable getObservable() {
