@@ -16,22 +16,30 @@ public class RainbowSpell extends Mobile {
 
 	public RainbowSpell(int x, int y, char c) {
 
-		if (c == 'R') {
+		switch (c) {
+		case 'R':
 			this.setX(x--);
 			this.setY(y);
-			
-		} else if (c == 'L') {
+			System.out.println(this.getX());
+			break;
+
+		case 'L':
 			this.setX(x++);
 			this.setY(y);
-			
-		} else if (c == 'D') {
+			break;
+
+		case 'D':
 			this.setY(y--);
 			this.setX(x);
-			
-		} else if (c == 'U') {
+			break;
+
+		case 'U':
 			this.setY(y++);
 			this.setX(x);
-			
+			break;
+		default:
+			break;
+
 		}
 
 	}

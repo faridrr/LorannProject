@@ -27,12 +27,14 @@ public class Lorann extends Mobile implements IMobile, IModel {
 		this.x = x;
 		this.y = y;
 		
+		
 		try {
 			this.image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
 	public int getX() {
@@ -125,7 +127,8 @@ public class Lorann extends Mobile implements IMobile, IModel {
 	}
 
 	public void launchSpell() {
-		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), c);
+		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), this.c);
+
 		// TODO Auto-generated method stub
 
 	}

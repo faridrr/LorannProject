@@ -95,7 +95,7 @@ public class Controller implements IController, IView{ // IController interface
 			this.model.getArmobile().get(0).move('D');
 			break;
 		case Spell:
-			this.model.launchSpell();
+			this.model.getArmobile().get(0).launchSpell();
 			break;
 
 		default:
