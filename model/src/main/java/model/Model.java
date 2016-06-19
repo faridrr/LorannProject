@@ -19,6 +19,7 @@ import com.mysql.jdbc.CallableStatement;
 
 import elements.Lorann;
 import contract.IElements;
+import contract.IMobile;
 import contract.IModel;
 
 /**
@@ -46,11 +47,6 @@ public class Model extends Observable implements IModel {
 				case '+':
 					VBone vbone = new VBone(x, y);
 					Arimages.add(vbone);
-					break;
-				case 'L':
-					Lorann lorann = new Lorann(x, y);
-					Arimages.add(lorann);
-					//
 					break;
 				case '-':
 					HBone hbone = new HBone(x, y);
@@ -97,6 +93,11 @@ public class Model extends Observable implements IModel {
 		return Arimages;
 	}
 
+	public List<IMobile> getMobile() throws SQLException{
+		
+		return null;
+		
+	}
 	/**
 	 * Instantiates a new model.
 	 */

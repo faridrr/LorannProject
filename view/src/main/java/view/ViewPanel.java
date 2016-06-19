@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +12,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -65,14 +69,13 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
 	 */
-	public void update(final Observable arg0, final Object arg1) {
-		this.repaint();
-	}
 
+	int delay = 1000;
+
+ActionListener taskPerformer = new ActionListener(){
 	@Override
-
 	protected void paintComponent(final Graphics graphics) {
-		
+
 		int pixelNumbers = 32;
 		List<IElements> Arimages = new ArrayList<IElements>();
 		try {
@@ -83,18 +86,24 @@ class ViewPanel extends JPanel implements Observer {
 		}
 
 		for (IElements obj : Arimages) {
-			
+
 			int x = obj.getX();
 			int y = obj.getY();
-			
+
+			obj.setX(x++);
+
 			try {
 				graphics.drawImage(obj.Image(), x * pixelNumbers, y * pixelNumbers, this);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		}
+		repaint();
 	}
+
+};new Timer(delay,taskPerformer).start();
 
 	public void getMessage() {
 		// TODO Auto-generated method stub
@@ -130,7 +139,6 @@ class ViewPanel extends JPanel implements Observer {
 		// TODO Auto-generated method stub
 
 	}
-
 
 	public void run() {
 		// TODO Auto-generated method stub
