@@ -38,7 +38,8 @@ public class Model extends Observable implements IModel {
 
 	public List<IElements> getMap1() throws SQLException {
 
-		List<IElements> Arimages = new ArrayList<IElements>();
+		List<IElements> Arimages ;
+		Arimages = new ArrayList<IElements>();
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 13; y++) {

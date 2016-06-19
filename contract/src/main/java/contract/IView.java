@@ -1,5 +1,7 @@
 package contract;
 
+import java.awt.event.KeyEvent;
+
 /**
  * The Interface IView.
  *
@@ -11,7 +13,9 @@ public interface IView {
 	 * Prints the message.
 	 *
 	 * @param message
-	 *          the message
+	 *            the message
 	 */
 	void printMessage(final String message);
+
+	void keyPressed(final KeyEvent e);
 }

@@ -1,6 +1,7 @@
 package contract;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -21,7 +22,8 @@ public interface IController {
 	 *
 	 * @param controllerOrder
 	 *          the controller order
+	 * @throws IOException 
 	 */
-	public void orderPerform(ControllerOrder controllerOrder);
+	public void orderPerform(ControllerOrder controllerOrder) throws IOException;
 	List<IElements> getMap1() throws SQLException;
 }

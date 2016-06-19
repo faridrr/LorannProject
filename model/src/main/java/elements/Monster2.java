@@ -45,8 +45,8 @@ public class Monster2 extends Mobile {
 		return null;
 	}
 
-
-	public void move(char c) {
+	public char move(char c) {
+		return c;
 		// TODO Auto-generated method stub
 		
 	}

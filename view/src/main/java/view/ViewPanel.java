@@ -66,7 +66,8 @@ class ViewPanel extends JPanel implements Observer {
 	protected void paintComponent(final Graphics graphics) {
 
 		int pixelNumbers = 32;
-		List<IElements> Arimages = new ArrayList<IElements>();
+		List<IElements> Arimages;
+		Arimages = new ArrayList<IElements>();
 		try {
 			Arimages = this.viewFrame.getController().getMap1();
 		} catch (SQLException e) {
@@ -84,6 +85,7 @@ class ViewPanel extends JPanel implements Observer {
 			}
 
 		}
+		repaint();
 	}
 
 }

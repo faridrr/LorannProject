@@ -38,11 +38,7 @@ public class View implements IView, Runnable {
 	 * @return the controller order
 	 */
 	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) { // Controller
-																					// of
-																					// the
-																					// key
-																					// events
-
+			
 		switch (keyCode) {
 		case KeyEvent.VK_RIGHT:
 			return ControllerOrder.Right;
@@ -84,6 +80,11 @@ public class View implements IView, Runnable {
 	 */
 	public void setController(final IController controller) {
 		this.viewFrame.setController(controller);
+	}
+
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

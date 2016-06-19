@@ -1,7 +1,8 @@
 package contract;
 
-public interface IMobile {
-	void move(char c);
+import java.io.IOException;
 
+public interface IMobile {
+	void move(char c) throws IOException;
 	void launchSpell();
 }

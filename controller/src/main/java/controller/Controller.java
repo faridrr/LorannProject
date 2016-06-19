@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -45,7 +46,6 @@ public class Controller implements IController { // IController interface
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("Welcome! Please press Enter to start.");
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class Controller implements IController { // IController interface
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
+	public void orderPerform(final ControllerOrder controllerOrder) throws IOException {
 		switch (controllerOrder) {
 		case Right:
 			this.mobile.move('R');
