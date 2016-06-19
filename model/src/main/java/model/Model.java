@@ -35,15 +35,11 @@ public class Model extends Observable implements IModel {
 	int x;
 	int y;
 	int lvl = 1;
-	List<IElements> Arimages = new ArrayList<IElements>();
 
-	public List<IElements> getArimages() {
-		return Arimages;
-	}
-
-	public List<IElements> getMap1() throws SQLException {
-
+	public List<IElements> getArimages() throws SQLException {
+		List<IElements> Arimages = new ArrayList<IElements>();
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
+
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 13; y++) {
 				char symbol = co.checkMap(x, y, lvl);
@@ -52,47 +48,58 @@ public class Model extends Observable implements IModel {
 					VBone vbone = new VBone(x, y);
 					Arimages.add(vbone);
 					break;
-				case 'L':
-					Lorann lorann = new Lorann(x, y);
-					Arimages.add(lorann); // add() is a method that adds an element on the ArrayList called here "Arimage"
-					break;
 
 				case '-':
 					HBone hbone = new HBone(x, y);
-					Arimages.add(hbone); // add() is a method that adds an element on the ArrayList called here "Arimage"
+					Arimages.add(hbone); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
 					//
 					break;
 				case '#':
 					Corners corner = new Corners(x, y);
-					Arimages.add(corner); // add() is a method that adds an element on the ArrayList called here "Arimage"
+					Arimages.add(corner); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
 					//
 					break;
 				case 'x':
 					Purse purse = new Purse(x, y);
-					Arimages.add(purse); // add() is a method that adds an element on the ArrayList called here "Arimage"
+					Arimages.add(purse); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
 					//
 					break;
 				case 'o':
 					CrystalBall crystal = new CrystalBall(x, y);
-					Arimages.add(crystal); // add() is a method that adds an element on the ArrayList called here "Arimage"
+					Arimages.add(crystal); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
 					//
 					break;
 				case '$':
 					DoorC doorC = new DoorC(x, y);
-					Arimages.add(doorC); // add() is a method that adds an element on the ArrayList called here "Arimage"
+					Arimages.add(doorC); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
 					//
 					break;
 				case '@':
 					DoorO doorO = new DoorO(x, y);
-					Arimages.add(doorO); // add() is a method that adds an element on the ArrayList called here "Arimage"
+					Arimages.add(doorO); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
 					//
 					break;
 				case '?':
 					Black black = new Black(x, y);
-					Arimages.add(black); // add() is a method that adds an element on the ArrayList called here "Arimage"
+					Arimages.add(black); // add() is a method that adds an
+											// element on the ArrayList called
+											// here "Arimage"
 					break;
 
-				default: //default action : if no one character have been recognized, add nothing on the map
+				default: // default action : if no one character have been
+							// recognized, add nothing on the map
 					break;
 				}
 			}
@@ -101,11 +108,46 @@ public class Model extends Observable implements IModel {
 		return Arimages;
 	}
 
-	public List<IMobile> getMobile() throws SQLException {
+	public List<IElements> getArmobile() throws SQLException {
+		List<IElements> Armobile = new ArrayList<IElements>();
 
-		return null;
+		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 
+		for (x = 0; x < 21; x++) {
+			for (y = 0; y < 13; y++) {
+				char symbol = co.checkMap(x, y, lvl);
+				switch (symbol) {
+				case 'L':
+					Lorann lorann = new Lorann(x, y);
+					Armobile.add(0, lorann); // add() is a method that adds an
+												// element on the ArrayList
+												// called here "Arimage"
+					break;
+				case 'M':
+					Monster1 monster1 = new Monster1(x, y);
+					Armobile.add(1, monster1);
+					break;
+				case 'N':
+					Monster2 monster2 = new Monster2(x, y);
+					Armobile.add(2, monster2);
+					break;
+				case 'O':
+					Monster3 monster3 = new Monster3(x, y);
+					Armobile.add(3, monster3);
+					break;
+				case 'P':
+					Monster4 monster4 = new Monster4(x, y);
+					Armobile.add(4, monster4);
+					break;
+				}
+
+			}
+		}
+
+		return Armobile;
 	}
+
+	
 
 	/**
 	 * Instantiates a new model.

@@ -38,8 +38,8 @@ public class Monster4 extends Mobile {
 	}
 
 	public BufferedImage Image() throws IOException {
-		BufferedImage monster_4 = ImageIO.read(new File("src/main/resources/sprite/monster_4.png"));
-		return monster_4;
+		BufferedImage monster4 = ImageIO.read(new File("src/main/resources/sprite/monster_4.png"));
+		return monster4;
 	}
 
 	public Permeability getPerm() {

@@ -29,7 +29,10 @@ public interface IModel {
 
 	void launchSpell();
 
-	List<IElements> getMap1() throws SQLException;
 
 	void move(char c) throws IOException;
+
+	List<IElements> getArimages() throws SQLException;
+
+	List<IElements> getArmobile() throws SQLException;
 }

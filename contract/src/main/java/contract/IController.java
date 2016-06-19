@@ -25,5 +25,8 @@ public interface IController {
 	 * @throws IOException 
 	 */
 	public void orderPerform(ControllerOrder controllerOrder) throws IOException;
-	List<IElements> getMap1() throws SQLException;
+	void getMap1() throws SQLException;
+
+	public List<IElements> getArimages()throws SQLException ;
+	public List<IElements> getArmobile()throws SQLException ;
 }

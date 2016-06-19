@@ -66,24 +66,34 @@ class ViewPanel extends JPanel implements Observer {
 	protected void paintComponent(final Graphics graphics) {
 
 		int pixelNumbers = 32;
-		List<IElements> Arimages;
-		Arimages = new ArrayList<IElements>();
-		try {
-			Arimages = this.viewFrame.getController().getMap1();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		List<IElements> Arimages = new ArrayList<IElements>();
+		List<IElements> Armobile = new ArrayList<IElements>();
 
-		for (IElements obj : Arimages) {
-			try {
+		try {
+			Arimages = this.viewFrame.getModel().getArimages();
+			Armobile = this.viewFrame.getModel().getArmobile();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			for (IElements obj : Arimages) {
+
 				int x = obj.getX();
 				int y = obj.getY();
 				graphics.drawImage(obj.Image(), x * pixelNumbers, y * pixelNumbers, this);
-			} catch (IOException e) {
-				e.printStackTrace();
+
 			}
 
+			for (IElements obj : Armobile) {
+
+				int x = obj.getX();
+				int y = obj.getY();
+				graphics.drawImage(obj.Image(), x * pixelNumbers, y * pixelNumbers, this);
+
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		repaint();
 	}

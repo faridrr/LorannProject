@@ -137,7 +137,16 @@ public class Lorann extends Mobile implements IModel{
 		return null;
 	}
 
-	public List<IElements> getMap1() throws SQLException {
+	public void getMap1() throws SQLException {
+		// TODO Auto-generated method stub
+	}
+
+	public List<IElements> getArimages() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<IElements> getArmobile() throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}

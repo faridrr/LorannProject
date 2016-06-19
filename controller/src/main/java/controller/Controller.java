@@ -99,7 +99,16 @@ public class Controller implements IController { // IController interface
 		}
 	}
 
-	public List<IElements> getMap1() throws SQLException {
-		return this.model.getMap1();
+	public void getMap1() throws SQLException {
+	}
+
+	public List<IElements> getArimages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<IElements> getArmobile() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
