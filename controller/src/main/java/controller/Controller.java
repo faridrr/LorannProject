@@ -24,7 +24,6 @@ public class Controller implements IController { // IController interface
 
 	/** The model. */
 	private IModel model;
-	private IMobile mobile;
 
 	/**
 	 * Instantiates a new controller.
@@ -80,19 +79,19 @@ public class Controller implements IController { // IController interface
 	public void orderPerform(final ControllerOrder controllerOrder) throws IOException {
 		switch (controllerOrder) {
 		case Right:
-			this.mobile.move('R');
+			this.model.move('R');
 			break;
 		case Left:
-			this.mobile.move('L');
+			this.model.move('L');
 			break;
 		case Up:
-			this.mobile.move('U');
+			this.model.move('U');
 			break;
 		case Down:
-			this.mobile.move('D');
+			this.model.move('D');
 			break;
 		case Spell:
-			this.mobile.launchSpell();
+			this.model.launchSpell();
 			break;
 
 		default:

@@ -23,23 +23,13 @@ public interface IModel {
 	 */
 	void getMessage();
 
-	/**
-	 * Load the message.
-	 *
-	 * @param key
-	 *          the key
-	 */
-
-	/**
-	 * Gets the observable.
-	 *
-	 * @return the observable
-	 */
 	Observable getObservable();
-	void moveL();
-	void moveU();
-	void moveD();
-	void moveR();
+	int getX();
+	void setX(int x);
+
 	void launchSpell();
+
 	List<IElements> getMap1() throws SQLException;
+
+	void move(char c) throws IOException;
 }

@@ -3,16 +3,20 @@ package elements;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Observable;
 
 import javax.imageio.ImageIO;
 
+import contract.IElements;
 import contract.IMobile;
+import contract.IModel;
 import contract.Permeability;
 import java.util.Timer;
 import java.lang.*;
+import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IMobile{
+public class Lorann extends Mobile implements IModel{
 	private int x;
 	private int y;
 	char c;
@@ -121,6 +125,21 @@ public class Lorann extends Mobile implements IMobile{
 		RainbowSpell spell = new RainbowSpell(x, y, c);
 		// TODO Auto-generated method stub
 
+	}
+
+	public void getMessage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Observable getObservable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<IElements> getMap1() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

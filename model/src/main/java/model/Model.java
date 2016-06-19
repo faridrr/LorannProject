@@ -35,11 +35,14 @@ public class Model extends Observable implements IModel {
 	int x;
 	int y;
 	int lvl = 1;
+	List<IElements> Arimages = new ArrayList<IElements>();
+
+	public List<IElements> getArimages() {
+		return Arimages;
+	}
 
 	public List<IElements> getMap1() throws SQLException {
 
-		List<IElements> Arimages ;
-		Arimages = new ArrayList<IElements>();
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		for (x = 0; x < 21; x++) {
 			for (y = 0; y < 13; y++) {
@@ -95,7 +98,6 @@ public class Model extends Observable implements IModel {
 			}
 
 		}
-
 		return Arimages;
 	}
 
@@ -164,6 +166,21 @@ public class Model extends Observable implements IModel {
 	}
 
 	public void launchSpell() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void move(char c) throws IOException {
+		// TODO Auto-generated method stub
+
+	}
+
+	public int getX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setX(int x) {
 		// TODO Auto-generated method stub
 
 	}
