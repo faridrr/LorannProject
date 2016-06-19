@@ -54,45 +54,45 @@ public class Model extends Observable implements IModel {
 					break;
 				case 'L':
 					Lorann lorann = new Lorann(x, y);
-					Arimages.add(lorann);
+					Arimages.add(lorann); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
 
 				case '-':
 					HBone hbone = new HBone(x, y);
-					Arimages.add(hbone);
+					Arimages.add(hbone); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					//
 					break;
 				case '#':
 					Corners corner = new Corners(x, y);
-					Arimages.add(corner);
+					Arimages.add(corner); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					//
 					break;
 				case 'x':
 					Purse purse = new Purse(x, y);
-					Arimages.add(purse);
+					Arimages.add(purse); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					//
 					break;
 				case 'o':
 					CrystalBall crystal = new CrystalBall(x, y);
-					Arimages.add(crystal);
+					Arimages.add(crystal); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					//
 					break;
 				case '$':
 					DoorC doorC = new DoorC(x, y);
-					Arimages.add(doorC);
+					Arimages.add(doorC); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					//
 					break;
 				case '@':
 					DoorO doorO = new DoorO(x, y);
-					Arimages.add(doorO);
+					Arimages.add(doorO); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					//
 					break;
 				case '?':
 					Black black = new Black(x, y);
-					Arimages.add(black);
+					Arimages.add(black); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
 
-				default:
+				default: //default action : if no one character have been recognized, add nothing on the map
 					break;
 				}
 			}
