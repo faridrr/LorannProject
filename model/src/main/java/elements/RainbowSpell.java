@@ -20,7 +20,6 @@ public class RainbowSpell extends Mobile {
 		case 'R':
 			this.setX(x--);
 			this.setY(y);
-			System.out.println(this.getX());
 			break;
 
 		case 'L':

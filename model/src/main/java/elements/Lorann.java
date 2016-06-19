@@ -58,18 +58,22 @@ public class Lorann extends Mobile implements IMobile, IModel {
 		case 'R':
 			this.setX(getX() + 1);
 			this.image = ImageR();
+			this.c = c;
 			break;
 		case 'L':
 			this.setX(getX() - 1);
 			this.image = ImageL();
+			this.c = c;
 			break;
 		case 'U':
 			this.setY(getY() - 1);
 			this.image = ImageU();
+			this.c = c;
 			break;
 		case 'D':
 			this.setY(getY() + 1);
 			this.image = ImageD();
+			this.c = c;
 			break;
 		default:
 			break;
