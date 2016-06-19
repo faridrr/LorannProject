@@ -26,14 +26,14 @@ public class Model extends Observable implements IModel, IMobile {
 	int y;
 	int lvl = 1;
 	private String message;
+	List<IElements> Arimages = new ArrayList<IElements>();
+	List<IMobile> Armobile = new ArrayList<IMobile>();
 
-	
-	public List<IElements> getArimages() throws SQLException {
-		List<IElements> Arimages = new ArrayList<IElements>();
+	public void createMap() throws SQLException {
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 
-		for (x = 0; x < 21; x++) {
-			for (y = 0; y < 13; y++) {
+		for (x = 0; x < 22; x++) {
+			for (y = 0; y < 14; y++) {
 				char symbol = co.checkMap(x, y, lvl);
 				switch (symbol) {
 				case '+':
@@ -89,26 +89,6 @@ public class Model extends Observable implements IModel, IMobile {
 											// element on the ArrayList called
 											// here "Arimage"
 					break;
-
-				default: // default action : if no one character have been
-							// recognized, add nothing on the map
-					break;
-				}
-			}
-
-		}
-		return Arimages;
-	}
-
-	public List<IMobile> getArmobile() throws SQLException {
-		List<IMobile> Armobile = new ArrayList<IMobile>();
-
-		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
-
-		for (x = 0; x < 21; x++) {
-			for (y = 0; y < 13; y++) {
-				char symbol = co.checkMap(x, y, lvl);
-				switch (symbol) {
 				case 'L':
 					Lorann lorann = new Lorann(x, y);
 					Armobile.add(0, lorann); // add() is a method that adds an
@@ -131,12 +111,23 @@ public class Model extends Observable implements IModel, IMobile {
 					Monster4 monster4 = new Monster4(x, y);
 					Armobile.add(4, monster4);
 					break;
-				}
 
+				default: // default action : if no one character have been
+							// recognized, add nothing on the map
+					break;
+				}
 			}
 		}
+	}
 
-		return Armobile;
+	public List<IElements> getArimages() {
+
+		return this.Arimages;
+
+	}
+
+	public List<IMobile> getArmobile() {
+		return this.Armobile;
 	}
 
 	/**
@@ -202,7 +193,7 @@ public class Model extends Observable implements IModel, IMobile {
 
 	}
 
-	public void move(char c){
+	public void move(char c) {
 		// TODO Auto-generated method stub
 
 	}
@@ -224,7 +215,7 @@ public class Model extends Observable implements IModel, IMobile {
 
 	public void setY(int y) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Permeability getPerm() {

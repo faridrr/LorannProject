@@ -46,19 +46,19 @@ public class Lorann extends Mobile implements IMobile{
 	public void move(char c) throws IOException {
 		switch (c) {
 		case 'R':
-			setX(x++);
+			this.setX(getX()+1);
 			image = ImageR();
 			break;
 		case 'L':
-			setX(x--);
+			this.setX(getX()-1);
 			image = ImageL();
 			break;
 		case 'U':
-			setY(y--);
+			this.setY(getY()-1);
 			image = ImageU();
 			break;
 		case 'D':
-			setY(y++);
+			this.setY(getY()+1);
 			image = ImageD();
 			break;
 		default:
