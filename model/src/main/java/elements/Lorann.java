@@ -16,7 +16,7 @@ import java.util.Timer;
 import java.lang.*;
 import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IMobile, IModel {
+public class Lorann extends Mobile implements IMobile, IModel, IElements {
 	private int x;
 	private int y;
 	char c;
@@ -79,6 +79,66 @@ public class Lorann extends Mobile implements IMobile, IModel {
 			break;
 		}
 	}
+	
+	public void colision (char c){
+
+		int characterX;
+		int characterY;
+
+		characterX = this.getX();
+		characterY = this.getY();
+
+		//access to list
+
+ 		for(IElements obj : Arimages){
+
+			int objetX = obj.getX();
+			int objetY = obj.getY();
+
+			switch(c){
+
+				case 'R':
+					if(characterX + 1 == objetX && characterY == objetY){	
+						this.setX(getX() - 1);
+					}
+
+					else {
+					}
+					break;
+
+
+				case 'L':
+					if(characterX - 1 == objetX && characterY == objetY){	
+						this.setX(getX() + 1);
+					}
+
+					else {
+					}
+					break;
+
+				case 'U':
+					if(characterX == objetX && characterY - 1 == objetY){	
+						this.setX(getY() + 1);
+					}
+
+					else {
+					}
+					break;
+
+				case 'D':
+					if(characterX + 1 == objetX && characterY + 1 == objetY){	
+						this.setX(getY() - 1);
+					}
+
+					else {
+					}
+					break;
+
+			}
+    	}
+
+    }
+
 
 	public BufferedImage ImageD() throws IOException {
 		image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
@@ -124,7 +184,8 @@ public class Lorann extends Mobile implements IMobile, IModel {
 		return image;
 
 	}
-
+	
+	
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
 		return null;
