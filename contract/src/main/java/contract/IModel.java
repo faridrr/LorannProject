@@ -30,7 +30,7 @@ public interface IModel {
 	void launchSpell();
 
 
-	void move(char c) throws IOException;
+	void move(char c) throws IOException, SQLException;
 
 	List<IElements> getArimages() throws SQLException;
 

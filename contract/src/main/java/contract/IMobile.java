@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public interface IMobile {
-	void move(char c) throws IOException;
+	void move(char c) throws IOException, SQLException;
 
 	void launchSpell();
 

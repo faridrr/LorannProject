@@ -22,7 +22,7 @@ import java.util.Timer;
  * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
 
-public class Model extends Observable implements IModel, IMobile {
+public class Model extends Observable implements IModel, IMobile, IElements {
 
 	Timer timer = new Timer();
 	
@@ -31,11 +31,13 @@ public class Model extends Observable implements IModel, IMobile {
 	int y;
 	int lvl = 5;
 	private String message;
-	List<IElements> Arimages = new ArrayList<IElements>();
-	List<IMobile> Armobile = new ArrayList<IMobile>();
+	List<IElements> Arimages ;
+	List<IMobile> Armobile;
 
 	public void createMap() throws SQLException {
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
+		Arimages = new ArrayList<IElements>();
+		Armobile = new ArrayList<IMobile>();
 
 		switch (lvl) {
 		case 1:

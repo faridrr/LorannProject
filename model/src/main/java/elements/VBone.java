@@ -3,8 +3,11 @@ package elements;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+
 import javax.imageio.ImageIO;
 
+import contract.IElements;
 import contract.Permeability;
 
 public class VBone extends Background {
@@ -45,5 +48,10 @@ public class VBone extends Background {
 	public void move(char c) throws IOException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public List<IElements> getArimages() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

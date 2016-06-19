@@ -1,33 +1,37 @@
 package elements;
 
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
 import javax.imageio.ImageIO;
 
+import contract.ControllerOrder;
 import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
+import contract.IView;
 import contract.Permeability;
-import java.util.Timer;
-import java.lang.*;
+import model.Model;
+
 import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IMobile, IModel, IElements{
+public class Lorann extends Mobile {
 	private int x;
 	private int y;
+	private IElements elements;
 	char c;
-
+	List<IElements> Arimages = new ArrayList<IElements>();
 	BufferedImage image;
 
-	public Lorann(int x, int y) {
+	public Lorann(int x, int y) throws SQLException {
 		this.x = x;
 		this.y = y;
-		
-		
+
 		try {
 			this.image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
 		} catch (IOException e) {
@@ -53,28 +57,38 @@ public class Lorann extends Mobile implements IMobile, IModel, IElements{
 		this.y = y;
 	}
 
-	public void move(char c) throws IOException {
+	public void move(char c) throws IOException, SQLException {
+		Arimages = this.elements.getArimages();
+
 		switch (c) {
 		case 'R':
-			collision(c);
-			this.setX(getX() + 1);
-			this.image = ImageR();
-			this.c = c;
+			for (IElements obj : Arimages) {
+				if (this.getX() + 1 != obj.getX() && this.getY() == obj.getY()) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
+						this.setX(getX() + 1);
+						this.image = ImageR();
+						this.c = c;
+					}
+				}
+			}
 			break;
 		case 'L':
-			collision(c);
-			this.setX(getX() - 1);
-			this.image = ImageL();
-			this.c = c;
+			for (IElements obj : Arimages) {
+				if ((this.getX() + 1 != obj.getX()) && this.getY() == obj.getY()) {
+					this.setX(getX() - 1);
+					this.image = ImageR();
+					this.c = c;
+
+				}
+			}
 			break;
 		case 'U':
-			collision(c);
+
 			this.setY(getY() - 1);
 			this.image = ImageU();
 			this.c = c;
 			break;
 		case 'D':
-			collision(c);
 			this.setY(getY() + 1);
 			this.image = ImageD();
 			this.c = c;
@@ -83,66 +97,6 @@ public class Lorann extends Mobile implements IMobile, IModel, IElements{
 			break;
 		}
 	}
-	
-	public void collision (char c) throws SQLException{
-
-		int characterX;
-		int characterY;
-		List<IElements> Arimages = getArimages();
-		characterX = this.getX();
-		characterY = this.getY();
-
-		//access to list
-
- 		for(IElements obj : Arimages){
-
-			int objetX = obj.getX();
-			int objetY = obj.getY();
-
-			switch(c){
-
-				case 'R':
-					if(characterX + 1 == objetX && characterY == objetY){	
-						this.setX(getX() - 1);
-					}
-
-					else {
-					}
-					break;
-
-
-				case 'L':
-					if(characterX - 1 == objetX && characterY == objetY){	
-						this.setX(getX() + 1);
-					}
-
-					else {
-					}
-					break;
-
-				case 'U':
-					if(characterX == objetX && characterY - 1 == objetY){	
-						this.setX(getY() + 1);
-					}
-
-					else {
-					}
-					break;
-
-				case 'D':
-					if(characterX + 1 == objetX && characterY + 1 == objetY){	
-						this.setX(getY() - 1);
-					}
-
-					else {
-					}
-					break;
-
-			}
-    	}
-
-    }
-
 
 	public BufferedImage ImageD() throws IOException {
 		image = ImageIO.read(new File("src/main/resources/sprite/lorann_b.png"));
@@ -188,8 +142,7 @@ public class Lorann extends Mobile implements IMobile, IModel, IElements{
 		return image;
 
 	}
-	
-	
+
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
 		return null;
@@ -216,12 +169,32 @@ public class Lorann extends Mobile implements IMobile, IModel, IElements{
 		// TODO Auto-generated method stub
 	}
 
-	public List<IElements> getArimages() throws SQLException {
+	public void control() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void orderPerform(ControllerOrder controllerOrder) throws IOException, SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void printMessage(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public List<IMobile> getArmobile() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public List<IMobile> getArmobile() throws SQLException {
+	public List<IElements> getArimages() {
 		// TODO Auto-generated method stub
 		return null;
 	}

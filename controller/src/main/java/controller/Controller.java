@@ -18,7 +18,7 @@ import contract.IView;
 /**
  * The Class Controller.
  */
-public class Controller implements IController, IView{ // IController interface
+public class Controller implements IController{ // IController interface
 													// implementation
 
 	/** The view. */
@@ -107,16 +107,8 @@ public class Controller implements IController, IView{ // IController interface
 	}
 
 	public List<IMobile> getArmobile(){
-		List<IMobile> Armobile = new ArrayList<IMobile>();
-		try {
-			 Armobile = model.getArmobile();
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
-		return Armobile;
+		return null;
 	}
 	public void printMessage(String message) {
 		// TODO Auto-generated method stub
