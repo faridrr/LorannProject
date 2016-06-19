@@ -31,7 +31,14 @@ public class Model extends Observable implements IModel, IMobile {
 
 	public void createMap() throws SQLException {
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
-
+		switch (lvl) {
+		case 1:
+			Lorann lorann = new Lorann(13, 7);
+			Armobile.add(0, lorann);
+			break;
+		default:
+			break;
+		}
 		for (x = 0; x < 22; x++) {
 			for (y = 0; y < 14; y++) {
 				char symbol = co.checkMap(x, y, lvl);

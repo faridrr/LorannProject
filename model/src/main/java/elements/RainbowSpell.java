@@ -17,13 +17,21 @@ public class RainbowSpell extends Mobile {
 	public RainbowSpell(int x, int y, char c) {
 
 		if (c == 'R') {
-			// TODO
+			this.setX(x--);
+			this.setY(y);
+			
 		} else if (c == 'L') {
-			// TODO
+			this.setX(x++);
+			this.setY(y);
+			
 		} else if (c == 'D') {
-			// TODO
+			this.setY(y--);
+			this.setX(x);
+			
 		} else if (c == 'U') {
-			// TODO
+			this.setY(y++);
+			this.setX(x);
+			
 		}
 
 	}
@@ -79,7 +87,6 @@ public class RainbowSpell extends Mobile {
 		return null;
 	}
 
-
 	public void launchSpell() {
 		// TODO Auto-generated method stub
 
@@ -87,6 +94,6 @@ public class RainbowSpell extends Mobile {
 
 	public void move(char c) throws IOException {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

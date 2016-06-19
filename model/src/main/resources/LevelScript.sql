@@ -140,7 +140,6 @@ INSERT INTO `level1` (`y`, `x`, `symbol`) VALUES  -- this is the level 1
 
 
 (7,5,"o"),
-(7,13,"L"),
 
 
 (3,12,"x"),

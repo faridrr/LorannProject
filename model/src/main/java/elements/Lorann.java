@@ -16,11 +16,12 @@ import java.util.Timer;
 import java.lang.*;
 import java.sql.SQLException;
 
-public class Lorann extends Mobile implements IMobile{
+public class Lorann extends Mobile implements IMobile, IModel{
 	private int x;
 	private int y;
 	char c;
 	BufferedImage image;
+	private IModel model;
 
 	public Lorann(int x, int y) {
 		this.x = x;
@@ -47,19 +48,19 @@ public class Lorann extends Mobile implements IMobile{
 		switch (c) {
 		case 'R':
 			this.setX(getX()+1);
-			image = ImageR();
+			this.image = ImageR();
 			break;
 		case 'L':
 			this.setX(getX()-1);
-			image = ImageL();
+			this.image = ImageL();
 			break;
 		case 'U':
 			this.setY(getY()-1);
-			image = ImageU();
+			this.image = ImageU();
 			break;
 		case 'D':
 			this.setY(getY()+1);
-			image = ImageD();
+			this.image = ImageD();
 			break;
 		default:
 			break;
@@ -107,7 +108,6 @@ public class Lorann extends Mobile implements IMobile{
 	}
 
 	public BufferedImage Image() throws IOException {
-		image = ImageIO.read(new File("src/main/resources/sprite/lorann_ur.png"));
 		return image;
 
 	}
@@ -118,7 +118,7 @@ public class Lorann extends Mobile implements IMobile{
 	}
 
 	public void launchSpell() {
-		RainbowSpell spell = new RainbowSpell(x, y, c);
+		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), c);
 		// TODO Auto-generated method stub
 
 	}
@@ -142,7 +142,7 @@ public class Lorann extends Mobile implements IMobile{
 		return null;
 	}
 
-	public List<IElements> getArmobile() throws SQLException {
+	public List<IMobile> getArmobile() throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
