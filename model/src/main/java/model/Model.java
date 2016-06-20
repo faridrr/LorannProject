@@ -1,17 +1,24 @@
 package model;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
+import java.util.TimerTask;
+
+import javax.swing.Timer;
+
+import org.junit.experimental.theories.Theories;
+
 import elements.*;
 import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
 import contract.Permeability;
-import java.util.Timer;
 
 /**
  * The Class Model.
@@ -21,16 +28,30 @@ import java.util.Timer;
 
 public class Model extends Observable implements IModel, IMobile, IElements {
 
-	Timer timer = new Timer();
-
 	int x;
 	int y;
+	int delay = 0;
+	int period = 0;
 	int lvl;
 	private String message;
 	List<IElements> Arimages;
 	List<IMobile> Armobile;
-
+	Model tmp = this;
+	
+    ActionListener task = new ActionListener(){
+    	public void actionPerformed(ActionEvent ae){
+    		tmp.refresh();
+    	}
+    };
+    Timer timer = new Timer(500, task);
+    
+    public void refresh(){
+    	//code qui s'exécute en fonction du timer
+    	//indiquer ce que l'on veut 
+    }
+    
 	public void createMap(int lvl) throws SQLException {
+
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		Arimages = new ArrayList<IElements>();
 		Armobile = new ArrayList<IMobile>();
@@ -167,6 +188,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 			}
 		}
 	}
+	
 
 	public List<IElements> getArimages() {
 
