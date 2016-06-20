@@ -179,8 +179,8 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		boolean hit = true;
 		
 		for(IElements obj : Arimages){
-			if(obj.getX() == x && obj.getY() == y){
-				if(obj.getPerm() == Permeability.PENETRABLE){
+			if((obj.getX() == x) && (obj.getY() == y)){
+				if(obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER){
 					hit = false;
 				}
 			}

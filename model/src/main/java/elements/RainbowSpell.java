@@ -24,6 +24,8 @@ public class RainbowSpell extends Mobile {
 	public RainbowSpell(int x, int y, char c, IModel model) {
 		spelled = true;
 		this.model = model;
+		this.x = x;
+		this.y = y;
 		this.c = c;
 
 	}
@@ -83,35 +85,53 @@ public class RainbowSpell extends Mobile {
 		// TODO Auto-generated method stub
 
 	}
-	public void move(char c) throws IOException {
+	public void move(char c){
 		// TODO Auto-generated method stub
 
 	}
 
 	public void move() {
 		if (spelled == true) {
+			
 			switch (c) {
 			case 'R':
 				if (this.model.checkBump(this.getX() - 1, this.getY()) == false) {
+					try {
+						image = Image1();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					this.setX(x--);
+					System.out.println(c);
 				}
 				break;
 
 			case 'L':
+				
 				if (this.model.checkBump(this.getX() + 1, this.getY()) == false) {
+					try {
+						image = Image1();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					this.setX(x++);
+					System.out.println(c);
 				}
 				break;
 
 			case 'D':
 				if (this.model.checkBump(this.getX(), this.getY() - 1) == false) {
 					this.setY(y--);
+					System.out.println(c);
 				}
 				break;
 
 			case 'U':
 				if (this.model.checkBump(this.getX(), this.getY() + 1) == false) {
 					this.setY(y++);
+					System.out.println(c);
 				}
 				break;
 			default:
