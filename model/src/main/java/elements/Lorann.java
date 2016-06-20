@@ -30,11 +30,13 @@ public class Lorann extends Mobile {
 	int lvl;
 	Permeability perm = Permeability.CHARACTER;
 	List<IElements> Arimages = new ArrayList<IElements>();
+	List<IMobile> Armobile = new ArrayList<IMobile>();
 	BufferedImage image;
 
 	public Lorann(int x, int y, IModel model) throws SQLException {
 		this.model = model;
 		this.Arimages = this.model.getArimages();
+		this.Armobile = this.model.getArmobile();
 		this.x = x;
 		this.y = y;
 
@@ -335,6 +337,12 @@ public class Lorann extends Mobile {
 			break;
 
 		}
+		for (IMobile obj : this.Armobile){
+		
+				
+			
+			obj.move();
+		}
 		if ((this.x == this.exitX) && (this.y == this.exitY)) {
 			this.lvl = this.model.getLvl();
 			lvl++;
@@ -441,6 +449,11 @@ public class Lorann extends Mobile {
 	public List<IElements> getArimages() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void move() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

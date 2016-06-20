@@ -59,7 +59,7 @@ public class Monster3 extends Mobile {
 	}
 
 
-	public void move(char c) throws IOException {
+	public void move(){
 		
 		/*
 		 * Upper-left
@@ -196,6 +196,11 @@ public class Monster3 extends Mobile {
 	}
 
 	public void launchSpell() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void move(char c) throws IOException, SQLException {
 		// TODO Auto-generated method stub
 		
 	}

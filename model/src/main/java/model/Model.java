@@ -42,6 +42,8 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 1:
 			Lorann lorann1 = new Lorann(13, 7, this);
 			Armobile.add(0, lorann1);
+			Monster1 monster1 = new Monster1(10,10,this);
+			Armobile.add(monster1);
 			break;
 		case 2:
 			Lorann lorann2 = new Lorann(13, 7, this);
@@ -122,7 +124,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 					break;
 
 				case 'M':
-					Monster1 monster1 = new Monster1(x, y);
+					Monster1 monster1 = new Monster1(x, y,this);
 					Armobile.add(1, monster1);
 					break;
 				case 'N':
@@ -153,6 +155,9 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 		return this.Arimages;
 
+	}
+	
+	public void getMoves(){
 	}
 
 	public List<IMobile> getArmobile() {
@@ -265,6 +270,11 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	
 	public int getLvl(){
 		return lvl;
+	}
+
+	public void move() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -103,4 +103,9 @@ public class RainbowSpell extends Mobile {
 		// TODO Auto-generated method stub
 
 	}
+
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
 }

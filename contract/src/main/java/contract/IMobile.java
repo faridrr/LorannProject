@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public interface IMobile {
 	void move(char c) throws IOException, SQLException;
+	void move();
 
 	void launchSpell();
 
@@ -20,4 +21,5 @@ public interface IMobile {
 	Permeability getPerm();
 
 	BufferedImage Image() throws IOException;
+
 }
