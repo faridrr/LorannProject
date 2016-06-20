@@ -322,4 +322,9 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		
 	}
 
+	public int LevelChoice(String message) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

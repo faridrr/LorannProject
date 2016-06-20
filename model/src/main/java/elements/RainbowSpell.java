@@ -27,7 +27,7 @@ public class RainbowSpell extends Mobile implements IElements {
 
 	Permeability perm = Permeability.SPELL;
 
-	public RainbowSpell(int x, int y, char c, IModel model) throws SQLException {
+	public RainbowSpell(int x, int y, char c, IModel model) {
 
 		spelled = true;
 		this.model = model;
@@ -100,18 +100,46 @@ public class RainbowSpell extends Mobile implements IElements {
 
 	public void move() {
 		if (spelled == true) {
-			System.out.println(c);
+			try {
+				image = Image1();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			switch (c) {
+
+			case '7':
+				if (this.model.checkBump(this.getX() + 1, this.getY() + 1) == false) {
+					this.setX(this.getX() + 1);
+					this.setY(this.getY() + 1);
+				}
+				break;
+				
+			case '9':
+				if (this.model.checkBump(this.getX() - 1, this.getY() + 1) == false) {
+					this.setX(this.getX() - 1);
+					this.setY(this.getY() + 1);
+				}
+				break;
+				
+			case '1':
+				if (this.model.checkBump(this.getX() + 1, this.getY() + 1) == false) {
+					this.setX(this.getX() + 1);
+					this.setY(this.getY() - 1);
+				}
+				break;
+			case '3':
+				if (this.model.checkBump(this.getX() + 1, this.getY() + 1) == false) {
+					this.setX(this.getX() - 1);
+					this.setY(this.getY() - 1);
+				}
+				break;
+
 			case 'R':
 				if (this.model.checkBump(this.getX() - 1, this.getY()) == false) {
-					try {
-						image = Image1();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					this.setX(x--);
 					
+					this.setX(this.getX() - 1);
+
 				}
 				break;
 
@@ -124,8 +152,7 @@ public class RainbowSpell extends Mobile implements IElements {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					this.setX(x++);
-					System.out.println(c);
+					this.setX(this.getX() + 1);
 				}
 				break;
 
@@ -137,7 +164,7 @@ public class RainbowSpell extends Mobile implements IElements {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					this.setY(y--);
+					this.setY(this.getY() - 1);
 					System.out.println(c);
 				}
 				break;
@@ -150,7 +177,7 @@ public class RainbowSpell extends Mobile implements IElements {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					this.setY(y++);
+					this.setY(this.getY() + 1);
 					System.out.println(c);
 				}
 				break;
