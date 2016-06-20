@@ -34,7 +34,7 @@ public class View implements IView, Runnable {
 	}
 	
 	public int LevelChoice(String message){
-		int level = viewFrame.LevelChoice();
+		int level = viewFrame.LevelSelection();
 		return level;
 		
 	}

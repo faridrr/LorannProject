@@ -84,7 +84,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.buildViewFrame(model);
 	}
 
-	public int LevelChoice () {
+	public int LevelSelection () {
 		int level = 6;
 		String[] TabLvl = {"1","2","3","4","5"};
 		JOptionPane jop = new JOptionPane();
