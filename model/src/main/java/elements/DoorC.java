@@ -10,15 +10,16 @@ import javax.imageio.ImageIO;
 import contract.IElements;
 import contract.Permeability;
 
-public class DoorC extends Background{
+public class DoorC extends Background {
 	private int x;
 	private int y;
-	
-	public DoorC(int x, int y){
-		
+	Permeability perm = Permeability.BLOCKING;
+
+	public DoorC(int x, int y) {
+
 		this.x = x;
 		this.y = y;
-		
+
 	}
 
 	public int getX() {
@@ -44,12 +45,12 @@ public class DoorC extends Background{
 
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.perm;
 	}
 
 	public void move(char c) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public List<IElements> getArimages() {

@@ -13,11 +13,13 @@ import contract.Permeability;
 public class Black extends Background {
 	private int x;
 	private int y;
+	Permeability perm = Permeability.PENETRABLE;
 
 	public Black(int x, int y) {
 
 		this.x = x;
 		this.y = y;
+		
 
 	}
 
@@ -45,7 +47,7 @@ public class Black extends Background {
 
 	public Permeability getPerm() {
 		
-		return Permeability.PENETRABLE;
+		return this.perm;
 	}
 
 	public void move(char c) {

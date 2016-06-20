@@ -23,12 +23,14 @@ import java.sql.SQLException;
 public class Lorann extends Mobile {
 	private int x;
 	private int y;
-	private IElements elements;
+	private IModel model;
 	char c;
 	List<IElements> Arimages = new ArrayList<IElements>();
 	BufferedImage image;
 
-	public Lorann(int x, int y) throws SQLException {
+	public Lorann(int x, int y, IModel model) throws SQLException {
+		this.model = model;
+		this.Arimages = this.model.getArimages();
 		this.x = x;
 		this.y = y;
 
@@ -58,57 +60,95 @@ public class Lorann extends Mobile {
 	}
 
 	public void move(char c) throws IOException, SQLException {
-		Arimages = this.elements.getArimages();
 
 		switch (c) {
 		case 'R':
-			for (IElements obj : Arimages) {
-				if (this.getX() + 1 != obj.getX() && this.getY() == obj.getY()) {
+			this.image = ImageR();
+			this.c = c;
+
+			for (IElements obj : this.Arimages) {
+				if ((obj.getX() == this.getX() + 1) && (obj.getY() == this.getY())) {
 					if (obj.getPerm() == Permeability.PENETRABLE) {
 						this.setX(getX() + 1);
-						this.image = ImageR();
-						this.c = c;
+						break;
+					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						this.setX(getX() + 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
 					}
+
 				}
 			}
 			break;
+
 		case 'L':
-			for (IElements obj : Arimages) {
-				if ((this.getX() - 1 != obj.getX()) && this.getY() == obj.getY()) {
+			this.image = ImageL();
+			this.c = c;
+
+			for (IElements obj : this.Arimages) {
+				if ((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY())) {
 					if (obj.getPerm() == Permeability.PENETRABLE) {
-					this.setX(getX() - 1);
-					this.image = ImageR();
-					this.c = c;
+						this.setX(getX() - 1);
+						break;
+					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						this.setX(getX() - 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
 					}
+
 				}
 			}
 			break;
+
 		case 'U':
-			
-			for (IElements obj : Arimages) {
-				if (this.getX() == obj.getX() && this.getY() - 1 != obj.getY()) {
+			this.image = ImageU();
+			this.c = c;
+
+			for (IElements obj : this.Arimages) {
+				if ((obj.getY() == this.getY() - 1) && (obj.getX() == this.getX())) {
 					if (obj.getPerm() == Permeability.PENETRABLE) {
 						this.setY(getY() - 1);
-						this.image = ImageU();
-						this.c = c;
+						break;
+					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						this.setY(getY() - 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
 					}
+
 				}
 			}
 			break;
+
 		case 'D':
-			
-			for (IElements obj : Arimages) {
-				if (this.getX() == obj.getX() && this.getY() + 1 != obj.getY()) {
-					if (obj.getPerm() == Permeability.PENETRABLE) {			
+			this.image = ImageD();
+			this.c = c;
+
+			for (IElements obj : this.Arimages) {
+				if ((obj.getY() == this.getY() + 1) && (obj.getX() == this.getX())) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
 						this.setY(getY() + 1);
-						this.image = ImageD();
-						this.c = c;
+						break;
+					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						this.setY(getY() + 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
 					}
+
 				}
-			}			
+			}
 			break;
+
 		default:
 			break;
+
 		}
 	}
 

@@ -13,6 +13,7 @@ import contract.Permeability;
 public class DoorO extends Background {
 	private int x;
 	private int y;
+	Permeability perm = Permeability.PENETRABLE;
 	
 	public DoorO(int x, int y){
 		
@@ -44,7 +45,7 @@ public class DoorO extends Background {
 
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.perm;
 	}
 
 	public void move(char c) {

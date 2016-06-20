@@ -1,5 +1,5 @@
 package contract;
 
 public enum Permeability {
-	PENETRABLE, BLOCKING;
+	PENETRABLE, BLOCKING, COLLECTABLE;
 }

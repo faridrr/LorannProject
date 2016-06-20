@@ -13,6 +13,7 @@ import contract.Permeability;
 public class Corners extends Background{
 	private int x;
 	private int y;
+	Permeability perm = Permeability.BLOCKING;
 	
 	public Corners(int x, int y){
 		
@@ -44,7 +45,7 @@ public class Corners extends Background{
 
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.perm;
 	}
 
 	public void move(char c) {

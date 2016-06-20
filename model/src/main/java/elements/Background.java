@@ -4,6 +4,6 @@ import contract.Permeability;
 import model.Elements;
 
 public abstract class Background extends Elements implements IElements{
-	Permeability penetrable;
+	
 
 }

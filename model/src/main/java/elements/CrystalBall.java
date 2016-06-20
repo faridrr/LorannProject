@@ -15,6 +15,7 @@ import contract.Permeability;
 public class CrystalBall extends Items{
 	private int x;
 	private int y;
+	Permeability perm = Permeability.COLLECTABLE;
 	
 	public CrystalBall(int x, int y){
 		
@@ -46,7 +47,7 @@ public class CrystalBall extends Items{
 
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.perm;
 	}
 
 	public void move(char c) {

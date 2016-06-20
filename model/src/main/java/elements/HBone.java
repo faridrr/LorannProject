@@ -10,10 +10,11 @@ import javax.imageio.ImageIO;
 import contract.IElements;
 import contract.Permeability;
 
-public class HBone extends Background{
+public class HBone extends Background {
 	private int x;
 	private int y;
-	
+	Permeability perm = Permeability.BLOCKING;
+
 	public HBone(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -42,12 +43,12 @@ public class HBone extends Background{
 
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.perm;
 	}
 
 	public void move(char c) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public List<IElements> getArimages() {
