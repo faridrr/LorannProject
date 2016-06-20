@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -8,6 +10,8 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+
 import contract.*;
 
 /**
@@ -15,10 +19,11 @@ import contract.*;
  *
  * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
-class ViewPanel extends JPanel implements Observer {
+class ViewPanel extends JPanel implements Observer, ActionListener {
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
+	Timer timer = new Timer(500, this);
 	public List<IElements> Arimages = new ArrayList<IElements>();
 	public List<IMobile> Armobile = new ArrayList<IMobile>();
 	/** The Constant serialVersionUID. */
@@ -31,6 +36,7 @@ class ViewPanel extends JPanel implements Observer {
 	 *            the view frame
 	 */
 	public ViewPanel(final ViewFrame viewFrame) {
+		timer.start();
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getObservable().addObserver(this);
 	}
@@ -71,6 +77,10 @@ class ViewPanel extends JPanel implements Observer {
 	public void update(final Observable arg0, final Object arg1) {
 		this.repaint();
 	}
+	
+	 
+	   
+	    
 
 	@Override
 	protected void paintComponent(final Graphics graphics) {
@@ -105,6 +115,14 @@ class ViewPanel extends JPanel implements Observer {
 			e.printStackTrace();
 		}
 		repaint();
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		for (IMobile obj : this.Armobile){
+
+			obj.move();
+		}
+		
 	}
 
 }

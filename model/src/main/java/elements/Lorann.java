@@ -337,12 +337,6 @@ public class Lorann extends Mobile {
 			break;
 
 		}
-		for (IMobile obj : this.Armobile){
-		
-				
-			
-			obj.move();
-		}
 		if ((this.x == this.exitX) && (this.y == this.exitY)) {
 			this.lvl = this.model.getLvl();
 			lvl++;

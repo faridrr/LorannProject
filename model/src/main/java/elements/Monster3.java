@@ -56,7 +56,7 @@ public class Monster3 extends Mobile {
 	}
 
 	public BufferedImage Image() throws IOException {
-		BufferedImage monster_1 = ImageIO.read(new File("src/main/resources/sprite/monster_1.png"));
+		BufferedImage monster_1 = ImageIO.read(new File("src/main/resources/sprite/monster_3.png"));
 		return monster_1;
 	}
 
@@ -192,6 +192,7 @@ public class Monster3 extends Mobile {
 				if ((obj.getY() == this.getY() + 1) && (obj.getX() == this.getX())) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setY(getY() + 1);
+						break;
 					}
 				}
 			}

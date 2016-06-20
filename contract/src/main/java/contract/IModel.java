@@ -28,6 +28,7 @@ public interface IModel {
 	void setX(int x);
 	int getLvl();
 	void createMap(int lvl) throws SQLException;
+	 public void refresh();
 
 	void launchSpell();
 

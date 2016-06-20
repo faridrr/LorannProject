@@ -1,6 +1,8 @@
 package elements;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -8,19 +10,18 @@ import java.sql.SQLException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.Timer;
 
 import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
 import contract.Permeability;
+import model.Model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
 
 public class Monster1 extends Mobile {
-
-	Timer timer = new Timer();
 
 	private int x;
 	private int y;
@@ -37,6 +38,7 @@ public class Monster1 extends Mobile {
 		this.Armobile = this.model.getArmobile();
 		this.x = x;
 		this.y = y;
+
 	}
 
 	public int getX() {
@@ -65,6 +67,7 @@ public class Monster1 extends Mobile {
 	}
 
 	public void move() {
+		
 
 		/*
 		 * Upper-left
@@ -192,6 +195,8 @@ public class Monster1 extends Mobile {
 				if ((obj.getY() == this.getY() + 1) && (obj.getX() == this.getX())) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setY(getY() + 1);
+						break;
+						
 					}
 				}
 			}
