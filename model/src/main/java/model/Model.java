@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import elements.*;
-
-import elements.Lorann;
 import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
@@ -44,24 +42,58 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 			Armobile.add(0, lorann1);
 			break;
 		case 2:
+			//add Loran : 
 			Lorann lorann2 = new Lorann(13, 7, this);
 			Armobile.add(0, lorann2);
+			
+			//add the monster (4,19,"M"),
+			Monster1 monster1 = new Monster1(19, 4, this);
+			Armobile.add(1, monster1);
+			
 			break;
 
 		case 3:
+			//add Loran : 
 			Lorann lorann3 = new Lorann(15, 9, this);
 			Armobile.add(0, lorann3);
+			
+			//add the monsters:
+			Monster4 monster2 = new Monster4(19, 4, this);
+			Armobile.add(1, monster2);
+			
+			Monster2 monster3 = new Monster2(5, 10, this);
+			Armobile.add(2, monster3);
+			
+			Monster1 monster4 = new Monster1(8, 6, this);
+			Armobile.add(3, monster4);
+			
 			break;
 
 		case 4:
+			//add Loran : 
 			Lorann lorann4 = new Lorann(11, 1, this);
 			Armobile.add(0, lorann4);
+			
+			//add the monsters:
+			Monster4 monster5 = new Monster4(7, 9, this);
+			Armobile.add(1, monster5);
+			
+			Monster2 monster6 = new Monster2(12, 9, this);
+			Armobile.add(2, monster6);
+			
 			break;
 
 		case 5:
+			//add Loran : 
 			Lorann lorann5 = new Lorann(18, 6, this);
 			Armobile.add(0, lorann5);
+			
+			//add the monsters:
+			Monster3 monster7 = new Monster3(8, 6, this);
+			Armobile.add(2, monster7);
+			
 			break;
+			
 		default:
 			break;
 		}
