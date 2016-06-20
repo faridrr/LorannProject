@@ -105,8 +105,7 @@ public class Lorann extends Mobile {
 						this.c = c;
 					}
 				}
-			}
-						
+			}			
 			break;
 		default:
 			break;
