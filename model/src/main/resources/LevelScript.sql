@@ -249,6 +249,7 @@ INSERT INTO `level2` (`y`, `x`, `symbol`) VALUES -- this is the level 2
 (5,16,"-"),
 (5,17,"-"),
 
+(4,19,"M"),
 
 (3,12,"x"),
 (3,14,"x"),

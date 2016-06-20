@@ -72,78 +72,65 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 				switch (symbol) {
 				case '+':
 					VBone vbone = new VBone(x, y);
-					Arimages.add(0, vbone);
+					Arimages.add(0, vbone);  // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
 
 				case '-':
 					HBone hbone = new HBone(x, y);
-					Arimages.add(1, hbone); // add() is a method that adds an
-											// element on the ArrayList called
-											// here "Arimage"
-					//
+					Arimages.add(1, hbone);  // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
+					
 				case '#':
 					Corners corner = new Corners(x, y);
-					Arimages.add(2, corner); // add() is a method that adds an
-												// element on the ArrayList
-												// called
-												// here "Arimage"
-					//
+					Arimages.add(2, corner); // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
+					
 				case 'x':
 					Purse purse = new Purse(x, y);
-					Arimages.add(3, purse); // add() is a method that adds an
-											// element on the ArrayList called
-											// here "Arimage"
-					//
+					Arimages.add(3, purse);  // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
+					
 				case 'o':
 					CrystalBall crystal = new CrystalBall(x, y);
-					Arimages.add(4, crystal); // add() is a method that adds an
-												// element on the ArrayList
-												// called
-												// here "Arimage"
-					//
+					Arimages.add(4, crystal);  // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
 
 				case '@':
 					DoorO doorO = new DoorO(x, y);
-					Arimages.add(5, doorO); // add() is a method that adds an
-											// element on the ArrayList called
-											// here "Arimage"
-					//
+					Arimages.add(5, doorO);  // add() is a method that adds an element on the ArrayList called here "Arimage"
 					break;
+					
 				case '$':
 					DoorC doorC = new DoorC(x, y);
-					Arimages.add(6, doorC); // add() is a method that adds an
-											// element on the ArrayList called
-											// here "Arimage"
-					//
+					Arimages.add(6, doorC);  // add() is a method that adds an element on the ArrayList called here "Arimage"										
 					break;
 
+					//M, N, O and P are the 4 monsters
 				case 'M':
-					Monster1 monster1 = new Monster1(x, y,this);
+					Monster1 monster1 = new Monster1(x, y, this);
 					Armobile.add(1, monster1);
 					break;
+
 				case 'N':
-					Monster2 monster2 = new Monster2(x, y,this);
+					Monster2 monster2 = new Monster2(x, y, this);
 					Armobile.add(2, monster2);
 					break;
+
 				case 'O':
-					Monster3 monster3 = new Monster3(x, y,this);
+					Monster3 monster3 = new Monster3(x, y, this);
 					Armobile.add(3, monster3);
 					break;
+
 				case 'P':
-					Monster4 monster4 = new Monster4(x, y,this);
+					Monster4 monster4 = new Monster4(x, y, this);
 					Armobile.add(4, monster4);
 					break;
 
 				default:
 					Black black = new Black(x, y);
-					Arimages.add(black); // add() is a method that adds an
-					// element on the ArrayList called
-					// here "Arimage"
+					Arimages.add(black); 
 					break;
+					
 				}
 			}
 		}
@@ -154,15 +141,14 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		return this.Arimages;
 
 	}
-	
-	public void getMoves(){
+
+	public void getMoves() {
 	}
 
 	public List<IMobile> getArmobile() {
 		return this.Armobile;
 	}
 
-	
 	/**
 	 * Instantiates a new model.
 	 */
@@ -265,14 +251,14 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public int getLvl(){
+
+	public int getLvl() {
 		return lvl;
 	}
 
 	public void move() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
