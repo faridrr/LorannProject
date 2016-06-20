@@ -74,24 +74,39 @@ public class Lorann extends Mobile {
 			break;
 		case 'L':
 			for (IElements obj : Arimages) {
-				if ((this.getX() + 1 != obj.getX()) && this.getY() == obj.getY()) {
+				if ((this.getX() - 1 != obj.getX()) && this.getY() == obj.getY()) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
 					this.setX(getX() - 1);
 					this.image = ImageR();
 					this.c = c;
-
+					}
 				}
 			}
 			break;
 		case 'U':
-
-			this.setY(getY() - 1);
-			this.image = ImageU();
-			this.c = c;
+			
+			for (IElements obj : Arimages) {
+				if (this.getX() == obj.getX() && this.getY() - 1 != obj.getY()) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
+						this.setY(getY() - 1);
+						this.image = ImageU();
+						this.c = c;
+					}
+				}
+			}
 			break;
 		case 'D':
-			this.setY(getY() + 1);
-			this.image = ImageD();
-			this.c = c;
+			
+			for (IElements obj : Arimages) {
+				if (this.getX() == obj.getX() && this.getY() + 1 != obj.getY()) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {			
+						this.setY(getY() + 1);
+						this.image = ImageD();
+						this.c = c;
+					}
+				}
+			}
+						
 			break;
 		default:
 			break;
