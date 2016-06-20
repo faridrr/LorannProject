@@ -91,7 +91,7 @@ public class Lorann extends Mobile {
 
 		//move Left
 		case 'L':
-			this.image = ImageL();
+			this.image = ImageR();
 			this.c = c;
 
 			for (IElements obj : this.Arimages) {
@@ -99,7 +99,8 @@ public class Lorann extends Mobile {
 					if (obj.getPerm() == Permeability.PENETRABLE) {
 						this.setX(getX() - 1);
 						break;
-					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+					}  else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if(obj == Arimages.get(4)){
 							System.out.println("oui");
 							Arimages.remove(Arimages.get(6));
 						}
@@ -111,7 +112,7 @@ public class Lorann extends Mobile {
 					}
 
 				}
-			
+			}
 			break;
 			
 		//move Up
