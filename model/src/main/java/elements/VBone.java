@@ -13,6 +13,7 @@ import contract.Permeability;
 public class VBone extends Background {
 	private int x;
 	private int y;
+	
 	Permeability perm = Permeability.BLOCKING;
 
 	public VBone(int x, int y) {
@@ -52,6 +53,11 @@ public class VBone extends Background {
 	}
 
 	public List<IElements> getArimages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
 	}

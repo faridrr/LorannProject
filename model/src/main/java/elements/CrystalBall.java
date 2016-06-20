@@ -15,6 +15,7 @@ import contract.Permeability;
 public class CrystalBall extends Items{
 	private int x;
 	private int y;
+	private String name = "crystal";
 	Permeability perm = Permeability.COLLECTABLE;
 	
 	public CrystalBall(int x, int y){
@@ -26,6 +27,10 @@ public class CrystalBall extends Items{
 
 	public int getX() {
 		return x;
+	}
+	
+	public String getName(){
+		return this.name;
 	}
 
 	public void setX(int x) {

@@ -60,4 +60,9 @@ public class Purse extends Items{
 		return null;
 	}
 
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

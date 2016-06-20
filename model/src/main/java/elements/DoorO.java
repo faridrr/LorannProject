@@ -58,4 +58,9 @@ public class DoorO extends Background {
 		return null;
 	}
 
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

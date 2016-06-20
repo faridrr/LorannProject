@@ -71,7 +71,11 @@ public class Lorann extends Mobile {
 					if (obj.getPerm() == Permeability.PENETRABLE) {
 						this.setX(getX() + 1);
 						break;
-					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+					}  else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if(obj == Arimages.get(4)){
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
 						this.setX(getX() + 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 
@@ -93,6 +97,9 @@ public class Lorann extends Mobile {
 						this.setX(getX() - 1);
 						break;
 					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
 						this.setX(getX() - 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 
@@ -101,7 +108,7 @@ public class Lorann extends Mobile {
 					}
 
 				}
-			}
+			
 			break;
 
 		case 'U':
@@ -114,6 +121,10 @@ public class Lorann extends Mobile {
 						this.setY(getY() - 1);
 						break;
 					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if (obj == Arimages.get(4)) {
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
 						this.setY(getY() - 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 
@@ -134,7 +145,11 @@ public class Lorann extends Mobile {
 					if (obj.getPerm() == Permeability.PENETRABLE) {
 						this.setY(getY() + 1);
 						break;
-					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+					}  else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if(obj == Arimages.get(4)){
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
 						this.setY(getY() + 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 

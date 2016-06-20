@@ -256,4 +256,9 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		return null;
 	}
 
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
