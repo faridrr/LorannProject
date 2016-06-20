@@ -22,5 +22,4 @@ public interface IView {
 	//void printMessage(final String message);
 
 	void keyPressed(final KeyEvent e);
-	public int LevelSelection(String message);
 }

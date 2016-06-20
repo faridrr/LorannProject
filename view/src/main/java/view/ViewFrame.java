@@ -84,24 +84,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.buildViewFrame(model);
 	}
 
-	public int LevelSelection () {
-		int level = 6;
-		String[] TabLvl = {"1","2","3","4","5"};
-		JOptionPane jop = new JOptionPane();
-		while (level== 6){
-			
-		   level = jop.showOptionDialog(null, 
-		      "Welcome! Which level do you want? ",
-		      "Level selection", JOptionPane.YES_NO_CANCEL_OPTION,
-		      JOptionPane.QUESTION_MESSAGE,
-		      null,
-		      TabLvl,
-		      TabLvl[0]);
-		}
-		
-		return level;
-		
-	}
+	
 	
 	
 	

@@ -33,11 +33,6 @@ public class View implements IView, Runnable {
 		SwingUtilities.invokeLater(this);
 	}
 	
-	public int LevelSelection(String message){
-		int level = viewFrame.LevelSelection();
-		return level;
-		
-	}
 	
 	/**
 	 * Key code to controller order.

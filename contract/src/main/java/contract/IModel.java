@@ -40,6 +40,4 @@ public interface IModel {
 	List<IMobile> getArmobile() throws SQLException;
 
 	boolean checkBump(int x, int y);
-	
-	public int LevelChoice(String message);
 }

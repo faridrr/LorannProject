@@ -47,13 +47,7 @@ public class Controller implements IController{ // IController interface
 	 * 
 	 * @see contract.IController#control()\n
 	 */
-	public void control() {
-		/*
-		 * Example of Home display message : this.view.printMessage("Write the message you want to show here");
-		 */
-		//this.view.printMessage("Welcome! Which level do you want? \nPlease press 1, 2, 3, 4 or 5 ");
-		this.view.LevelSelection("Welcome! Which level do you want? \nPlease press 1, 2, 3, 4 or 5 ");
-	}
+	
 
 	/**
 	 * Sets the view.

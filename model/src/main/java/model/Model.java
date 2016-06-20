@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.TimerTask;
 
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 import org.junit.experimental.theories.Theories;
@@ -36,6 +37,25 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	private String message;
 	List<IElements> Arimages;
 	List<IMobile> Armobile;
+	
+	public int LevelSelection () {
+		int level = 6;
+		String[] TabLvl = {"1","2","3","4","5"};
+		JOptionPane jop = new JOptionPane();
+		while (level== 6){
+			
+		   level = jop.showOptionDialog(null, 
+		      "Welcome! Which level do you want? ",
+		      "Level selection", JOptionPane.YES_NO_CANCEL_OPTION,
+		      JOptionPane.QUESTION_MESSAGE,
+		      null,
+		      TabLvl,
+		      TabLvl[0]);
+		}
+		
+		return level;
+		
+	}
 
 	public void createMap(int lvl) throws SQLException {
 
