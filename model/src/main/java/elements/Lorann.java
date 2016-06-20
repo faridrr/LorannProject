@@ -25,6 +25,7 @@ public class Lorann extends Mobile {
 	private int y;
 	private IModel model;
 	char c;
+	Permeability perm = Permeability.CHARACTER;
 	List<IElements> Arimages = new ArrayList<IElements>();
 	BufferedImage image;
 
@@ -347,8 +348,7 @@ public class Lorann extends Mobile {
 	}
 
 	public Permeability getPerm() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.perm;
 	}
 
 	public void launchSpell() {
