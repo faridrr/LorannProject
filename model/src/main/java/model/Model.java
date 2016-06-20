@@ -27,7 +27,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 	int x;
 	int y;
-	int lvl = 5;
+	int lvl = 1;
 	private String message;
 	List<IElements> Arimages;
 	List<IMobile> Armobile;
@@ -158,6 +158,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		return this.Armobile;
 	}
 
+	
 	/**
 	 * Instantiates a new model.
 	 */

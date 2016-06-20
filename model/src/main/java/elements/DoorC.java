@@ -13,6 +13,7 @@ import contract.Permeability;
 public class DoorC extends Background {
 	private int x;
 	private int y;
+	private String name = "doorC";
 	Permeability perm = Permeability.BLOCKING;
 
 	public DoorC(int x, int y) {
@@ -60,7 +61,7 @@ public class DoorC extends Background {
 
 	public String getName() {
 		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 }
