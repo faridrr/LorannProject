@@ -4,10 +4,14 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import contract.IMobile;
 import contract.IModel;
 import contract.Permeability;
 
@@ -18,10 +22,19 @@ public class RainbowSpell extends Mobile {
 	boolean spelled = false;
 	private IModel model;
 	BufferedImage image;
+	List<IMobile> Armobile;
 
 	Permeability perm = Permeability.SPELL;
 
 	public RainbowSpell(int x, int y, char c, IModel model) {
+		try {
+			this.Armobile = this.model.getArmobile();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		spelled = true;
 		this.model = model;
 		this.x = x;
@@ -92,6 +105,7 @@ public class RainbowSpell extends Mobile {
 
 	public void move() {
 		if (spelled == true) {
+			Armobile.add(this);
 			
 			switch (c) {
 			case 'R':
