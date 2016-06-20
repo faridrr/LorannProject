@@ -67,7 +67,6 @@ public class Monster1 extends Mobile {
 	}
 
 	public void move() {
-		
 
 		/*
 		 * Upper-left
@@ -79,6 +78,12 @@ public class Monster1 extends Mobile {
 				if (this.getX() - 1 == obj.getX() && this.getY() - 1 == obj.getY()) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setX(getX() - 1);
+						this.setY(getY() - 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() - 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
 						this.setY(getY() - 1);
 						break;
 					}
@@ -99,6 +104,12 @@ public class Monster1 extends Mobile {
 						this.setY(getY() - 1);
 						break;
 					}
+				} else if (this.getX() - 1 == obj.getX() && this.getY() - 1 == obj.getY()) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() - 1);
+						break;
+					}
 				}
 			}
 		}
@@ -114,6 +125,18 @@ public class Monster1 extends Mobile {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setX(getX() - 1);
 						this.setY(getY() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() - 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						this.setY(getY() - 1);
+						break;
+					}
+				} else if (this.getX() - 1 == obj.getX() && this.getY() - 1 == obj.getY()) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() - 1);
 						break;
 					}
 				}
@@ -133,6 +156,24 @@ public class Monster1 extends Mobile {
 						this.setY(getY() + 1);
 						break;
 					}
+				} else if ((obj.getX() == this.getX() - 1 && obj.getY() == this.getY() + 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() - 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						this.setY(getY() - 1);
+						break;
+					}
+				} else if (this.getX() - 1 == obj.getX() && this.getY() - 1 == obj.getY()) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() - 1);
+						break;
+					}
 				}
 			}
 		}
@@ -147,6 +188,20 @@ public class Monster1 extends Mobile {
 				if ((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY())) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setX(getX() - 1);
+						break;
+					}
+				}
+
+				else if (((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() + 1))) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						this.setY(getY() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() - 1 && obj.getY() == this.getY() + 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
 						break;
 					}
 				}
@@ -165,6 +220,25 @@ public class Monster1 extends Mobile {
 						this.setX(getX() + 1);
 						break;
 					}
+				} else if ((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY())) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						break;
+					}
+				}
+
+				else if (((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() + 1))) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						this.setY(getY() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() - 1 && obj.getY() == this.getY() + 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
+						break;
+					}
 				}
 			}
 		}
@@ -179,6 +253,30 @@ public class Monster1 extends Mobile {
 				if ((obj.getY() == this.getY() - 1) && (obj.getX() == this.getX())) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setY(getY() - 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() + 1) && (obj.getY() == this.getY())) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY())) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						break;
+					}
+				}
+
+				else if (((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() + 1))) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						this.setY(getY() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() - 1 && obj.getY() == this.getY() + 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
 						break;
 					}
 				}
@@ -196,7 +294,43 @@ public class Monster1 extends Mobile {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setY(getY() + 1);
 						break;
-						
+
+					}
+				}
+				if ((obj.getY() == this.getY() - 1) && (obj.getX() == this.getX())) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setY(getY() - 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() + 1) && (obj.getY() == this.getY())) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY())) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						break;
+					}
+				}
+
+				else if (((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() + 1))) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() + 1);
+						this.setY(getY() + 1);
+						break;
+					}
+				} else if ((obj.getX() == this.getX() - 1 && obj.getY() == this.getY() + 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
+						break;
+					} else if (this.getX() - 1 == obj.getX() && this.getY() - 1 == obj.getY()) {
+						if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
+							this.setX(getX() - 1);
+							this.setY(getY() - 1);
+							break;
+						}
 					}
 				}
 			}

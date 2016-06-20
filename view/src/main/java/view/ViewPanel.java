@@ -23,7 +23,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener {
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
-	Timer timer = new Timer(500, this);
+	Timer timer = new Timer(200, this);
 	public List<IElements> Arimages = new ArrayList<IElements>();
 	public List<IMobile> Armobile = new ArrayList<IMobile>();
 	/** The Constant serialVersionUID. */
@@ -114,13 +114,14 @@ class ViewPanel extends JPanel implements Observer, ActionListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		repaint();
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		for (IMobile obj : this.Armobile){
 
 			obj.move();
+			repaint();
 		}
 		
 	}
