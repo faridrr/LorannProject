@@ -195,10 +195,10 @@ public void move() {
 
 	}
 
-	public void launchSpell() {
-		// TODO Auto-generated method stub
+public void launchSpell(char c) {
+	// TODO Auto-generated method stub
 
-	}
+}
 	public void move(char c) throws IOException, SQLException {
 		// TODO Auto-generated method stub
 

@@ -205,7 +205,7 @@ public void move() {
 
 	}
 
-	public void launchSpell() {
+	public void launchSpell(char c) {
 		// TODO Auto-generated method stub
 
 	}

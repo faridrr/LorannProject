@@ -252,7 +252,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 	}
 
-	public void launchSpell() {
+	public void launchSpell(char c) {
 		// TODO Auto-generated method stub
 
 	}
@@ -314,6 +314,11 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	public void refresh() {
 		// TODO Auto-generated method stub
 
+	}
+
+	public void launchSpell() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

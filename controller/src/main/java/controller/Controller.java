@@ -26,6 +26,7 @@ public class Controller implements IController{ // IController interface
 
 	/** The model. */
 	private IModel model;
+	private char c;
 
 	/**
 	 * Instantiates a new controller.
@@ -84,39 +85,47 @@ public class Controller implements IController{ // IController interface
 		switch (controllerOrder) {
 		
 		case Right:
-			this.model.getArmobile().get(0).move('R');
+			this.c = 'R';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case Left:
-			this.model.getArmobile().get(0).move('L');
+			this.c = 'L';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case Up:
-			this.model.getArmobile().get(0).move('U');
+			this.c = 'U';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case Down:
-			this.model.getArmobile().get(0).move('D');
+			this.c = 'D';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case UpperRight:
-			this.model.getArmobile().get(0).move('9');
+			this.c = '9';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case UpperLeft:
-			this.model.getArmobile().get(0).move('7');
+			this.c = '7';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case LowerRight:
-			this.model.getArmobile().get(0).move('3');
+			this.c = '3';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case LowerLeft:
-			this.model.getArmobile().get(0).move('1');
+			this.c = '1';
+			this.model.getArmobile().get(0).move(c);
 			break;
 			
 		case Spell:
-			this.model.getArmobile().get(0).launchSpell();
+			this.model.getArmobile().get(0).launchSpell(c);
 			break;
 
 		default:

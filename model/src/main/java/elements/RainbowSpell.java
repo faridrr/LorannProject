@@ -79,11 +79,10 @@ public class RainbowSpell extends Mobile {
 		return null;
 	}
 
-	public void launchSpell() {
+	public void launchSpell(char c) {
 		// TODO Auto-generated method stub
 
 	}
-
 	public void move(char c) throws IOException {
 		// TODO Auto-generated method stub
 
