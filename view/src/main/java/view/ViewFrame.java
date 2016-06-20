@@ -84,6 +84,27 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.buildViewFrame(model);
 	}
 
+	public int LevelChoice () {
+		int level = 6;
+		String[] TabLvl = {"1","2","4","5"};
+		JOptionPane jop = new JOptionPane();
+		while (level== 6){
+			
+		   level = jop.showOptionDialog(null, 
+		      "Chose a level!",
+		      "Level choice", JOptionPane.YES_NO_CANCEL_OPTION,
+		      JOptionPane.QUESTION_MESSAGE,
+		      null,
+		      TabLvl,
+		      TabLvl[0]);
+		}
+		
+		return level;
+		
+	}
+	
+	
+	
 	/**
 	 * Gets the controller.
 	 *

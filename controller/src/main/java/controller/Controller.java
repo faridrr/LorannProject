@@ -51,7 +51,8 @@ public class Controller implements IController{ // IController interface
 		/*
 		 * Example of Home display message : this.view.printMessage("Write the message you want to show here");
 		 */
-		this.view.printMessage("Welcome! Which level do you want? \nPlease press 1, 2, 3, 4 or 5 ");
+		//this.view.printMessage("Welcome! Which level do you want? \nPlease press 1, 2, 3, 4 or 5 ");
+		this.view.LevelChoice("Welcome! Which level do you want? \nPlease press 1, 2, 3, 4 or 5 ");
 	}
 
 	/**
