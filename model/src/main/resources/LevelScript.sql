@@ -249,7 +249,6 @@ INSERT INTO `level2` (`y`, `x`, `symbol`) VALUES -- this is the level 2
 (5,16,"-"),
 (5,17,"-"),
 
-(4,19,"M"),
 
 (3,12,"x"),
 (3,14,"x"),
@@ -627,7 +626,9 @@ INSERT INTO `level5` (`y`, `x`,`symbol`) VALUES -- this is the level 5
 (11, 16,"-"),
 (11, 17,"-"),
 (11, 18,"-"),
-(11, 19,"#");
+(11, 19,"#"),
+
+(6,5,"x");
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 -- Adding Primary keys + auto increment ID columns --
