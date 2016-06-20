@@ -32,7 +32,13 @@ public class View implements IView, Runnable {
 		this.viewFrame = new ViewFrame(model);
 		SwingUtilities.invokeLater(this);
 	}
-
+	
+	public int LevelChoice(String message){
+		int level = viewFrame.LevelChoice();
+		return level;
+		
+	}
+	
 	/**
 	 * Key code to controller order.
 	 *
