@@ -11,11 +11,12 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
 import contract.Permeability;
 
-public class RainbowSpell extends Mobile {
+public class RainbowSpell extends Mobile implements IElements {
 	private int x;
 	private int y;
 	private char c;
@@ -26,15 +27,8 @@ public class RainbowSpell extends Mobile {
 
 	Permeability perm = Permeability.SPELL;
 
-	public RainbowSpell(int x, int y, char c, IModel model) {
-		try {
-			this.Armobile = this.model.getArmobile();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
+	public RainbowSpell(int x, int y, char c, IModel model) throws SQLException {
+
 		spelled = true;
 		this.model = model;
 		this.x = x;
@@ -98,15 +92,15 @@ public class RainbowSpell extends Mobile {
 		// TODO Auto-generated method stub
 
 	}
-	public void move(char c){
+
+	public void move(char c) {
 		// TODO Auto-generated method stub
 
 	}
 
 	public void move() {
 		if (spelled == true) {
-			Armobile.add(this);
-			
+			System.out.println(c);
 			switch (c) {
 			case 'R':
 				if (this.model.checkBump(this.getX() - 1, this.getY()) == false) {
@@ -117,15 +111,15 @@ public class RainbowSpell extends Mobile {
 						e.printStackTrace();
 					}
 					this.setX(x--);
-					System.out.println(c);
+					
 				}
 				break;
 
 			case 'L':
-				
+
 				if (this.model.checkBump(this.getX() + 1, this.getY()) == false) {
 					try {
-						image = Image1();
+						image = Image4();
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -137,6 +131,12 @@ public class RainbowSpell extends Mobile {
 
 			case 'D':
 				if (this.model.checkBump(this.getX(), this.getY() - 1) == false) {
+					try {
+						image = Image3();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					this.setY(y--);
 					System.out.println(c);
 				}
@@ -144,6 +144,12 @@ public class RainbowSpell extends Mobile {
 
 			case 'U':
 				if (this.model.checkBump(this.getX(), this.getY() + 1) == false) {
+					try {
+						image = Image2();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					this.setY(y++);
 					System.out.println(c);
 				}
@@ -156,5 +162,15 @@ public class RainbowSpell extends Mobile {
 		}
 		// TODO Auto-generated method stub
 
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<IElements> getArimages() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

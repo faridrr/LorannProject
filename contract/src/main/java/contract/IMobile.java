@@ -8,7 +8,7 @@ public interface IMobile {
 	void move(char c) throws IOException, SQLException;
 	void move();
 
-	void launchSpell(char c);
+	void launchSpell(char c) throws SQLException;
 
 	int getX();
 

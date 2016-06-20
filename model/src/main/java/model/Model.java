@@ -48,6 +48,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 1:
 			Lorann lorann1 = new Lorann(13, 7, this);
 			Armobile.add(lorann1);
+			
 			break;
 		case 2:
 			// add Loran :

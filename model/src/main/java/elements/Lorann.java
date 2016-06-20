@@ -393,10 +393,11 @@ public class Lorann extends Mobile {
 	public Permeability getPerm() {
 		return this.perm;
 	}
+	
 
-	public void launchSpell(char c) {
+	public void launchSpell(char c) throws SQLException {
 		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), this.c, this.model);
-		// TODO Auto-generated method stub
+		Armobile.add(spell);// TODO Auto-generated method stub
 
 	}
 
