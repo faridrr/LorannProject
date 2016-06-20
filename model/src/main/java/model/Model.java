@@ -42,8 +42,6 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 1:
 			Lorann lorann1 = new Lorann(13, 7, this);
 			Armobile.add(0, lorann1);
-			Monster1 monster1 = new Monster1(10,10,this);
-			Armobile.add(monster1);
 			break;
 		case 2:
 			Lorann lorann2 = new Lorann(13, 7, this);
@@ -128,15 +126,15 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 					Armobile.add(1, monster1);
 					break;
 				case 'N':
-					Monster2 monster2 = new Monster2(x, y);
+					Monster2 monster2 = new Monster2(x, y,this);
 					Armobile.add(2, monster2);
 					break;
 				case 'O':
-					Monster3 monster3 = new Monster3(x, y);
+					Monster3 monster3 = new Monster3(x, y,this);
 					Armobile.add(3, monster3);
 					break;
 				case 'P':
-					Monster4 monster4 = new Monster4(x, y);
+					Monster4 monster4 = new Monster4(x, y,this);
 					Armobile.add(4, monster4);
 					break;
 

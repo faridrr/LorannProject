@@ -5,8 +5,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -16,7 +14,14 @@ import contract.IMobile;
 import contract.IModel;
 import contract.Permeability;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+
 public class Monster4 extends Mobile {
+
+	Timer timer = new Timer();
+
 	private int x;
 	private int y;
 	private IModel model;
@@ -25,26 +30,25 @@ public class Monster4 extends Mobile {
 
 	private List<IMobile> Armobile = new ArrayList<IMobile>();
 	private List<IElements> Arimages = new ArrayList<IElements>();
-	
-	public Monster4(int x, int y) throws SQLException{
-		
+
+	public Monster4(int x, int y, IModel model) throws SQLException {
+		this.model = model;
+		this.Arimages = this.model.getArimages();
 		this.Armobile = this.model.getArmobile();
-		
 		this.x = x;
 		this.y = y;
-		
 	}
 
 	public int getX() {
 		return x;
 	}
 
-	public void setX(int x) {
-		this.x = x;
-	}
-
 	public int getY() {
 		return y;
+	}
+
+	public void setX(int x) {
+		this.x = x;
 	}
 
 	public void setY(int y) {
@@ -52,25 +56,24 @@ public class Monster4 extends Mobile {
 	}
 
 	public BufferedImage Image() throws IOException {
-		BufferedImage monster4 = ImageIO.read(new File("src/main/resources/sprite/monster_4.png"));
-		return monster4;
+		BufferedImage monster_1 = ImageIO.read(new File("src/main/resources/sprite/monster_1.png"));
+		return monster_1;
 	}
 
 	public Permeability getPerm() {
 		return this.perm;
 	}
 
+	public void move() {
 
-	public void move(){
-		
 		/*
 		 * Upper-left
 		 */
-		
-		if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() < this.y)){
+
+		if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() < this.y))
 
 			for (IElements obj : this.Arimages) {
-				if (((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY())) && ((obj.getX() == this.getX()) && (obj.getY() == this.getY() - 1))){
+				if (this.getX() - 1 == obj.getX() && this.getY() - 1 == obj.getY()) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setX(getX() - 1);
 						this.setY(getY() - 1);
@@ -78,16 +81,16 @@ public class Monster4 extends Mobile {
 					}
 				}
 			}
-		}
-		
+
 		/*
 		 * Upper-right
 		 */
-		
-		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() < this.y)){
+
+		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() < this.y)) {
+			System.out.println("UR");
 
 			for (IElements obj : this.Arimages) {
-				if (((obj.getX() == this.getX() + 1) && (obj.getY() == this.getY()) && (obj.getX() == this.getX()) && (obj.getY() == this.getY() - 1))){
+				if ((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() - 1)) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setX(getX() + 1);
 						this.setY(getY() - 1);
@@ -96,15 +99,15 @@ public class Monster4 extends Mobile {
 				}
 			}
 		}
-		
+
 		/*
 		 * Lower-left
 		 */
-		
-		else if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() > this.y)){
+
+		else if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() > this.y)) {
 
 			for (IElements obj : this.Arimages) {
-				if (((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY()) && (obj.getX() == this.getX()) && (obj.getY() == this.getY() + 1))){
+				if ((obj.getX() == this.getX() - 1 && obj.getY() == this.getY() + 1)) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setX(getX() - 1);
 						this.setY(getY() + 1);
@@ -113,15 +116,15 @@ public class Monster4 extends Mobile {
 				}
 			}
 		}
-		
+
 		/*
 		 * Lower-right
 		 */
-		
-		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() > this.y)){
+
+		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() > this.y)) {
 
 			for (IElements obj : this.Arimages) {
-				if (((obj.getX() == this.getX() + 1) && (obj.getY() == this.getY()) && (obj.getX() == this.getX()) && (obj.getY() == this.getY() + 1))){
+				if (((obj.getX() == this.getX() + 1 && obj.getY() == this.getY() + 1))) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setX(getX() + 1);
 						this.setY(getY() + 1);
@@ -130,12 +133,12 @@ public class Monster4 extends Mobile {
 				}
 			}
 		}
-		
+
 		/*
 		 * Left
 		 */
-		
-		else if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() == this.y)){
+
+		else if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() == this.y)) {
 
 			for (IElements obj : this.Arimages) {
 				if ((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY())) {
@@ -146,13 +149,13 @@ public class Monster4 extends Mobile {
 				}
 			}
 		}
-		
+
 		/*
 		 * Right
 		 */
 
-		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() == this.y)){
-			
+		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() == this.y)) {
+
 			for (IElements obj : this.Arimages) {
 				if ((obj.getX() == this.getX() + 1) && (obj.getY() == this.getY())) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
@@ -162,13 +165,12 @@ public class Monster4 extends Mobile {
 				}
 			}
 		}
-		
+
 		/*
 		 * Up
 		 */
 
-		else if ((this.Armobile.get(0).getX() == this.x) && (this.Armobile.get(0).getY() < this.y)){
-			
+		else if ((this.Armobile.get(0).getX() == this.x) && (this.Armobile.get(0).getY() < this.y)) {
 
 			for (IElements obj : this.Arimages) {
 				if ((obj.getY() == this.getY() - 1) && (obj.getX() == this.getX())) {
@@ -177,33 +179,36 @@ public class Monster4 extends Mobile {
 						break;
 					}
 				}
-			}	
+			}
 		}
-		
+
 		/*
 		 * Down
 		 */
 
-		else if ((this.Armobile.get(0).getX() == this.x) && (this.Armobile.get(0).getY() > this.y)){
-			
+		else if ((this.Armobile.get(0).getX() == this.x) && (this.Armobile.get(0).getY() > this.y)) {
+
 			for (IElements obj : this.Arimages) {
 				if ((obj.getY() == this.getY() + 1) && (obj.getX() == this.getX())) {
 					if (obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER) {
 						this.setY(getY() + 1);
 					}
 				}
-			}	
+			}
+		}
+
+		else {
 		}
 
 	}
 
 	public void launchSpell() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void move(char c) throws IOException, SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
