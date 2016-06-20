@@ -43,13 +43,13 @@ public class View implements IView, Runnable {
 	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) { // Controller
 			
 		switch (keyCode) {
-		case KeyEvent.VK_RIGHT:
+		case KeyEvent.VK_NUMPAD6:
 			return ControllerOrder.Right;
-		case KeyEvent.VK_LEFT:
+		case KeyEvent.VK_NUMPAD4:
 			return ControllerOrder.Left;
-		case KeyEvent.VK_UP:
+		case KeyEvent.VK_NUMPAD8:
 			return ControllerOrder.Up;
-		case KeyEvent.VK_DOWN:
+		case KeyEvent.VK_NUMPAD2:
 			return ControllerOrder.Down;
 		case KeyEvent.VK_SPACE:
 			return ControllerOrder.Spell;
