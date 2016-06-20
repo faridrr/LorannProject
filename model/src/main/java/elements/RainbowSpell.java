@@ -23,6 +23,9 @@ public class RainbowSpell extends Mobile implements IElements {
 	boolean spelled = false;
 	private IModel model;
 	BufferedImage image;
+	boolean wall;
+	boolean lorann;
+	Permeability checkPerm;
 	List<IMobile> Armobile;
 
 	Permeability perm = Permeability.SPELL;
@@ -98,6 +101,155 @@ public class RainbowSpell extends Mobile implements IElements {
 
 	}
 
+	public void moveL() {
+
+		if (this.wall == false) {
+			if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.CHARACTER) {
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.PENETRABLE) {
+				this.setX(this.getX() + 1);
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.BLOCKING) {
+				this.wall = true;
+				this.setX(this.getX() - 1);
+
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.COLLECTABLE) {
+				this.setX(this.getX() - 1);
+				this.wall = true;
+			}
+		}
+
+		else if (this.wall == true) {
+			if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.CHARACTER) {
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.PENETRABLE) {
+				this.setX(this.getX() - 1);
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.BLOCKING) {
+				this.wall = false;
+				this.setX(this.getX() + 1);
+
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.COLLECTABLE) {
+				this.setX(this.getX() + 1);
+				this.wall = false;
+			}
+		}
+	}
+
+	public void moveU() {
+		
+		if (this.wall == false) {
+			if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.CHARACTER) {
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.PENETRABLE) {
+				this.setX(this.getY() + 1);
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.BLOCKING) {
+				this.wall = true;
+				this.setX(this.getY() - 1);
+
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.COLLECTABLE) {
+				this.setX(this.getY() - 1);
+				this.wall = true;
+			}
+		}
+
+		else if (this.wall == true) {
+			if (this.model.checkBump(this.getX(), this.getY()) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.CHARACTER) {
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.PENETRABLE) {
+				this.setX(this.getY() - 1);
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.BLOCKING) {
+				this.wall = false;
+				this.setX(this.getY() + 1);
+
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.COLLECTABLE) {
+				this.setX(this.getY() + 1);
+				this.wall = false;
+			}
+		}
+	}
+
+	public void moveR() {
+		System.out.println(Armobile.indexOf("spell"));
+		if (this.wall == false) {
+			if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.CHARACTER) {
+				spelled = false;
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.PENETRABLE) {
+				this.setX(this.getX() - 1);
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.BLOCKING) {
+				this.wall = true;this.spelled = false;
+				System.out.println(this.Armobile.indexOf("spell"));
+
+			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.COLLECTABLE) {
+				this.setX(this.getX() + 1);
+				this.wall = true;
+			}
+		}
+
+		else if (this.wall == true) {
+			if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.CHARACTER) {
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.PENETRABLE) {
+				this.setX(this.getX() + 1);
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.BLOCKING) {
+				this.wall = false;
+				this.setX(this.getX() - 1);
+
+			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.COLLECTABLE) {
+				this.setX(this.getX() - 1);
+				this.wall = false;
+			}
+		}
+	}
+
+	public void moveD() {
+
+		if (this.wall == false) {
+			if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.CHARACTER) {
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.PENETRABLE) {
+				this.setX(this.getY() - 1);
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.BLOCKING) {
+				this.wall = true;
+				this.setX(this.getY() + 1);
+
+			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.COLLECTABLE) {
+				this.setX(this.getY() + 1);
+				this.wall = true;
+			}
+		}
+
+		else if (this.wall == true) {
+			if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.MONSTER) {
+				// kill monster
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.CHARACTER) {
+				Armobile.remove(this);
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.PENETRABLE) {
+				this.setX(this.getY() + 1);
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.BLOCKING) {
+				this.wall = false;
+				this.setX(this.getY() - 1);
+
+			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.COLLECTABLE) {
+				this.setX(this.getY() - 1);
+				this.wall = false;
+			}
+		}
+	}
+
 	public void move() {
 		if (spelled == true) {
 			try {
@@ -108,82 +260,20 @@ public class RainbowSpell extends Mobile implements IElements {
 			}
 			switch (c) {
 
-			case '7':
-				if (this.model.checkBump(this.getX() + 1, this.getY() + 1) == false) {
-					this.setX(this.getX() + 1);
-					this.setY(this.getY() + 1);
-				}
-				break;
-				
-			case '9':
-				if (this.model.checkBump(this.getX() - 1, this.getY() + 1) == false) {
-					this.setX(this.getX() - 1);
-					this.setY(this.getY() + 1);
-				}
-				break;
-				
-			case '1':
-				if (this.model.checkBump(this.getX() + 1, this.getY() + 1) == false) {
-					this.setX(this.getX() + 1);
-					this.setY(this.getY() - 1);
-				}
-				break;
-			case '3':
-				if (this.model.checkBump(this.getX() + 1, this.getY() + 1) == false) {
-					this.setX(this.getX() - 1);
-					this.setY(this.getY() - 1);
-				}
-				break;
-
 			case 'R':
-				if (this.model.checkBump(this.getX() - 1, this.getY()) == false) {
-					
-					this.setX(this.getX() - 1);
-
-				}
+				moveR();
 				break;
 
 			case 'L':
-
-				if (this.model.checkBump(this.getX() + 1, this.getY()) == false) {
-					try {
-						image = Image4();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					this.setX(this.getX() + 1);
-				}
+				moveL();
+				break;
+			case 'U':
+				moveU();
 				break;
 
 			case 'D':
-				if (this.model.checkBump(this.getX(), this.getY() - 1) == false) {
-					try {
-						image = Image3();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					this.setY(this.getY() - 1);
-					System.out.println(c);
-				}
+				moveD();
 				break;
-
-			case 'U':
-				if (this.model.checkBump(this.getX(), this.getY() + 1) == false) {
-					try {
-						image = Image2();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					this.setY(this.getY() + 1);
-					System.out.println(c);
-				}
-				break;
-			default:
-				break;
-
 			}
 
 		}

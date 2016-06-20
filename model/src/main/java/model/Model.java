@@ -34,27 +34,23 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	int delay = 0;
 	int period = 0;
 	int lvl;
+	private Permeability permBump = Permeability.BLOCKING;
 	private String message;
 	List<IElements> Arimages;
 	List<IMobile> Armobile;
-	
-	public int LevelSelection () {
+
+	public int LevelSelection() {
 		int level = 6;
-		String[] TabLvl = {"1","2","3","4","5"};
+		String[] TabLvl = { "1", "2", "3", "4", "5" };
 		JOptionPane jop = new JOptionPane();
-		while (level== 6){
-			
-		   level = jop.showOptionDialog(null, 
-		      "Welcome! Which level do you want? ",
-		      "Level selection", JOptionPane.YES_NO_CANCEL_OPTION,
-		      JOptionPane.QUESTION_MESSAGE,
-		      null,
-		      TabLvl,
-		      TabLvl[0]);
+		while (level == 6) {
+
+			level = jop.showOptionDialog(null, "Welcome! Which level do you want? ", "Level selection",
+					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, TabLvl, TabLvl[0]);
 		}
-		
+
 		return level;
-		
+
 	}
 
 	public void createMap(int lvl) throws SQLException {
@@ -68,7 +64,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 1:
 			Lorann lorann1 = new Lorann(13, 7, this);
 			Armobile.add(lorann1);
-			
+
 			break;
 		case 2:
 			// add Loran :
@@ -196,19 +192,31 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 	}
 
-	public boolean checkBump(int x, int y){
-		boolean hit = true;
-		
-		for(IElements obj : Arimages){
-			if((obj.getX() == x) && (obj.getY() == y)){
-				if(obj.getPerm() == Permeability.PENETRABLE || obj.getPerm() == Permeability.CHARACTER){
-					hit = false;
+	public Permeability checkBump(int x, int y) {
+		Permeability permBump = null;
+
+		for (IElements obj : Arimages) {
+			if ((obj.getX() == x) && (obj.getY() == y)) {
+				if (obj.getPerm() == Permeability.PENETRABLE) {
+					return this.permBump = Permeability.PENETRABLE;
+				} else {
+					if (obj.getPerm() == Permeability.CHARACTER) {
+						 this.permBump = Permeability.CHARACTER;
+					} else if (obj.getPerm() == Permeability.MONSTER) {
+						 this.permBump = Permeability.MONSTER;
+					} else if (obj.getPerm() == Permeability.SPELL) {
+						 this.permBump = Permeability.SPELL;
+					} else if (obj.getPerm() == Permeability.BLOCKING) {
+						 this.permBump = Permeability.BLOCKING;
+					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						 this.permBump = Permeability.COLLECTABLE;
+					}
+
 				}
 			}
 		}
-		
-		
-		return hit;
+		return this.permBump;
+
 	}
 
 	public List<IMobile> getArmobile() {
@@ -339,12 +347,17 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 	public void launchSpell() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public int LevelChoice(String message) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	public Permeability checkPermBump() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
