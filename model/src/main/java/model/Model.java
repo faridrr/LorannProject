@@ -360,4 +360,12 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		return null;
 	}
 
+	public void addArmobile(IMobile mobile){
+		this.Armobile.add(mobile);
+	}
+	
+	public void delArmobile(IMobile mobile){
+		this.Armobile.remove(mobile);
+	}
+
 }

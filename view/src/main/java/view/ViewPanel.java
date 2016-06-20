@@ -3,6 +3,7 @@ package view;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import contract.*;
  *
  * @author Cattelan Montes Duffaut | Exia A1 Promo 2015
  */
-class ViewPanel extends JPanel implements Observer, ActionListener {
+class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
@@ -73,6 +74,8 @@ class ViewPanel extends JPanel implements Observer, ActionListener {
 	public List<IElements> getArimages(){
 		return this.Arimages;
 	}
+	
+	
 
 	public void update(final Observable arg0, final Object arg1) {
 		this.repaint();
@@ -123,6 +126,15 @@ class ViewPanel extends JPanel implements Observer, ActionListener {
 			obj.move();
 			repaint();
 		}
+		
+	}
+
+	public void addArmobile(IMobile mobile){
+		this.Armobile.add(mobile);
+	}
+
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 

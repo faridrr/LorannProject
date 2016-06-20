@@ -33,7 +33,15 @@ public class RainbowSpell extends Mobile implements IElements {
 	public RainbowSpell(int x, int y, char c, IModel model) {
 
 		spelled = true;
+		
 		this.model = model;
+		try {
+			this.Armobile = this.model.getArmobile();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Armobile.add(this);
 		this.x = x;
 		this.y = y;
 		this.c = c;
@@ -176,7 +184,6 @@ public class RainbowSpell extends Mobile implements IElements {
 	}
 
 	public void moveR() {
-		System.out.println(Armobile.indexOf("spell"));
 		if (this.wall == false) {
 			if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.MONSTER) {
 				// kill monster
@@ -186,11 +193,14 @@ public class RainbowSpell extends Mobile implements IElements {
 			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.PENETRABLE) {
 				this.setX(this.getX() - 1);
 			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.BLOCKING) {
-				this.wall = true;this.spelled = false;
-				System.out.println(this.Armobile.indexOf("spell"));
+				this.wall = true;
+				this.setX(this.getX() + 1);
+	
+				
+				
 
 			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.COLLECTABLE) {
-				this.setX(this.getX() + 1);
+				
 				this.wall = true;
 			}
 		}
@@ -251,32 +261,51 @@ public class RainbowSpell extends Mobile implements IElements {
 	}
 
 	public void move() {
-		if (spelled == true) {
-			try {
-				image = Image1();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		if (this.spelled == true) {
+			
 			switch (c) {
 
 			case 'R':
+				try {
+					image = Image1();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				moveR();
 				break;
 
 			case 'L':
+				try {
+					image = Image2();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				moveL();
 				break;
 			case 'U':
+				try {
+					image = Image3();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				moveU();
 				break;
 
 			case 'D':
+				try {
+					image = Image4();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				moveD();
 				break;
 			}
 
-		}
+		} else{}
 		// TODO Auto-generated method stub
 
 	}

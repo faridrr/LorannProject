@@ -117,4 +117,10 @@ public class View implements IView, Runnable {
 		return null;
 	}
 
+
+	public void addArmobile(IMobile mobile) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -16,13 +16,14 @@ import java.util.Observable;
  */
 public interface IModel {
 
+
 	/**
 	 * Gets the message.
 	 *
 	 * @return the message
 	 */
 	void getMessage();
-
+	void addArmobile(IMobile mobile);
 	Observable getObservable();
 	int getX();
 	void setX(int x);

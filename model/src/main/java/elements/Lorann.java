@@ -397,8 +397,7 @@ public class Lorann extends Mobile {
 
 	public void launchSpell(char c) throws SQLException {
 		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), this.c, this.model);
-		Armobile.add(spell);// TODO Auto-generated method stub
-
+		
 	}
 
 	public void getMessage() {
