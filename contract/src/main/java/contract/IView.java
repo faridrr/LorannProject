@@ -19,7 +19,8 @@ public interface IView {
 	 * @param message
 	 *            the message
 	 */
-	void printMessage(final String message);
+	//void printMessage(final String message);
 
 	void keyPressed(final KeyEvent e);
+	public int LevelChoice(String message);
 }
