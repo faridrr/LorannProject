@@ -27,15 +27,16 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 	int x;
 	int y;
-	int lvl = 1;
+	int lvl;
 	private String message;
 	List<IElements> Arimages;
 	List<IMobile> Armobile;
 
-	public void createMap() throws SQLException {
+	public void createMap(int lvl) throws SQLException {
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
 		Arimages = new ArrayList<IElements>();
 		Armobile = new ArrayList<IMobile>();
+		this.lvl = lvl;
 
 		switch (lvl) {
 		case 1:
@@ -260,6 +261,10 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public int getLvl(){
+		return lvl;
 	}
 
 }

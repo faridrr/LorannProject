@@ -26,6 +26,8 @@ public interface IModel {
 	Observable getObservable();
 	int getX();
 	void setX(int x);
+	int getLvl();
+	void createMap(int lvl) throws SQLException;
 
 	void launchSpell();
 
