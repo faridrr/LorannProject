@@ -33,7 +33,7 @@ public class View implements IView, Runnable {
 		SwingUtilities.invokeLater(this);
 	}
 	
-	public int LevelChoice(String message){
+	public int LevelSelection(String message){
 		int level = viewFrame.LevelSelection();
 		return level;
 		
