@@ -8,38 +8,23 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import contract.IModel;
 import contract.Permeability;
 
 public class RainbowSpell extends Mobile {
 	private int x;
 	private int y;
+	private char c;
+	boolean spelled = false;
+	private IModel model;
+	BufferedImage image;
 
-	public RainbowSpell(int x, int y, char c) {
+	Permeability perm = Permeability.SPELL;
 
-		switch (c) {
-		case 'R':
-			this.setX(x--);
-			this.setY(y);
-			break;
-
-		case 'L':
-			this.setX(x++);
-			this.setY(y);
-			break;
-
-		case 'D':
-			this.setY(y--);
-			this.setX(x);
-			break;
-
-		case 'U':
-			this.setY(y++);
-			this.setX(x);
-			break;
-		default:
-			break;
-
-		}
+	public RainbowSpell(int x, int y, char c, IModel model) {
+		spelled = true;
+		this.model = model;
+		this.c = c;
 
 	}
 
@@ -60,33 +45,33 @@ public class RainbowSpell extends Mobile {
 	}
 
 	public BufferedImage Image1() throws IOException {
-		BufferedImage fireball_1 = ImageIO.read(new File("src/main/resources/sprite/fireball_1.png"));
-		return fireball_1;
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/fireball_1.png"));
+		return image;
 	}
 
 	public BufferedImage Image2() throws IOException {
-		BufferedImage fireball_2 = ImageIO.read(new File("src/main/resources/sprite/fireball_2.png"));
-		return fireball_2;
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/fireball_2.png"));
+		return image;
 	}
 
 	public BufferedImage Image3() throws IOException {
-		BufferedImage fireball_3 = ImageIO.read(new File("src/main/resources/sprite/fireball_3.png"));
-		return fireball_3;
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/fireball_3.png"));
+		return image;
 	}
 
 	public BufferedImage Image4() throws IOException {
-		BufferedImage fireball_4 = ImageIO.read(new File("src/main/resources/sprite/fireball_4.png"));
-		return fireball_4;
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/fireball_4.png"));
+		return image;
 	}
 
 	public BufferedImage Image5() throws IOException {
-		BufferedImage fireball_5 = ImageIO.read(new File("src/main/resources/sprite/fireball_5.png"));
-		return fireball_5;
+		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/fireball_5.png"));
+		return image;
 	}
 
 	public BufferedImage Image() throws IOException {
 		// TODO Auto-generated method stub
-		return null;
+		return image;
 	}
 
 	public Permeability getPerm() {
@@ -105,7 +90,38 @@ public class RainbowSpell extends Mobile {
 	}
 
 	public void move() {
+		if (spelled == true) {
+			switch (c) {
+			case 'R':
+				if (this.model.checkBump(this.getX() - 1, this.getY()) == false) {
+					this.setX(x--);
+				}
+				break;
+
+			case 'L':
+				if (this.model.checkBump(this.getX() + 1, this.getY()) == false) {
+					this.setX(x++);
+				}
+				break;
+
+			case 'D':
+				if (this.model.checkBump(this.getX(), this.getY() - 1) == false) {
+					this.setY(y--);
+				}
+				break;
+
+			case 'U':
+				if (this.model.checkBump(this.getX(), this.getY() + 1) == false) {
+					this.setY(y++);
+				}
+				break;
+			default:
+				break;
+
+			}
+
+		}
 		// TODO Auto-generated method stub
-		
+
 	}
 }

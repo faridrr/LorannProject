@@ -175,7 +175,19 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 	}
 
-	public void getMoves() {
+	public boolean checkBump(int x, int y){
+		boolean hit = true;
+		
+		for(IElements obj : Arimages){
+			if(obj.getX() == x && obj.getY() == y){
+				if(obj.getPerm() == Permeability.PENETRABLE){
+					hit = false;
+				}
+			}
+		}
+		
+		
+		return hit;
 	}
 
 	public List<IMobile> getArmobile() {

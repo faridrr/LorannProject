@@ -38,4 +38,6 @@ public interface IModel {
 	List<IElements> getArimages() throws SQLException;
 
 	List<IMobile> getArmobile() throws SQLException;
+
+	boolean checkBump(int x, int y);
 }

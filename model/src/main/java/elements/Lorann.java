@@ -395,8 +395,8 @@ public class Lorann extends Mobile {
 	}
 
 	public void launchSpell() {
-		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), this.c);
-
+		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), this.c, this.model);
+		Armobile.add(spell);
 		// TODO Auto-generated method stub
 
 	}
@@ -447,7 +447,7 @@ public class Lorann extends Mobile {
 
 	public void move() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
