@@ -82,18 +82,39 @@ public class Controller implements IController{ // IController interface
 	
 	public void orderPerform(final ControllerOrder controllerOrder) throws IOException, SQLException {
 		switch (controllerOrder) {
+		
 		case Right:
 			this.model.getArmobile().get(0).move('R');
 			break;
+			
 		case Left:
 			this.model.getArmobile().get(0).move('L');
 			break;
+			
 		case Up:
 			this.model.getArmobile().get(0).move('U');
 			break;
+			
 		case Down:
 			this.model.getArmobile().get(0).move('D');
 			break;
+			
+		case UpperRight:
+			this.model.getArmobile().get(0).move('9');
+			break;
+			
+		case UpperLeft:
+			this.model.getArmobile().get(0).move('7');
+			break;
+			
+		case LowerRight:
+			this.model.getArmobile().get(0).move('3');
+			break;
+			
+		case LowerLeft:
+			this.model.getArmobile().get(0).move('1');
+			break;
+			
 		case Spell:
 			this.model.getArmobile().get(0).launchSpell();
 			break;

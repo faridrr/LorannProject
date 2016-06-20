@@ -10,6 +10,12 @@ public enum ControllerOrder { //keyboard input enumeration
 	Right,  
 	Left, 
 	Up,  
-	Down, 
+	Down,
+	
+	UpperRight,
+	UpperLeft,
+	LowerRight,
+	LowerLeft,
+	
 	Spell
 }

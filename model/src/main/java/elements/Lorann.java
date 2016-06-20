@@ -62,6 +62,8 @@ public class Lorann extends Mobile {
 	public void move(char c) throws IOException, SQLException {
 
 		switch (c) {
+		
+		//move Right
 		case 'R':
 			this.image = ImageR();
 			this.c = c;
@@ -87,6 +89,7 @@ public class Lorann extends Mobile {
 			}
 			break;
 
+		//move Left
 		case 'L':
 			this.image = ImageL();
 			this.c = c;
@@ -110,7 +113,8 @@ public class Lorann extends Mobile {
 				}
 			
 			break;
-
+			
+		//move Up
 		case 'U':
 			this.image = ImageU();
 			this.c = c;
@@ -136,6 +140,7 @@ public class Lorann extends Mobile {
 			}
 			break;
 
+		//move Down
 		case 'D':
 			this.image = ImageD();
 			this.c = c;
@@ -160,7 +165,119 @@ public class Lorann extends Mobile {
 				}
 			}
 			break;
+		
+		//move UpperRight
+		case '9':
+			this.image = ImageUr();
+			this.c = c;
 
+			for (IElements obj : this.Arimages) {
+				if ((obj.getX() == this.getX() + 1) && (obj.getY() == this.getY() - 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
+						this.setX(getX() + 1);
+						this.setY(getY() - 1);
+						break;
+					}  else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if(obj == Arimages.get(4)){
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
+						this.setX(getX() + 1);
+						this.setY(getY() - 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
+					}
+
+				}
+			}
+			break;	
+			
+		//move UpperLeft
+		case '7':
+			this.image = ImageUl();
+			this.c = c;
+
+			for (IElements obj : this.Arimages) {
+				if ((obj.getY() == this.getY() - 1) && (obj.getX() == this.getX() - 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
+						this.setY(getY() - 1);
+						this.setX(getX() - 1);
+						break;
+					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if (obj == Arimages.get(4)) {
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
+						this.setY(getY() - 1);
+						this.setX(getX() - 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
+					}
+
+				}
+			}
+			break;	
+			
+		//move LowerRight	
+		case '3':
+			this.image = ImageDr();
+			this.c = c;
+
+			for (IElements obj : this.Arimages) {
+				if ((obj.getY() == this.getY() + 1) && (obj.getX() == this.getX() + 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
+						this.setY(getY() + 1);
+						this.setX(getX() + 1);
+						break;
+					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if (obj == Arimages.get(4)) {
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
+						this.setY(getY() + 1);
+						this.setX(getX() + 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
+					}
+
+				}
+			}
+			break;		
+		
+		//move LowerLeft	
+		case '1':
+			this.image = ImageDl();
+			this.c = c;
+
+			for (IElements obj : this.Arimages) {
+				if ((obj.getX() == this.getX() - 1) && (obj.getY() == this.getY() + 1)) {
+					if (obj.getPerm() == Permeability.PENETRABLE) {
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
+						break;
+					}  else if (obj.getPerm() == Permeability.COLLECTABLE) {
+						if(obj == Arimages.get(4)){
+							System.out.println("oui");
+							Arimages.remove(Arimages.get(6));
+						}
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
+						IElements black = new Black(obj.getX(), obj.getY());
+
+						Arimages.set(Arimages.indexOf(obj), black);
+						break;
+					}
+
+				}
+			}
+			break;	
+		//default action
 		default:
 			break;
 
@@ -173,7 +290,7 @@ public class Lorann extends Mobile {
 	}
 
 	public BufferedImage ImageDl() throws IOException {
-		image = ImageIO.read(new File("src/main/resources/sprite/lorann_b1.png"));
+		image = ImageIO.read(new File("src/main/resources/sprite/lorann_bl.png"));
 		return image;
 	}
 

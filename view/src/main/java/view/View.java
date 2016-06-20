@@ -45,12 +45,28 @@ public class View implements IView, Runnable {
 		switch (keyCode) {
 		case KeyEvent.VK_NUMPAD6:
 			return ControllerOrder.Right;
+			
 		case KeyEvent.VK_NUMPAD4:
 			return ControllerOrder.Left;
+			
 		case KeyEvent.VK_NUMPAD8:
 			return ControllerOrder.Up;
+			
 		case KeyEvent.VK_NUMPAD2:
 			return ControllerOrder.Down;
+			
+		case KeyEvent.VK_NUMPAD9:
+			return ControllerOrder.UpperRight;
+			
+		case KeyEvent.VK_NUMPAD7:
+			return ControllerOrder.UpperLeft;
+			
+		case KeyEvent.VK_NUMPAD3:
+			return ControllerOrder.LowerRight;
+			
+		case KeyEvent.VK_NUMPAD1:
+			return ControllerOrder.LowerLeft;
+		
 		case KeyEvent.VK_SPACE:
 			return ControllerOrder.Spell;
 		}
