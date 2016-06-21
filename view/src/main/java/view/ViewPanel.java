@@ -24,7 +24,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
-	Timer timer = new Timer(200, this);
+	Timer timer = new Timer(200, this); //Creation of the timer
 	public List<IElements> Arimages = new ArrayList<IElements>();
 	public List<IMobile> Armobile = new ArrayList<IMobile>();
 	/** The Constant serialVersionUID. */
@@ -99,7 +99,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 			e1.printStackTrace();
 		}
 		try {
-			for (IElements obj : Arimages) {
+			for (IElements obj : Arimages) { //Painting of the components of the background
 
 				int x = obj.getX();
 				int y = obj.getY();
@@ -107,7 +107,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 
 			}
 
-			for (IMobile obj : Armobile) {
+			for (IMobile obj : Armobile) { //Painting of the components such as the monsters and Lorann
 
 				int x = obj.getX();
 				int y = obj.getY();
@@ -120,10 +120,11 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 		
 	}
 
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) { //Refresh thanks to the timer
 		for (IMobile obj : this.Armobile){
 
 			obj.move();
+			
 			repaint();
 		}
 		

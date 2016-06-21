@@ -39,10 +39,10 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		JOptionPane jop = new JOptionPane();
 		while (level == 6) {
 
-			level = jop.showOptionDialog(null, "Welcome! Which level do you want? ", "Level selection",
+			level = JOptionPane.showOptionDialog(null, "Welcome! Which level do you want? ", "Level selection",
 					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, TabLvl, TabLvl[0]);
 		}
-
+		this.lvl = level;
 		return level;
 
 	}
@@ -50,20 +50,20 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	public void createMap(int lvl) throws SQLException {
 
 		DAOConnection co = new DAOConnection(DBConnection.getInstance().getConnection());
-		Arimages = new ArrayList<IElements>();
-		Armobile = new ArrayList<IMobile>();
+		this.Arimages = new ArrayList<IElements>();
+		this.Armobile = new ArrayList<IMobile>();
 		this.lvl = lvl;
 
 		switch (lvl) { //initializing Lorann and possible monsters on the map
 		case 1: //level 1
 			Lorann lorann1 = new Lorann(13, 7, this);
-			Armobile.add(lorann1);
+			Armobile.add(0, lorann1);
 
 			break;
 		case 2://level 2
 			// add Loran :
 			Lorann lorann2 = new Lorann(13, 7, this);
-			Armobile.add(lorann2);
+			Armobile.add(0, lorann2);
 
 			// add the monster (4,19,"M"),
 			Monster1 monster1 = new Monster1(19, 4, this);
@@ -74,7 +74,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 3://level 3
 			// add Loran :
 			Lorann lorann3 = new Lorann(15, 9, this);
-			Armobile.add(lorann3);
+			Armobile.add(0, lorann3);
 
 			// add the monsters:
 			Monster4 monster2 = new Monster4(19, 4, this);
@@ -91,7 +91,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 4://level 4
 			// add Loran :
 			Lorann lorann4 = new Lorann(11, 1, this);
-			Armobile.add(lorann4);
+			Armobile.add(0, lorann4);
 
 			// add the monsters:
 			Monster4 monster5 = new Monster4(7, 9, this);
@@ -105,7 +105,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 5://level 5
 			// add Loran :
 			Lorann lorann5 = new Lorann(18, 6, this);
-			Armobile.add(lorann5);
+			Armobile.add(0, lorann5);
 
 			// add the monsters:
 			Monster3 monster7 = new Monster3(8, 6, this);
@@ -187,25 +187,32 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	}
 
 	public Permeability checkBump(int x, int y) {
+
 		Permeability permBump = null;
+		for (IMobile obj2 : Armobile) {
 
+			if ((obj2.getX() == x) && (obj2.getY() == y)) {
+				if (obj2.getPerm() == Permeability.MONSTER) {
+					this.permBump = Permeability.MONSTER;
+					return this.permBump;
+				} else if (obj2.getPerm() == Permeability.CHARACTER) {
+					this.permBump = Permeability.CHARACTER;
+
+				} else if (obj2.getPerm() == Permeability.SPELL) {
+					this.permBump = Permeability.SPELL;
+				}
+			}
+		}
 		for (IElements obj : Arimages) {
-			if ((obj.getX() == x) && (obj.getY() == y)) {
-				if (obj.getPerm() == Permeability.PENETRABLE) {
-					return this.permBump = Permeability.PENETRABLE;
-				} else {
-					if (obj.getPerm() == Permeability.CHARACTER) {
-						 this.permBump = Permeability.CHARACTER;
-					} else if (obj.getPerm() == Permeability.MONSTER) {
-						 this.permBump = Permeability.MONSTER;
-					} else if (obj.getPerm() == Permeability.SPELL) {
-						 this.permBump = Permeability.SPELL;
-					} else if (obj.getPerm() == Permeability.BLOCKING) {
-						 this.permBump = Permeability.BLOCKING;
-					} else if (obj.getPerm() == Permeability.COLLECTABLE) {
-						 this.permBump = Permeability.COLLECTABLE;
-					}
 
+			if ((obj.getX() == x) && (obj.getY() == y)) {
+				if (obj.getPerm() == Permeability.COLLECTABLE) {
+					this.permBump = Permeability.COLLECTABLE;
+					System.out.println("Score +100");
+				} else if (obj.getPerm() == Permeability.PENETRABLE) {
+					this.permBump = Permeability.PENETRABLE;
+				} else if (obj.getPerm() == Permeability.BLOCKING) {
+					this.permBump = Permeability.BLOCKING;
 				}
 			}
 		}
@@ -319,15 +326,10 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	}
 
 	public int getLvl() {
-		return lvl;
+		return this.lvl;
 	}
 
 	public void move() {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
 	}
@@ -352,12 +354,13 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		return null;
 	}
 
-	public void addArmobile(IMobile mobile){
+	public void addArmobile(IMobile mobile) {
 		this.Armobile.add(mobile);
 	}
-	
-	public void delArmobile(IMobile mobile){
+
+	public void delArmobile(IMobile mobile) {
 		this.Armobile.remove(mobile);
 	}
 
+	
 }
