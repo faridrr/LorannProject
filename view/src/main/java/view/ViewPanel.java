@@ -124,6 +124,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 		for (IMobile obj : this.Armobile){
 
 			obj.move();
+			
 			repaint();
 		}
 		

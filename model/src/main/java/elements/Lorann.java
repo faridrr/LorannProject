@@ -343,8 +343,7 @@ public class Lorann extends Mobile {
 			this.lvl = this.model.getLvl();
 			lvl++;
 			this.model.createMap(lvl);
-		}
-		if (this.model.checkBump(this.getX(), this.getY()) == Permeability.MONSTER) {
+		} if(this.model.checkBump(this.getX(), this.getY()) == Permeability.MONSTER){
 			this.model.createMap(this.model.getLvl());
 		}
 
@@ -451,6 +450,11 @@ public class Lorann extends Mobile {
 	public void move() {
 		// TODO Auto-generated method stub
 
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "lorann";
 	}
 
 }

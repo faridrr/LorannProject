@@ -76,6 +76,142 @@ public class Monster1 extends Mobile {
 	}
 
 	public void move() {
+
+		/*
+		 * Upper-left
+		 */
+
+		if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() < this.y))
+
+			for (IElements obj : this.Arimages) {
+				
+				if(this.model.checkBump(this.getX()-1, this.getY()-1) == Permeability.PENETRABLE){
+						this.setX(getX() - 1);
+						this.setY(getY() - 1);
+						break;
+					
+				}
+			}
+
+		/*
+		 * Upper-right
+		 */
+
+		if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() < this.y)) {
+			for (IElements obj : this.Arimages) {
+				if (this.model.checkBump(this.getX()+1, this.getY()-1) == Permeability.PENETRABLE) {
+						this.setX(getX() + 1);
+						this.setY(getY() - 1);
+						break;
+					}
+				
+			}
+		}
+
+		/*
+		 * Lower-left
+		 */
+
+		else if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() > this.y)) {
+
+			for (IElements obj : this.Arimages) {
+				if (this.model.checkBump(this.getX()-1, this.getY()+1) == Permeability.PENETRABLE) {
+						this.setX(getX() - 1);
+						this.setY(getY() + 1);
+						break;
+					
+				}
+			}
+		}
+
+		/*
+		 * Lower-right
+		 */
+
+		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() > this.y)) {
+
+			for (IElements obj : this.Arimages) {
+				if (this.model.checkBump(this.getX()+1, this.getY()+1) == Permeability.PENETRABLE) {
+						this.setX(getX() + 1);
+						this.setY(getY() + 1);
+						break;
+					
+				}
+			}
+		}
+
+		/*
+		 * Left
+		 */
+
+		else if ((this.Armobile.get(0).getX() < this.x) && (this.Armobile.get(0).getY() == this.y)) {
+
+			for (IElements obj : this.Arimages) {
+				if (this.model.checkBump(this.getX()-1, this.getY()) == Permeability.PENETRABLE) {
+						this.setX(getX() - 1);
+						break;
+					}
+				
+			}
+		}
+
+		/*
+		 * Right
+		 */
+
+		else if ((this.Armobile.get(0).getX() > this.x) && (this.Armobile.get(0).getY() == this.y)) {
+
+			for (IElements obj : this.Arimages) {
+				if (this.model.checkBump(this.getX()+1,this.getY()) == Permeability.PENETRABLE) {
+						this.setX(getX() + 1);
+						break;
+					}
+				
+			}
+		}
+
+		/*
+		 * Up
+		 */
+
+		else if ((this.Armobile.get(0).getX() == this.x) && (this.Armobile.get(0).getY() < this.y)) {
+
+			for (IElements obj : this.Arimages) {
+				if (this.model.checkBump(this.getX(), this.getY()-1) == Permeability.PENETRABLE) {
+						this.setY(getY() - 1);
+						break;
+					}
+				}
+			
+		}
+
+		/*
+		 * Down
+		 */
+
+		else if ((this.Armobile.get(0).getX() == this.x) && (this.Armobile.get(0).getY() > this.y)) {
+
+			for (IElements obj : this.Arimages) {
+				if (this.model.checkBump(this.getX(), this.getY()+1) == Permeability.PENETRABLE) {
+						this.setY(getY() + 1);
+						break;
+					}
+				}
+			}
+		
+
+		else {
+		}
+		if (this.model.checkBump(this.getX(), this.getY()) == Permeability.SPELL) {
+			System.out.println("ogv");
+			try {
+				this.model.getArmobile().remove(this);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
 	}
 
 	public void launchSpell(char c) {
@@ -86,5 +222,10 @@ public class Monster1 extends Mobile {
 	public void move(char c) throws IOException, SQLException {
 		// TODO Auto-generated method stub
 
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "monster1";
 	}
 }

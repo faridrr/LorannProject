@@ -74,4 +74,9 @@ public void launchSpell(char c) {
 		// TODO Auto-generated method stub
 
 	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "monster4";
+	}
 }

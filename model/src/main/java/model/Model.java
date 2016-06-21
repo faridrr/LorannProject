@@ -45,7 +45,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		JOptionPane jop = new JOptionPane();
 		while (level == 6) {
 
-			level = jop.showOptionDialog(null, "Welcome! Which level do you want? ", "Level selection",
+			level = JOptionPane.showOptionDialog(null, "Welcome! Which level do you want? ", "Level selection",
 					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, TabLvl, TabLvl[0]);
 		}
 		this.lvl = level;
@@ -63,13 +63,13 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		switch (lvl) {
 		case 1:
 			Lorann lorann1 = new Lorann(13, 7, this);
-			Armobile.add(lorann1);
+			Armobile.add(0, lorann1);
 
 			break;
 		case 2:
 			// add Loran :
 			Lorann lorann2 = new Lorann(13, 7, this);
-			Armobile.add(lorann2);
+			Armobile.add(0, lorann2);
 
 			// add the monster (4,19,"M"),
 			Monster1 monster1 = new Monster1(19, 4, this);
@@ -80,7 +80,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 3:
 			// add Loran :
 			Lorann lorann3 = new Lorann(15, 9, this);
-			Armobile.add(lorann3);
+			Armobile.add(0, lorann3);
 
 			// add the monsters:
 			Monster4 monster2 = new Monster4(19, 4, this);
@@ -97,7 +97,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 4:
 			// add Loran :
 			Lorann lorann4 = new Lorann(11, 1, this);
-			Armobile.add(lorann4);
+			Armobile.add(0, lorann4);
 
 			// add the monsters:
 			Monster4 monster5 = new Monster4(7, 9, this);
@@ -111,7 +111,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		case 5:
 			// add Loran :
 			Lorann lorann5 = new Lorann(18, 6, this);
-			Armobile.add(lorann5);
+			Armobile.add(0, lorann5);
 
 			// add the monsters:
 			Monster3 monster7 = new Monster3(8, 6, this);
@@ -222,7 +222,6 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 				}
 			}
 		}
-		System.out.println(this.permBump);
 		return this.permBump;
 
 	}
@@ -343,11 +342,6 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public void refresh() {
 		// TODO Auto-generated method stub
 
@@ -376,4 +370,5 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		this.Armobile.remove(mobile);
 	}
 
+	
 }

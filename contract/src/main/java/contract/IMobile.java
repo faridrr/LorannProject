@@ -21,5 +21,6 @@ public interface IMobile {
 	Permeability getPerm();
 
 	BufferedImage Image() throws IOException;
+	String getName();
 
 }
