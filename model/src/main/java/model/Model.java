@@ -1,25 +1,31 @@
 package model;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
-import java.util.TimerTask;
 
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
 
-import org.junit.experimental.theories.Theories;
-
-import elements.*;
 import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
 import contract.Permeability;
+import elements.Black;
+import elements.Corners;
+import elements.CrystalBall;
+import elements.DoorC;
+import elements.DoorO;
+import elements.HBone;
+import elements.Lorann;
+import elements.Monster1;
+import elements.Monster2;
+import elements.Monster3;
+import elements.Monster4;
+import elements.Purse;
+import elements.VBone;
 
 /**
  * The Class Model.
