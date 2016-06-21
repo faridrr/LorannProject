@@ -61,6 +61,9 @@ public class RainbowSpell extends Mobile implements IElements {
 		this.y = y;
 	}
 
+	
+	// Bufferring of the different images of the RainbowSpell
+	
 	public BufferedImage Image1() throws IOException {
 		BufferedImage image = ImageIO.read(new File("src/main/resources/sprite/fireball_1.png"));
 		return image;
@@ -106,6 +109,8 @@ public class RainbowSpell extends Mobile implements IElements {
 
 	}
 
+	//Behavior of the spell depending of the direction of the attack
+	
 	public void moveL() {
 
 		if (this.wall == false) {

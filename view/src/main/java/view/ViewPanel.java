@@ -24,6 +24,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
+	/* New timer for the repaint */
 	Timer timer = new Timer(200, this);
 	public List<IElements> Arimages = new ArrayList<IElements>();
 	public List<IMobile> Armobile = new ArrayList<IMobile>();
@@ -66,7 +67,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 	 *
 	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
 	 */
-	
+	/* Get method for the Armobile and Arimages */
 	public List<IMobile> getArmobile(){
 		return this.Armobile;
 	}
@@ -74,8 +75,6 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 	public List<IElements> getArimages(){
 		return this.Arimages;
 	}
-	
-	
 
 	public void update(final Observable arg0, final Object arg1) {
 		this.repaint();
@@ -86,7 +85,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 	    
 
 	@Override
-	protected void paintComponent(final Graphics graphics) {
+	protected void paintComponent(final Graphics graphics) { //Painting ogf the elements within the ArrayList
 
 		int pixelNumbers = 32;
 		
@@ -99,7 +98,7 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 			e1.printStackTrace();
 		}
 		try {
-			for (IElements obj : Arimages) {
+			for (IElements obj : Arimages) { 
 
 				int x = obj.getX();
 				int y = obj.getY();
@@ -119,7 +118,9 @@ class ViewPanel extends JPanel implements Observer, ActionListener, IView{
 		}
 		
 	}
-
+	
+	/* Method to repaint the elements of the ArrayList */
+	
 	public void actionPerformed(ActionEvent e) {
 		for (IMobile obj : this.Armobile){
 

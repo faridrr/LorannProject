@@ -206,10 +206,8 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 			if ((obj2.getX() == x) && (obj2.getY() == y)) {
 				if (obj2.getPerm() == Permeability.MONSTER) {
 					this.permBump = Permeability.MONSTER;
-					return this.permBump;
 				} else if (obj2.getPerm() == Permeability.CHARACTER) {
 					this.permBump = Permeability.CHARACTER;
-
 				} else if (obj2.getPerm() == Permeability.SPELL) {
 					this.permBump = Permeability.SPELL;
 				}
@@ -229,6 +227,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 			}
 		}
 		return this.permBump;
+		
 
 	}
 
