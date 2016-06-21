@@ -26,6 +26,7 @@ public class Lorann extends Mobile {
 	private IModel model;
 	private int exitX;
 	private int exitY;
+	int score = 0;
 	char c;
 	int lvl;
 	Permeability perm = Permeability.CHARACTER;
@@ -90,7 +91,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setX(getX() + 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 						Arimages.set(Arimages.indexOf(obj), black);
@@ -122,7 +123,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setX(getX() - 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 						Arimages.set(Arimages.indexOf(obj), black);
@@ -154,7 +155,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setY(getY() - 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 						Arimages.set(Arimages.indexOf(obj), black);
@@ -186,7 +187,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setY(getY() + 1);
 						IElements black = new Black(obj.getX(), obj.getY());
 						Arimages.set(Arimages.indexOf(obj), black);
@@ -219,7 +220,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setY(getY() - 1);
 						this.setX(getX() + 1);
 						IElements black = new Black(obj.getX(), obj.getY());
@@ -253,7 +254,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setY(getY() - 1);
 						this.setX(getX() - 1);
 						IElements black = new Black(obj.getX(), obj.getY());
@@ -287,7 +288,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setY(getY() + 1);
 						this.setX(getX() + 1);
 						IElements black = new Black(obj.getX(), obj.getY());
@@ -321,7 +322,7 @@ public class Lorann extends Mobile {
 								}
 							}
 						}
-
+						this.score++;
 						this.setY(getY() + 1);
 						this.setX(getX() - 1);
 						IElements black = new Black(obj.getX(), obj.getY());
@@ -331,6 +332,7 @@ public class Lorann extends Mobile {
 
 				}
 			}
+
 			break;
 		// default action
 		default:
@@ -341,6 +343,9 @@ public class Lorann extends Mobile {
 			this.lvl = this.model.getLvl();
 			lvl++;
 			this.model.createMap(lvl);
+		}
+		if (this.model.checkBump(this.getX(), this.getY()) == Permeability.MONSTER) {
+			this.model.createMap(this.model.getLvl());
 		}
 
 	}
@@ -393,11 +398,10 @@ public class Lorann extends Mobile {
 	public Permeability getPerm() {
 		return this.perm;
 	}
-	
 
 	public void launchSpell(char c) throws SQLException {
 		RainbowSpell spell = new RainbowSpell(this.getX(), this.getY(), this.c, this.model);
-		
+
 	}
 
 	public void getMessage() {

@@ -46,7 +46,7 @@ public class Monster1 extends Mobile {
 		public void actionPerformed(ActionEvent e) {
 			move();
 			model.refresh();
-			
+
 		}
 	});
 
@@ -75,7 +75,8 @@ public class Monster1 extends Mobile {
 		return this.perm;
 	}
 
-public void move() {}
+	public void move() {
+	}
 
 	public void launchSpell(char c) {
 		// TODO Auto-generated method stub
