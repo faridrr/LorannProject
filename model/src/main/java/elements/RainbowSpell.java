@@ -93,7 +93,7 @@ public class RainbowSpell extends Mobile implements IElements {
 
 	public Permeability getPerm() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.perm;
 	}
 
 	public void launchSpell(char c) {
@@ -151,30 +151,30 @@ public class RainbowSpell extends Mobile implements IElements {
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.CHARACTER) {
 				Armobile.remove(this);
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.PENETRABLE) {
-				this.setX(this.getY() + 1);
+				this.setY(this.getY() + 1);
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.BLOCKING) {
 				this.wall = true;
-				this.setX(this.getY() - 1);
+				this.setY(this.getY() - 1);
 
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.COLLECTABLE) {
-				this.setX(this.getY() - 1);
+				this.setY(this.getY() - 1);
 				this.wall = true;
 			}
 		}
 
 		else if (this.wall == true) {
-			if (this.model.checkBump(this.getX(), this.getY()) == Permeability.MONSTER) {
+			if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.MONSTER) {
 				// kill monster
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.CHARACTER) {
 				Armobile.remove(this);
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.PENETRABLE) {
-				this.setX(this.getY() - 1);
+				this.setY(this.getY() - 1);
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.BLOCKING) {
 				this.wall = false;
-				this.setX(this.getY() + 1);
+				this.setY(this.getY() + 1);
 
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.COLLECTABLE) {
-				this.setX(this.getY() + 1);
+				this.setY(this.getY() + 1);
 				this.wall = false;
 			}
 		}
@@ -192,18 +192,14 @@ public class RainbowSpell extends Mobile implements IElements {
 			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.BLOCKING) {
 				this.wall = true;
 				this.setX(this.getX() + 1);
-	
-				
-				
-
 			} else if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.COLLECTABLE) {
-				
+				this.setX(this.getX() + 1);
 				this.wall = true;
 			}
 		}
 
 		else if (this.wall == true) {
-			if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.MONSTER) {
+			if (this.model.checkBump(this.getX() - 1, this.getY()) == Permeability.MONSTER) { //+1 became -1
 				// kill monster
 			} else if (this.model.checkBump(this.getX() + 1, this.getY()) == Permeability.CHARACTER) {
 				Armobile.remove(this);
@@ -228,30 +224,30 @@ public class RainbowSpell extends Mobile implements IElements {
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.CHARACTER) {
 				Armobile.remove(this);
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.PENETRABLE) {
-				this.setX(this.getY() - 1);
+				this.setY(this.getY() - 1);
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.BLOCKING) {
 				this.wall = true;
-				this.setX(this.getY() + 1);
+				this.setY(this.getY() + 1);
 
 			} else if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.COLLECTABLE) {
-				this.setX(this.getY() + 1);
+				this.setY(this.getY() + 1);
 				this.wall = true;
 			}
 		}
 
 		else if (this.wall == true) {
-			if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.MONSTER) {
+			if (this.model.checkBump(this.getX(), this.getY() - 1) == Permeability.MONSTER) {//+1 became -1
 				// kill monster
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.CHARACTER) {
 				Armobile.remove(this);
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.PENETRABLE) {
-				this.setX(this.getY() + 1);
+				this.setY(this.getY() + 1);
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.BLOCKING) {
 				this.wall = false;
-				this.setX(this.getY() - 1);
+				this.setY(this.getY() - 1);
 
 			} else if (this.model.checkBump(this.getX(), this.getY() + 1) == Permeability.COLLECTABLE) {
-				this.setX(this.getY() - 1);
+				this.setY(this.getY() - 1);
 				this.wall = false;
 			}
 		}
