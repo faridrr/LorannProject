@@ -39,7 +39,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	List<IElements> Arimages;
 	List<IMobile> Armobile;
 
-	public int LevelSelection() {
+	public int LevelSelection() { //The home frame, where we ask the user at which level he want to start
 		int level = 6;
 		String[] TabLvl = { "1", "2", "3", "4", "5" };
 		JOptionPane jop = new JOptionPane();
@@ -60,7 +60,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		this.Armobile = new ArrayList<IMobile>();
 		this.lvl = lvl;
 
-		switch (lvl) {
+		switch (lvl) { //initializing Lorann and possible monsters on the map
 		case 1:
 			Lorann lorann1 = new Lorann(13, 7, this);
 			Armobile.add(0, lorann1);
@@ -123,7 +123,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 			break;
 		}
 
-		for (x = 0; x < 22; x++) {
+		for (x = 0; x < 22; x++) { //The loop which will display the non-mobiles elements on the map
 			for (y = 0; y < 14; y++) {
 				char symbol = co.checkMap(x, y, lvl);
 				switch (symbol) {
