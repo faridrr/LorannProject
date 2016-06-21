@@ -41,10 +41,10 @@ public class View implements IView, Runnable {
 	 *            the key code
 	 * @return the controller order
 	 */
-	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) { // Controller
+	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) { //KeyEvent which get back the enter
 			
 		switch (keyCode) {
-		case KeyEvent.VK_NUMPAD6:
+		case KeyEvent.VK_NUMPAD6: //NUMPAD mean the number at the right of the keyboard
 			return ControllerOrder.Right;
 			
 		case KeyEvent.VK_NUMPAD4:

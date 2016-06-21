@@ -1,10 +1,8 @@
 package controller;
 
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import contract.ControllerOrder;
@@ -76,7 +74,7 @@ public class Controller implements IController{ // IController interface
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
 	
-	public void orderPerform(final ControllerOrder controllerOrder) throws IOException, SQLException {
+	public void orderPerform(final ControllerOrder controllerOrder) throws IOException, SQLException { //Get back the enter from the View before send the char to the Model
 		switch (controllerOrder) {
 		
 		case Right:

@@ -1,19 +1,14 @@
 package model;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
-import java.util.TimerTask;
 
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
-
-import org.junit.experimental.theories.Theories;
 
 import elements.*;
 import contract.IElements;
@@ -35,11 +30,10 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	int period = 0;
 	int lvl;
 	private Permeability permBump = Permeability.BLOCKING;
-	private String message;
 	List<IElements> Arimages;
 	List<IMobile> Armobile;
 
-	public int LevelSelection() {
+	public int LevelSelection() { //The home frame, where we ask the user at which level he want to start
 		int level = 6;
 		String[] TabLvl = { "1", "2", "3", "4", "5" };
 		JOptionPane jop = new JOptionPane();
@@ -60,13 +54,13 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 		Armobile = new ArrayList<IMobile>();
 		this.lvl = lvl;
 
-		switch (lvl) {
-		case 1:
+		switch (lvl) { //initializing Lorann and possible monsters on the map
+		case 1: //level 1
 			Lorann lorann1 = new Lorann(13, 7, this);
 			Armobile.add(lorann1);
 
 			break;
-		case 2:
+		case 2://level 2
 			// add Loran :
 			Lorann lorann2 = new Lorann(13, 7, this);
 			Armobile.add(lorann2);
@@ -77,7 +71,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 			break;
 
-		case 3:
+		case 3://level 3
 			// add Loran :
 			Lorann lorann3 = new Lorann(15, 9, this);
 			Armobile.add(lorann3);
@@ -94,7 +88,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 			break;
 
-		case 4:
+		case 4://level 4
 			// add Loran :
 			Lorann lorann4 = new Lorann(11, 1, this);
 			Armobile.add(lorann4);
@@ -108,7 +102,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 
 			break;
 
-		case 5:
+		case 5://level 5
 			// add Loran :
 			Lorann lorann5 = new Lorann(18, 6, this);
 			Armobile.add(lorann5);
@@ -123,7 +117,7 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 			break;
 		}
 
-		for (x = 0; x < 22; x++) {
+		for (x = 0; x < 22; x++) { //The loop which will display the non-mobiles elements on the map
 			for (y = 0; y < 14; y++) {
 				char symbol = co.checkMap(x, y, lvl);
 				switch (symbol) {
@@ -227,7 +221,6 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		this.message = "Initialisation du jeu.";
 	}
 
 	public void getMessage() {
@@ -241,7 +234,6 @@ public class Model extends Observable implements IModel, IMobile, IElements {
 	 *            the new message
 	 */
 	private void setMessage(final String message) {
-		this.message = message;
 		this.setChanged();
 		this.notifyObservers();
 	}

@@ -14,7 +14,6 @@ import contract.ControllerOrder;
 import contract.IElements;
 import contract.IMobile;
 import contract.IModel;
-import contract.IView;
 import contract.Permeability;
 import model.Model;
 

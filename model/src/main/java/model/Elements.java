@@ -1,8 +1,5 @@
 package model;
 
-import contract.IElements;
-import contract.IModel;
-
 /**
  * The Class Elements.
  *
